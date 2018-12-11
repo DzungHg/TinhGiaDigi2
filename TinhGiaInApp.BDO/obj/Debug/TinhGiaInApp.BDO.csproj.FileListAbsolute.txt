@@ -1,0 +1,5 @@
+D:\GitHub02\TinhGiaDigi2\TinhGiaInApp.BDO\bin\Debug\TinhGiaInApp.BDO.dll
+D:\GitHub02\TinhGiaDigi2\TinhGiaInApp.BDO\bin\Debug\TinhGiaInApp.BDO.pdb
+D:\GitHub02\TinhGiaDigi2\TinhGiaInApp.BDO\obj\Debug\TinhGiaInApp.BDO.csprojResolveAssemblyReference.cache
+D:\GitHub02\TinhGiaDigi2\TinhGiaInApp.BDO\obj\Debug\TinhGiaInApp.BDO.dll
+D:\GitHub02\TinhGiaDigi2\TinhGiaInApp.BDO\obj\Debug\TinhGiaInApp.BDO.pdb
