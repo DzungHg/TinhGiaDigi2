@@ -19,7 +19,7 @@ namespace TinhGiaInApp.DAL
         public IEnumerable<KhoSanPhamBDO> DocTatCa()
         {
             IEnumerable<KhoSanPhamBDO> output;
-            var str = GlobalConfig.CnnString(tenDB);
+            //var str = GlobalConfig.CnnString(tenDB);
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(tenDB)))
             {
                 output = connection.Query<KhoSanPhamBDO>("dbo.spKhoSanPham_DocTatCa");
@@ -35,10 +35,8 @@ namespace TinhGiaInApp.DAL
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(tenDB)))
             {
                 var p = new DynamicParameters();
-                p.Add("@i", iD);
-
-                IEnumerable<KhoSanPhamBDO> abc = connection.Query<KhoSanPhamBDO>("dbo.spKhoSanPham_DocTatCa", p);//Thử
-                output = abc.SingleOrDefault();
+                p.Add("@id", iD);               
+                 output = connection.QueryFirstOrDefault<KhoSanPhamBDO>("dbo.spKhoSanPham_DocTheoId", p, commandType: CommandType.StoredProcedure);//Thử              
                 return output;
             }
 

@@ -256,6 +256,7 @@ namespace TinhGiaInClient
 
         private void lvwKhoSanPham_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //this.Text += $" [{this.IdChon.ToString()}]";
             khoSanPhamPres.CapNhatChiTietKhoSanPham();
             BatNutNhan();
         }
@@ -263,8 +264,7 @@ namespace TinhGiaInClient
         private void BatNutNhan()
         {
             var kq = true;
-            if (this.IdChon <= 0 || this.Rong <= 0 ||
-                this.Cao <= 0)
+            if (this.IdChon <= 0)
                 kq = false;
 
             btnDong.Enabled = kq;
