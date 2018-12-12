@@ -137,3 +137,6 @@ D:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\bin\Debug\TinhGiaInBDO.pdb
 D:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\obj\Debug\TinhGiaInLogic.csprojResolveAssemblyReference.cache
 D:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\obj\Debug\TinhGiaInLogic.dll
 D:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\obj\Debug\TinhGiaInLogic.pdb
+F:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\obj\Debug\TinhGiaInLogic.csprojResolveAssemblyReference.cache
+F:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\obj\Debug\TinhGiaInLogic.dll
+F:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\obj\Debug\TinhGiaInLogic.pdb

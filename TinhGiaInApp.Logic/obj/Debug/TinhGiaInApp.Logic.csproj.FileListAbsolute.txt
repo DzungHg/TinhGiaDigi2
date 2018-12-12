@@ -11,3 +11,16 @@ D:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Logic\bin\Debug\Dapper.xml
 D:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Logic\bin\Debug\TinhGiaInApp.Common.pdb
 D:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Logic\obj\Debug\TinhGiaInApp.Logic.dll
 D:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Logic\obj\Debug\TinhGiaInApp.Logic.pdb
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Logic\bin\Debug\TinhGiaInApp.Logic.dll
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Logic\bin\Debug\TinhGiaInApp.Logic.pdb
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Logic\bin\Debug\TinhGiaInApp.BDO.dll
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Logic\bin\Debug\TinhGiaInApp.DAL.dll
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Logic\bin\Debug\Dapper.dll
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Logic\bin\Debug\TinhGiaInApp.Common.dll
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Logic\bin\Debug\TinhGiaInApp.BDO.pdb
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Logic\bin\Debug\TinhGiaInApp.DAL.pdb
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Logic\bin\Debug\Dapper.xml
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Logic\bin\Debug\TinhGiaInApp.Common.pdb
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Logic\obj\Debug\TinhGiaInApp.Logic.csprojResolveAssemblyReference.cache
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Logic\obj\Debug\TinhGiaInApp.Logic.dll
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Logic\obj\Debug\TinhGiaInApp.Logic.pdb

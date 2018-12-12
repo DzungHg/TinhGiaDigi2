@@ -63,3 +63,8 @@ D:\GitHub02\TinhGiaDigi2\TinhGiaInBDO\bin\Debug\TinhGiaInBDO.pdb
 D:\GitHub02\TinhGiaDigi2\TinhGiaInBDO\obj\Debug\TinhGiaInBDO.csprojResolveAssemblyReference.cache
 D:\GitHub02\TinhGiaDigi2\TinhGiaInBDO\obj\Debug\TinhGiaInBDO.dll
 D:\GitHub02\TinhGiaDigi2\TinhGiaInBDO\obj\Debug\TinhGiaInBDO.pdb
+F:\GitHub02\TinhGiaDigi2\TinhGiaInBDO\bin\Debug\TinhGiaInBDO.dll
+F:\GitHub02\TinhGiaDigi2\TinhGiaInBDO\bin\Debug\TinhGiaInBDO.pdb
+F:\GitHub02\TinhGiaDigi2\TinhGiaInBDO\obj\Debug\TinhGiaInBDO.csprojResolveAssemblyReference.cache
+F:\GitHub02\TinhGiaDigi2\TinhGiaInBDO\obj\Debug\TinhGiaInBDO.dll
+F:\GitHub02\TinhGiaDigi2\TinhGiaInBDO\obj\Debug\TinhGiaInBDO.pdb

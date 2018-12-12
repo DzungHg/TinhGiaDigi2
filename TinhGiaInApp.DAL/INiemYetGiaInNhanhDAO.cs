@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TinhGiaInBDO;
+using TinhGiaInApp.BDO;
 
-namespace TinhGiaInDAL.RepoTinhGia
+namespace TinhGiaInApp.DAL
 {
     public interface INiemYetGiaInNhanhDAO
     {

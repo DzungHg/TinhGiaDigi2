@@ -9,3 +9,14 @@ D:\GitHub02\TinhGiaDigi2\TinhGiaInApp.DAL\bin\Debug\TinhGiaInApp.Common.pdb
 D:\GitHub02\TinhGiaDigi2\TinhGiaInApp.DAL\bin\Debug\Dapper.xml
 D:\GitHub02\TinhGiaDigi2\TinhGiaInApp.DAL\obj\Debug\TinhGiaInApp.DAL.dll
 D:\GitHub02\TinhGiaDigi2\TinhGiaInApp.DAL\obj\Debug\TinhGiaInApp.DAL.pdb
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.DAL\bin\Debug\TinhGiaInApp.DAL.dll
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.DAL\bin\Debug\TinhGiaInApp.DAL.pdb
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.DAL\bin\Debug\Dapper.dll
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.DAL\bin\Debug\TinhGiaInApp.BDO.dll
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.DAL\bin\Debug\TinhGiaInApp.Common.dll
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.DAL\bin\Debug\TinhGiaInApp.BDO.pdb
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.DAL\bin\Debug\TinhGiaInApp.Common.pdb
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.DAL\bin\Debug\Dapper.xml
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.DAL\obj\Debug\TinhGiaInApp.DAL.csprojResolveAssemblyReference.cache
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.DAL\obj\Debug\TinhGiaInApp.DAL.dll
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.DAL\obj\Debug\TinhGiaInApp.DAL.pdb

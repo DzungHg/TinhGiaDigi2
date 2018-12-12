@@ -3,3 +3,8 @@ D:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Common\bin\Debug\TinhGiaInApp.Common.dll
 D:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Common\bin\Debug\TinhGiaInApp.Common.pdb
 D:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Common\obj\Debug\TinhGiaInApp.Common.dll
 D:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Common\obj\Debug\TinhGiaInApp.Common.pdb
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Common\bin\Debug\TinhGiaInApp.Common.dll
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Common\bin\Debug\TinhGiaInApp.Common.pdb
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Common\obj\Debug\TinhGiaInApp.Common.csprojResolveAssemblyReference.cache
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Common\obj\Debug\TinhGiaInApp.Common.dll
+F:\GitHub02\TinhGiaDigi2\TinhGiaInApp.Common\obj\Debug\TinhGiaInApp.Common.pdb
