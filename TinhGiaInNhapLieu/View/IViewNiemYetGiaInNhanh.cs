@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TinhGiaInClient;
-using TinhGiaInClient.Common.Enum;
+using TinhGiaInApp.Common.Enums;
 
 namespace TinhGiaInNhapLieu.View
 {
@@ -14,7 +14,7 @@ namespace TinhGiaInNhapLieu.View
         string TenNiemYet { get; set; }
        
         string DienGiai { get; set; }
-        string LoaiBangGia { get; set; }
+        LoaiBangGiaS LoaiBangGia { get; set; }
         int IdBangGia { get; set; }
         string TenBangGia { get; set; }
         int IdHangKhachHang { get; set; }

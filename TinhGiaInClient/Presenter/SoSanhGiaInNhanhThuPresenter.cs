@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TinhGiaInClient.View;
 using TinhGiaInClient.Model;
+using TinhGiaInApp.Common.Enums;
 using TinhGiaInClient.Common;
 
 
@@ -63,9 +64,12 @@ namespace TinhGiaInClient.Presenter
             if (idNiemYetChon > 0)
             {
                 var niemYetGia = NiemYetGiaInNhanh.DocTheoId(idNiemYetChon);
+
+                LoaiBangGiaS loaiBangGia;
+                Enum.TryParse(niemYetGia.LoaiBangGia, out loaiBangGia);
                 
                 kq = DanhSachBangGia.DocTheoIDvaLoai(niemYetGia.IdBangGia,
-                    niemYetGia.LoaiBangGia);
+                    loaiBangGia);
             }
             return kq;
         }

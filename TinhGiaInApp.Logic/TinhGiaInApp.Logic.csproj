@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BangGiaLuyTienLogic.cs" />
     <Compile Include="BangGiaTheoBuocLogic.cs" />
+    <Compile Include="LoaiBangGiaLogic.cs" />
     <Compile Include="KhoSanPhamLogic.cs" />
     <Compile Include="NiemYetGiaInNhanhLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

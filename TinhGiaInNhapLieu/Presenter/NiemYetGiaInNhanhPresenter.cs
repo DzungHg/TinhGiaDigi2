@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TinhGiaInClient.Model;
 using TinhGiaInNhapLieu.View;
-using TinhGiaInClient.Common.Enum;
+using TinhGiaInApp.Common.Enums;
 
 namespace TinhGiaInNhapLieu.Presenter
 {
@@ -37,7 +37,7 @@ namespace TinhGiaInNhapLieu.Presenter
             View.SoTrangToiDa = 0;
             View.DuocGomTrang = false;
             View.KhongSuDung = false;
-            View.LoaiBangGia = "";
+            
             View.DaySoLuongNiemYet = ";";
             View.ThuTu = 100;
             
@@ -54,7 +54,9 @@ namespace TinhGiaInNhapLieu.Presenter
             View.TenNiemYet = niemYetGia.Ten;
             View.DienGiai = niemYetGia.DienGiai;
             View.IdBangGia  = niemYetGia.IdBangGia;
-            View.LoaiBangGia = niemYetGia.LoaiBangGia;
+            LoaiBangGiaS loaiBangGia;
+            Enum.TryParse(niemYetGia.LoaiBangGia, out loaiBangGia);
+            View.LoaiBangGia = loaiBangGia ;
             View.IdHangKhachHang = niemYetGia.IdHangKhachHang;
             View.DuocGomTrang = niemYetGia.DuocGomTrang;
             View.SoTrangToiDa = niemYetGia.SoTrangToiDa;           
@@ -66,20 +68,20 @@ namespace TinhGiaInNhapLieu.Presenter
 
             
         }
-        public string TenBangGia (int iDBangGia, string loaiBangGia)
+        public string TenBangGia (int iDBangGia,  LoaiBangGiaS loaiBangGia)
         {
             var kq = "";
-            if (iDBangGia > 0 && !string.IsNullOrEmpty(loaiBangGia))
+            if (iDBangGia > 0)
             {
                 kq  = DanhSachBangGia.DocTheoIDvaLoai(iDBangGia, loaiBangGia).Ten;               
 
             }
             return kq;
         }
-        public string DienGiaiBangGia(int iDBangGia, string loaiBangGia)
+        public string DienGiaiBangGia(int iDBangGia, LoaiBangGiaS loaiBangGia)
         {
             var kq = "";
-            if (iDBangGia > 0 && !string.IsNullOrEmpty(loaiBangGia))
+            if (iDBangGia > 0 )
             {
                 kq = DanhSachBangGia.DocTheoIDvaLoai(iDBangGia, loaiBangGia).DienGiai;
 
@@ -90,7 +92,7 @@ namespace TinhGiaInNhapLieu.Presenter
         {
             try
             {
-                if (View.IdBangGia > 0 && !string.IsNullOrEmpty(View.LoaiBangGia))
+                if (View.IdBangGia > 0 )
                 {
                     var bangGia = DanhSachBangGia.DocTheoIDvaLoai(View.IdBangGia, View.LoaiBangGia);
                     View.TenBangGia = bangGia.Ten;
@@ -118,7 +120,7 @@ namespace TinhGiaInNhapLieu.Presenter
             niemYetGia.IdBangGia = View.IdBangGia;
           
             niemYetGia.IdHangKhachHang = View.IdHangKhachHang;
-            niemYetGia.LoaiBangGia = View.LoaiBangGia;
+            niemYetGia.LoaiBangGia = View.LoaiBangGia.ToString();
             niemYetGia.SoTrangToiDa = View.SoTrangToiDa;
            
             niemYetGia.DaySoLuongNiemYet = View.DaySoLuongNiemYet;

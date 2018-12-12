@@ -11,7 +11,7 @@ using TinhGiaInClient.View;
 using TinhGiaInClient.Presenter;
 using TinhGiaInClient.Model.Support;
 using TinhGiaInClient.Model;
-using TinhGiaInClient.Common.Enum;
+using TinhGiaInApp.Common.Enums;
 
 namespace TinhGiaInClient
 {

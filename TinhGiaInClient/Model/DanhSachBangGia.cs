@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TinhGiaInClient.Presenter;
-using TinhGiaInClient.Common;
+using TinhGiaInApp.Common.Enums;
 
 
 namespace TinhGiaInClient.Model
@@ -28,13 +28,14 @@ namespace TinhGiaInClient.Model
             }
             return lst;
         }
-        public static BangGiaBase DocTheoIDvaLoai(int id, string loai)
+        
+        public static BangGiaBase DocTheoIDvaLoai(int id, LoaiBangGiaS loai)
         {
             BangGiaBase bg = null;
-            bg = DanhSachBangGia.DanhSachS().Where(x => x.ID == id && x.LoaiBangGia == loai).SingleOrDefault();
+            bg = DanhSachBangGia.DanhSachS().Where(x => x.ID == id && x.LoaiBangGia.Trim() == loai.ToString() ).SingleOrDefault();
             return bg;
         }
-        public static Dictionary<string, string> TrinhBayBangGiaTuDB(int idBangGia, string loaiBangGia)
+        public static Dictionary<string, string> TrinhBayBangGiaTuDB(int idBangGia, LoaiBangGiaS loaiBangGia)
         {
             Dictionary<string, string> kq = null;
             if (idBangGia <= 0)
@@ -44,18 +45,18 @@ namespace TinhGiaInClient.Model
             var bangGiaChon = DanhSachBangGia.DocTheoIDvaLoai(idBangGia, loaiBangGia);
             switch (loaiBangGia)
             {
-                case Global.cBangGiaLuyTien:
+                case LoaiBangGiaS.LuyTien:
 
                     kq = HoTro.TrinhBayBangGiaLuyTien(bangGiaChon.DaySoLuong,
                         bangGiaChon.DayGia, bangGiaChon.DonViTinh);
                     break;
 
-                case Global.cBangGiaBuoc:
+                case LoaiBangGiaS.Buoc:
 
                     kq = HoTro.TrinhBayBangGiaBuoc(bangGiaChon.DaySoLuong,
                         bangGiaChon.DayGia, bangGiaChon.DonViTinh);
                     break;
-                case Global.cBangGiaGoi:
+                case LoaiBangGiaS.Goi:
 
                     kq = HoTro.TrinhBayBangGiaGoi(bangGiaChon.DaySoLuong,
                         bangGiaChon.DayGia, bangGiaChon.DonViTinh);
@@ -64,7 +65,7 @@ namespace TinhGiaInClient.Model
             return kq;
         }
         public static Dictionary<string, string> TrinhBayBangGia(string daySoLuong, string dayGia,
-                string loaiBangGia, string donViTinh = "trang A4")
+                LoaiBangGiaS loaiBangGia, string donViTinh = "trang A4")
         {
             Dictionary<string, string> kq = null;
             //Kiểm tra bản giá có hợp lệ
@@ -90,18 +91,18 @@ namespace TinhGiaInClient.Model
             
             switch (loaiBangGia)
             {
-                case Global.cBangGiaLuyTien:
+                case LoaiBangGiaS.LuyTien:
 
                     kq = HoTro.TrinhBayBangGiaLuyTien(daySoLuong,
                         dayGia, donViTinh);
                     break;
 
-                case Global.cBangGiaBuoc:
+                case LoaiBangGiaS.Buoc:
 
                     kq = HoTro.TrinhBayBangGiaBuoc(daySoLuong,
                         dayGia, donViTinh);
                     break;
-                case Global.cBangGiaGoi:
+                case LoaiBangGiaS.Goi:
 
                     kq = HoTro.TrinhBayBangGiaGoi(daySoLuong,
                         dayGia, donViTinh);

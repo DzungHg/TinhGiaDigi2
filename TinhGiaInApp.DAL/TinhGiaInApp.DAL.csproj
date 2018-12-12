@@ -51,6 +51,7 @@
     <Compile Include="IBangGiaTheoBuocDAO.cs" />
     <Compile Include="IKhoSanPhamDAO.cs" />
     <Compile Include="INiemYetGiaInNhanhDAO.cs" />
+    <Compile Include="LoaiBangGiaDAO.cs" />
     <Compile Include="KhoSanPhamDAO.cs" />
     <Compile Include="NiemYetGiaInNhanhDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

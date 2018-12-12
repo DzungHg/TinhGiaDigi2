@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 
-using TinhGiaInClient;
+using TinhGiaInApp.Common.Enums;
 using TinhGiaInClient.Model;
 
 namespace TinhGiaInNhapLieu
@@ -23,12 +23,12 @@ namespace TinhGiaInNhapLieu
         //Thêm field
         public int IdBangGiaChon
         { get; set; }
-        public string LoaiBangGia { get; set; }
+        public LoaiBangGiaS LoaiBangGia { get; set; }
         //
         public void LoadBangGia()
         {
             lstBangGia.DataSource = DanhSachBangGia.DanhSachS();
-            lstBangGia.DataMember = "ID";
+            lstBangGia.DataMember = "Id";
 
         }
         public string Ten { get; set; }
@@ -50,9 +50,9 @@ namespace TinhGiaInNhapLieu
 
         private void lstBangGia_ColumnCreating(object sender, Telerik.WinControls.UI.ListViewColumnCreatingEventArgs e)
         {
-            if (e.Column.FieldName == "ID")
+            if (e.Column.FieldName == "Id")
             {
-                e.Column.HeaderText = "ID";
+                e.Column.HeaderText = "Id";
                 e.Column.Width = 5;
                 e.Column.MinWidth = 5;
             }
@@ -104,17 +104,19 @@ namespace TinhGiaInNhapLieu
 
         private void lstBangGia_SelectedItemChanged(object sender, EventArgs e)
         {
-             
-                if (lstBangGia.SelectedItems.Count > 0)
+            LoaiBangGiaS loaiBangGia;
+            if (lstBangGia.SelectedItems.Count > 0)
                 {
                     var item = (BangGiaBase)lstBangGia.SelectedItems[0].DataBoundItem;
                     this.IdBangGiaChon = item.ID;
-                    this.LoaiBangGia = item.LoaiBangGia;
+                Enum.TryParse(item.LoaiBangGia, out loaiBangGia);
+
+                    this.LoaiBangGia = loaiBangGia;
                 }
                 else
                 {
                     this.IdBangGiaChon = 0;
-                    this.LoaiBangGia = "";
+                    //this.LoaiBangGia = null;
                 }
                 BatNutNhan();
             

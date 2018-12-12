@@ -11,7 +11,7 @@ using TinhGiaInClient;
 using TinhGiaInClient.Model;
 using TinhGiaInClient.Model.Support;
 using TinhGiaInClient.UI;
-using TinhGiaInClient.Common.Enum;
+using TinhGiaInApp.Common.Enums;
 using TinhGiaInClient.Common;
 
 namespace TinhGiaInClient.UI
@@ -289,14 +289,14 @@ namespace TinhGiaInClient.UI
             }
             else
                 frmGiaInNhanh.Focus();*/
-            var frmGiaInNhanh = new GiaInNhanhThuForm((int)FormStateS.View,
+           /* var frmGiaInNhanh = new GiaInNhanhThuForm((int)FormStateS.View,
                 int.Parse(cboHangKH.SelectedValue.ToString()));
             
             frmGiaInNhanh.Text = "Tính thử " + cboHangKH.Text;
             frmGiaInNhanh.MinimizeBox = false;
             frmGiaInNhanh.MaximizeBox = false;
             frmGiaInNhanh.StartPosition = FormStartPosition.CenterParent;
-            frmGiaInNhanh.Show();
+            frmGiaInNhanh.Show();*/
            
         }
 

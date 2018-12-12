@@ -144,3 +144,11 @@ D:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\bin\Debug\TinhGiaInDAL.dll
 D:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\bin\Debug\EntityFramework.dll
 D:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\bin\Debug\TinhGiaInDAL.pdb
 D:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\bin\Debug\EntityFramework.xml
+F:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\bin\Debug\TinhGiaInLogic.dll
+F:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\bin\Debug\TinhGiaInLogic.pdb
+F:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\bin\Debug\TinhGiaInBDO.dll
+F:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\bin\Debug\TinhGiaInDAL.dll
+F:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\bin\Debug\EntityFramework.dll
+F:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\bin\Debug\TinhGiaInBDO.pdb
+F:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\bin\Debug\TinhGiaInDAL.pdb
+F:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\bin\Debug\EntityFramework.xml

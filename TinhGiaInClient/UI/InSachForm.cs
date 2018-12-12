@@ -12,7 +12,7 @@ using TinhGiaInClient.Model.Booklet;
 using TinhGiaInClient.Model.Support;
 using TinhGiaInClient.Presenter;
 using TinhGiaInClient.View;
-using TinhGiaInClient.Common.Enum;
+using TinhGiaInApp.Common.Enums;
 
 namespace TinhGiaInClient.UI
 {

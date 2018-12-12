@@ -427,6 +427,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TinhGiaInApp.Common\TinhGiaInApp.Common.csproj">
+      <Project>{cd43c938-8a98-4145-9713-51c2c6fa4f65}</Project>
+      <Name>TinhGiaInApp.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TinhGiaInClient\TinhGiaInClient.csproj">
       <Project>{8e9c6969-1a2e-4bb4-ac12-5b20e318326d}</Project>
       <Name>TinhGiaInClient</Name>

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using TinhGiaInClient.View;
 using TinhGiaInClient.Presenter;
 using TinhGiaInClient.Model;
-using TinhGiaInClient.Common.Enum;
+using TinhGiaInApp.Common.Enums;
 using TinhGiaInClient.Common;
 using TinhGiaInClient.UI;
 

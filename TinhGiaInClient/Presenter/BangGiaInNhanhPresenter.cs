@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using TinhGiaInApp.Common.Enums;
 using TinhGiaInClient.Model;
 using TinhGiaInClient.View;
 using TinhGiaInClient.Model.Support;
 
 namespace TinhGiaInClient.Presenter
 {
-  
+
     public class BangGiaInNhanhPresenter
     {
         /// <summary>
@@ -68,8 +67,10 @@ namespace TinhGiaInClient.Presenter
             {
                 var niemYetGia = NiemYetGiaInNhanh.DocTheoId(View.IdNiemYetGiaChon);
 
+                LoaiBangGiaS loaiBangGia;
+                Enum.TryParse(niemYetGia.LoaiBangGia, out loaiBangGia);
                 kq = DanhSachBangGia.DocTheoIDvaLoai(niemYetGia.IdBangGia,
-                    niemYetGia.LoaiBangGia);
+                    loaiBangGia);
             }
             return kq;
         }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TinhGiaInClient;
-using TinhGiaInClient.Common.Enum;
+﻿using TinhGiaInApp.Common.Enums;
 
 namespace TinhGiaInNhapLieu.View
 {
@@ -16,7 +10,7 @@ namespace TinhGiaInNhapLieu.View
         string DaySoLuong { get; set; }
         string DayGiaTrang { get; set; }
         string DonViTinh { get; set; }      
-        string LoaiBangGia { get; set; }
+        LoaiBangGiaS LoaiBangGia { get; set; }
         int ThuTu { get; set; }
        
         bool KhongSuDung { get; set; }

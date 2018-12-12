@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using TinhGiaInNhapLieu.View;
 using TinhGiaInNhapLieu.Presenter;
-using TinhGiaInClient.Common.Enum;
+using TinhGiaInApp.Common.Enums;
 using TinhGiaInClient.Model;
 
 

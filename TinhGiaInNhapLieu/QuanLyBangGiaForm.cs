@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Telerik.WinControls;
 using TinhGiaInNhapLieu.View;
 using TinhGiaInNhapLieu.Presenter;
 using TinhGiaInClient.Model;
-using TinhGiaInClient.Common;
-using TinhGiaInClient.Common.Enum;
+using TinhGiaInApp.Common.Enums;
 
 namespace TinhGiaInNhapLieu
 {
@@ -85,7 +80,7 @@ namespace TinhGiaInNhapLieu
         {
             lstBangGia.DataSource = null;
             lstBangGia.DataSource = quanLyBGPres.BangGiaTheoLoai();
-            lstBangGia.DataMember = "ID";
+            lstBangGia.DataMember = "Id";
             lstBangGia.DisplayMember = "Ten";
             lstBangGia.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView;
         }
@@ -192,7 +187,7 @@ namespace TinhGiaInNhapLieu
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            var frm = new BangGiaForm(quanLyBGPres.LoaiBanGiaStr(), FormStateS.New);
+            var frm = new BangGiaForm(this.LoaiBangGia, FormStateS.New);
             frm.MinimizeBox = false;
             frm.MaximizeBox = false;
             frm.Text = "[Thêm mới]";
@@ -208,7 +203,7 @@ namespace TinhGiaInNhapLieu
             if (this.IdBangGiaChon <= 0)
                 return;
             //
-            var frm = new BangGiaForm(quanLyBGPres.LoaiBanGiaStr(), FormStateS.Edit, this.IdBangGiaChon);
+            var frm = new BangGiaForm(this.LoaiBangGia, FormStateS.Edit, this.IdBangGiaChon);
             frm.MinimizeBox = false;
             frm.MaximizeBox = false;
             frm.Text = "[Sửa]";

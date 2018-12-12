@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using TinhGiaInClient;
 using TinhGiaInNhapLieu.View;
 using TinhGiaInClient.Model;
-using TinhGiaInClient.Common.Enum;
+using TinhGiaInApp.Common.Enums;
 
 namespace TinhGiaInNhapLieu.Presenter
 {

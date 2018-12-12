@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using Telerik.WinControls;
 using TinhGiaInNhapLieu.View;
 using TinhGiaInNhapLieu.Presenter;
-using TinhGiaInClient;
-using TinhGiaInClient.Common.Enum;
+using TinhGiaInApp.Common.Enums;
 
 
 namespace TinhGiaInNhapLieu
@@ -93,10 +87,13 @@ namespace TinhGiaInNhapLieu
             get { return lblTenBangGia.Text; }
             set { lblTenBangGia.Text = value; }
         }
-        public string LoaiBangGia
+        public LoaiBangGiaS LoaiBangGia
         {
-            get { return lblLoaiBangGia.Text; }
-            set { lblLoaiBangGia.Text = value; }
+            get {
+                LoaiBangGiaS loaiBangGia;
+                Enum.TryParse(lblLoaiBangGia.Text.Trim(), out loaiBangGia);
+                return loaiBangGia; }
+            set { lblLoaiBangGia.Text = value.ToString(); }
         }
        
         int _idHangKH;

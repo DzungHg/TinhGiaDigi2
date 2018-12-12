@@ -9,7 +9,7 @@ using Telerik.WinControls;
 using TinhGiaInNhapLieu.View;
 using TinhGiaInNhapLieu.Presenter;
 using TinhGiaInClient;
-using TinhGiaInClient.Common.Enum;
+using TinhGiaInApp.Common.Enums;
 
 
 namespace TinhGiaInNhapLieu
@@ -17,9 +17,12 @@ namespace TinhGiaInNhapLieu
     public partial class BangGiaForm : Telerik.WinControls.UI.RadForm, IViewBangGia
     {
 
-        public BangGiaForm(string loaiBangGia, FormStateS tinhTrangForm, int idBangGia = 0 )
+        public BangGiaForm(LoaiBangGiaS loaiBangGia, FormStateS tinhTrangForm, int idBangGia = 0 )
         {
             InitializeComponent();
+            //Khởi đầu một số dữ liệu
+            cboLoaiBangGia.DataSource = Enum.GetValues(typeof(LoaiBangGiaS));
+
             //NhapMotSoCoban
             this.ID = idBangGia;
             this.LoaiBangGia = loaiBangGia;
@@ -84,10 +87,15 @@ namespace TinhGiaInNhapLieu
 
 
 
-        public string LoaiBangGia
+        public LoaiBangGiaS LoaiBangGia
         {
-            get { return txtLoaiBangGia.Text; }
-            set { txtLoaiBangGia.Text = value; }
+            
+            get {
+                LoaiBangGiaS loaiBangGia;
+                Enum.TryParse(cboLoaiBangGia.SelectedItem.ToString(), out loaiBangGia);
+                return loaiBangGia;
+            }
+            set { cboLoaiBangGia.Text = value.ToString(); }
         }
         public string DonViTinh
         {

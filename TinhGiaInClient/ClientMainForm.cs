@@ -8,8 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TinhGiaInClient.Model;
-using TinhGiaInClient.Common.Enum;
-
+using TinhGiaInApp.Common.Enums;
 
 namespace TinhGiaInClient
 {

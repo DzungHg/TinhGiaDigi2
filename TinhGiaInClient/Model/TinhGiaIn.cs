@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using TinhGiaInLogic;
 using TinhGiaInClient.Model.Booklet;
+using TinhGiaInApp.Common.Enums;
 
 
 namespace TinhGiaInClient.Model
@@ -130,6 +127,9 @@ namespace TinhGiaInClient.Model
             decimal kq = 0;
             var idNiemYetGiaInNhanh = 0;
             var idMayInDigiChon = 0;
+
+            LoaiBangGiaS loaiBangGia;
+
             if (this.TongSoTrangInA4BaiIn() > 0)
             {
                 //Tìm mục nào có IdBangGiaInNhanh chung > 0 thì dừng
@@ -149,8 +149,10 @@ namespace TinhGiaInClient.Model
                 else
                 {
                     //Tạo bảng giá in nhanh
+                    Enum.TryParse(NiemYetGiaInNhanh.DocTheoId(idNiemYetGiaInNhanh).LoaiBangGia.Trim(), out loaiBangGia);
+
                     var bangGia = DanhSachBangGia.DocTheoIDvaLoai(NiemYetGiaInNhanh.DocTheoId(idNiemYetGiaInNhanh).IdBangGia,
-                        NiemYetGiaInNhanh.DocTheoId(idNiemYetGiaInNhanh).LoaiBangGia);
+                          loaiBangGia);
                     var soTrangToiDa = NiemYetGiaInNhanh.DocTheoId(idNiemYetGiaInNhanh).SoTrangToiDa;
 
                     var giaInNhanh = new GiaInNhanhKetHopBangGia_May(this.TongSoTrangInA4BaiIn(),

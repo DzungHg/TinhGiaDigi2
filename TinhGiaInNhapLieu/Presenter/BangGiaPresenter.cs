@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using TinhGiaInClient.Model;
 using TinhGiaInNhapLieu.View;
-using TinhGiaInClient.Common.Enum;
-using TinhGiaInClient.Common;
+using TinhGiaInApp.Common.Enums;
 
 namespace TinhGiaInNhapLieu.Presenter
 {
-    
+
     public class BangGiaPresenter
     {
         IViewBangGia View;
@@ -50,13 +45,13 @@ namespace TinhGiaInNhapLieu.Presenter
             BangGiaBase bangGiaIn;
             switch (View.LoaiBangGia)
             {
-                case Global.cBangGiaLuyTien:
+                case LoaiBangGiaS.LuyTien:
                     bangGiaIn = BangGiaLuyTien.DocTheoId(View.ID);
                     break;
-                case Global.cBangGiaBuoc:
+                case LoaiBangGiaS.Buoc:
                     bangGiaIn = BangGiaTheoBuoc.DocTheoId(View.ID);
                     break;
-                case Global.cBangGiaGoi:
+                case LoaiBangGiaS.Goi:
                     bangGiaIn = BangGiaTheoBuoc.DocTheoId(View.ID);
                     break;
                 default:
@@ -82,7 +77,7 @@ namespace TinhGiaInNhapLieu.Presenter
                 ID = View.ID,
                 Ten = View.Ten,
                 DienGiai = View.DienGiai,
-                LoaiBangGia = View.LoaiBangGia,
+                LoaiBangGia = View.LoaiBangGia.ToString(),
                 DaySoLuong = View.DaySoLuong,
                 DayGia = View.DayGiaTrang,
                 DonViTinh = View.DonViTinh,
@@ -94,7 +89,7 @@ namespace TinhGiaInNhapLieu.Presenter
                 ID = View.ID,
                 Ten = View.Ten,
                 DienGiai = View.DienGiai,
-                LoaiBangGia = View.LoaiBangGia,
+                LoaiBangGia = View.LoaiBangGia.ToString(),
                 DaySoLuong = View.DaySoLuong,
                 DayGia = View.DayGiaTrang,
                 DonViTinh = View.DonViTinh,
@@ -105,7 +100,7 @@ namespace TinhGiaInNhapLieu.Presenter
 
             switch (View.LoaiBangGia)
             {
-                case Global.cBangGiaLuyTien:
+                case LoaiBangGiaS.LuyTien:
                     switch (View.TinhTrangForm)
                     {
                         case FormStateS.Edit:                            

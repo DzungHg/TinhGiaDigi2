@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using TinhGiaInClient.Model;
 using TinhGiaInNhapLieu.View;
-using TinhGiaInClient.Common.Enum;
+
+using TinhGiaInApp.Common.Enums;
 using TinhGiaInClient.Common;
 using TinhGiaInClient.Presenter;
 
@@ -26,19 +27,21 @@ namespace TinhGiaInNhapLieu.Presenter
             switch (View.LoaiBangGia)
             {
                 case LoaiBangGiaS.LuyTien:
-                    lst = DanhSachBangGia.DanhSachS().Where(x => x.LoaiBangGia == Global.cBangGiaLuyTien).ToList();
+                    lst = DanhSachBangGia.DanhSachS().Where(x => x.LoaiBangGia.Trim() == LoaiBangGiaS.LuyTien.ToString()).ToList();
+                    
+                    var count = lst.Count();
                     break;
                 case LoaiBangGiaS.Buoc:
-                    lst = DanhSachBangGia.DanhSachS().Where(x => x.LoaiBangGia == Global.cBangGiaBuoc).ToList();
+                    lst = DanhSachBangGia.DanhSachS().Where(x => x.LoaiBangGia.Trim() == LoaiBangGiaS.Buoc.ToString()).ToList();
                     break;
                 case LoaiBangGiaS.Goi:
-                    lst = DanhSachBangGia.DanhSachS().Where(x => x.LoaiBangGia == Global.cBangGiaGoi).ToList();
+                    lst = DanhSachBangGia.DanhSachS().Where(x => x.LoaiBangGia.Trim() == LoaiBangGiaS.Goi.ToString()).ToList();
                     break;
             }
           
             return lst;
         }
-        public string LoaiBanGiaStr()
+        /*public string LoaiBanGiaStr()
         {
             //Loại bảng giá
             var loaiBG = "";
@@ -55,29 +58,32 @@ namespace TinhGiaInNhapLieu.Presenter
                     break;
             }
             return loaiBG;
-        }
+        }*/
         public Dictionary<string, string> TrinhBayBangGia()
         {
             Dictionary<string, string> kq = null;
             if (View.IdBangGiaChon <= 0 )
                 return kq;
 
+            
 
-            var bangGiaChon = DanhSachBangGia.DocTheoIDvaLoai(View.IdBangGiaChon, LoaiBanGiaStr());
-            switch (LoaiBanGiaStr())
+            var bangGiaChon = DanhSachBangGia.DocTheoIDvaLoai(View.IdBangGiaChon, View.LoaiBangGia);
+            
+
+            switch (View.LoaiBangGia)
             {
-                case Global.cBangGiaLuyTien:
+                case LoaiBangGiaS.LuyTien:
 
                     kq = HoTro.TrinhBayBangGiaLuyTien(bangGiaChon.DaySoLuong,
                         bangGiaChon.DayGia, bangGiaChon.DonViTinh);
                     break;
 
-                case Global.cBangGiaBuoc:
+                case LoaiBangGiaS.Buoc:
 
                     kq = HoTro.TrinhBayBangGiaBuoc(bangGiaChon.DaySoLuong,
                         bangGiaChon.DayGia, bangGiaChon.DonViTinh);
                     break;
-                case Global.cBangGiaGoi:
+                case LoaiBangGiaS.Goi:
 
                     kq = HoTro.TrinhBayBangGiaGoi(bangGiaChon.DaySoLuong,
                         bangGiaChon.DayGia, bangGiaChon.DonViTinh);
@@ -91,7 +97,7 @@ namespace TinhGiaInNhapLieu.Presenter
             if (View.IdBangGiaChon <= 0)
                 return kq;
             //
-            var bangGia = DanhSachBangGia.DocTheoIDvaLoai(View.IdBangGiaChon, this.LoaiBanGiaStr());
+            var bangGia = DanhSachBangGia.DocTheoIDvaLoai(View.IdBangGiaChon, View.LoaiBangGia);
             kq = bangGia.DienGiai;
             return kq;
         }
@@ -104,7 +110,7 @@ namespace TinhGiaInNhapLieu.Presenter
                 return kq;
             }
             //
-            var bangGia = DanhSachBangGia.DocTheoIDvaLoai(View.IdBangGiaChon, this.LoaiBanGiaStr());
+            var bangGia = DanhSachBangGia.DocTheoIDvaLoai(View.IdBangGiaChon, View.LoaiBangGia);
             var giaInNhanhNiemYet = new GiaInNhanhNiemYet(View.SoTrangTinhThu, bangGia);
             kq = giaInNhanhNiemYet.ThanhTienSales();
 

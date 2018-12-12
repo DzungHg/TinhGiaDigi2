@@ -943,7 +943,6 @@ F:\GitHub02\TinhGiaDigi2\TinhGiaInClient\obj\Debug\TinhGiaInClient.BaiInToForm.r
 F:\GitHub02\TinhGiaDigi2\TinhGiaInClient\obj\Debug\TinhGiaInClient.BangGiaGiayForm.resources
 F:\GitHub02\TinhGiaDigi2\TinhGiaInClient\obj\Debug\TinhGiaInClient.GiaInDanhThiepForm.resources
 F:\GitHub02\TinhGiaDigi2\TinhGiaInClient\obj\Debug\TinhGiaInClient.GiaInOffsetForm.resources
-F:\GitHub02\TinhGiaDigi2\TinhGiaInClient\obj\Debug\TinhGiaInClient.GiaInNhanhThuForm.resources
 F:\GitHub02\TinhGiaDigi2\TinhGiaInClient\obj\Debug\TinhGiaInClient.GiayDeInForm.resources
 F:\GitHub02\TinhGiaDigi2\TinhGiaInClient\obj\Debug\TinhGiaInClient.KhoSanPhamSForm.resources
 F:\GitHub02\TinhGiaDigi2\TinhGiaInClient\obj\Debug\TinhGiaInClient.LietKeTinhGiaForm.resources
