@@ -40,7 +40,7 @@ namespace TinhGiaInClient.Presenter
         }
         public List<NiemYetGiaInNhanh>NiemYetGiaInNhanhS()
         {
-            return NiemYetGiaInNhanh.DocConDungTheoIdHangKH(View.IdHangKH);
+            return NiemYetGiaInNhanh.DocTheoIdHangKHConDung(View.IdHangKH);
         }
         private BangGiaBase DocBangGiaChon()
         {

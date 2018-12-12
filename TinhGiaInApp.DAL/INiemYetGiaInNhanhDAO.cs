@@ -10,11 +10,10 @@ namespace TinhGiaInApp.DAL
     public interface INiemYetGiaInNhanhDAO
     {
         IEnumerable<NiemYetGiaInNhanhBDO> DocTatCa();
-        IEnumerable<NiemYetGiaInNhanhBDO> DocTheoIdHangKhachHang(int idHangKH);  
 
         NiemYetGiaInNhanhBDO DocTheoId(int iD);
         string Them(NiemYetGiaInNhanhBDO entityBDO);
         bool Sua(ref string thongDiep, NiemYetGiaInNhanhBDO entityBDO);
-        string Xoa(int iD);     
+        string Xoa(int iD);
     }
 }

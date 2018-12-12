@@ -4005,6 +4005,12 @@
             </summary>
             <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
         </member>
+        <member name="M:Telerik.WinControls.RadItem.PaintBorderHighlight(Telerik.WinControls.Paint.IGraphics)">
+            <summary>
+            Paints the border highlight.
+            </summary>
+            <param name="screenRadGraphics">The screen RAD graphics.</param>
+        </member>
         <member name="M:Telerik.WinControls.RadItem.ContainsText">
             <summary>
             	Determines if the item displays any text.
@@ -5530,6 +5536,11 @@
         <member name="M:Telerik.WinControls.ElementShape.CreatePath(System.Drawing.RectangleF)">
             <summary>Creates path using a rectangle for bounds.</summary>
         </member>
+        <member name="M:Telerik.WinControls.ElementShape.MirrorPath(System.Drawing.Drawing2D.GraphicsPath,System.Drawing.RectangleF)">
+            <summary>
+            Mirrors the GraphicsPath. Used in RightToLeft mode.
+            </summary>
+        </member>
         <member name="M:Telerik.WinControls.ElementShape.SerializeProperties">
             <summary>
             Serializes properties. Required for serialization mechanism of telerik
@@ -5629,6 +5640,21 @@
             <value>
               <c>true</c> if the bottom left corner is chamfered; otherwise, <c>false</c>.
             </value>
+        </member>
+        <member name="M:Telerik.WinControls.CircleShape.CreatePath(System.Drawing.Rectangle)">
+            <summary>
+            Creates circle shape in the middle of the provided rectangle.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.CircleShape.CreatePath(System.Drawing.RectangleF)">
+            <summary>
+            Creates circle shape in the middle of the provided rectangle.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.CircleShape.CreateRegion(System.Drawing.Rectangle)">
+            <summary>
+            Creates circle region in the middle of the provided rectangle.
+            </summary>
         </member>
         <member name="M:Telerik.WinControls.CustomShape.SerializeProperties">
             <summary>Serializes properties. Required for telerik serialization mechanism.</summary>
@@ -6399,6 +6425,82 @@
             <summary>
             Represents a collection of PropertyChangeBahavior instances.
             See also RadElement.AddBehavior
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.RootRadElement.AutoSizeChangedEvent">
+            <summary>
+            Tunnels when the AutoSize property of RadControl changes in order to notify any children that should take special actions.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.RootRadElement.StretchChangedEvent">
+            <summary>
+            Tunnels when some of the stretch properties (horizontal or vertical) has changed in order to notify any children that should take special actions.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.RootRadElement.RootLayoutSuspendedEvent">
+            <summary>
+            Tunnels when the layout has been suspended in order to notify any children that should take special actions in this case - like RadHostItem.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.RootRadElement.RootLayoutResumedEvent">
+            <summary>
+            Tunnels when the layout has been resumed in order to notify any children that should take special actions in this case - like RadHostItem.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.RootRadElement.SaveCurrentStretchModeAsDefault">
+            <summary>
+            This method is used internally.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.RootRadElement.NotifyControlImageListChanged">
+            <summary>
+            This method is used internally.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.RootRadElement.Paint(Telerik.WinControls.Paint.IGraphics,System.Drawing.Rectangle)">
+            <summary>
+            Paints the RootElement and its element tree. Intended for use by RadControl inheritors.
+            </summary>
+            <param name="graphics">IGrpahics object to be used to paint elements</param>
+            <param name="clipRectangle">Clipping rectangle to be painted. Only those elements from the tree which intersect with this rectangle will be painted.</param>
+        </member>
+        <member name="M:Telerik.WinControls.RootRadElement.Paint(Telerik.WinControls.Paint.IGraphics,System.Drawing.Rectangle,System.Boolean)">
+            <summary>
+            Paints the RootElement and its element tree. Intended for use by RadControl inheritors.
+            </summary>
+            <param name="graphics">IGrpahics object to be used to paint elements</param>
+            <param name="clipRectangle">Clipping rectangle to be painted. Only those elements from the tree which intersect with this rectangle will be painted.</param>
+            <param name="useRelativeTransformation"></param>
+        </member>
+        <member name="P:Telerik.WinControls.RootRadElement.ForeColor">
+            <summary>
+            Gets or sets the forecolor. Color type represents an ARGB color.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.RootRadElement.UseCompatibleTextRendering">
+            <summary>
+            Determines whether to use compatible text rendering engine (GDI+) or not (GDI). 
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.RootRadElement.ControlBounds">
+            <summary>
+                Gets or sets a value corresponding to the bounding rectangle of the owning Control.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.RootRadElement.ApplyShapeToControl">
+            <summary>
+            Gets or sets value indicating whether the shape set to the root element would be applied as a region to 
+            the RadControl that contains the element.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.RootRadElement.DisableControlSizeSet">
+            <summary>
+            This property is used internally!
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.RootRadElement.ControlDefaultSize">
+            <summary>
+            When set, replaces the default control size.
             </summary>
         </member>
         <member name="T:Telerik.WinControls.RoutedEvent">
@@ -11388,6 +11490,13 @@
             <returns>Returns the bounding rectangle around the rectangle
             that is rotated according to the given matrix</returns>
         </member>
+        <member name="M:Telerik.WinControls.TelerikHelper.FindRadControlParent(System.Windows.Forms.Control)">
+            <summary>
+            Searches the control hierarchy tree and returns the first RadControl that parents the control provided. Otherwise returns null.
+            </summary>
+            <param name="control"></param>
+            <returns></returns>
+        </member>
         <member name="M:Telerik.WinControls.TelerikHelper.GetColorAtPoint(System.Drawing.Point)">
             <summary>
             Gets the color of the pixel at the specified location on the screen.
@@ -14256,6 +14365,21 @@
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.Properties.Resources.Awesome_Brands_Regular">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.Properties.Resources.Awesome_Regular">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.Properties.Resources.Awesome_Solid">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
         <member name="P:Telerik.WinControls.Properties.Resources.extToFit">
             <summary>
               Looks up a localized resource of type System.Drawing.Bitmap.
@@ -14327,6 +14451,11 @@
             </summary>
         </member>
         <member name="P:Telerik.WinControls.Properties.Resources.TelerikWebUI">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.Properties.Resources.WebComponentsIcons">
             <summary>
               Looks up a localized resource of type System.Byte[].
             </summary>
@@ -15020,82 +15149,6 @@
             ArrowDirection enumeration: up, left, right, and bottom.
             </summary>
         </member>
-        <member name="F:Telerik.WinControls.RootRadElement.AutoSizeChangedEvent">
-            <summary>
-            Tunnels when the AutoSize property of RadControl changes in order to notify any children that should take special actions.
-            </summary>
-        </member>
-        <member name="F:Telerik.WinControls.RootRadElement.StretchChangedEvent">
-            <summary>
-            Tunnels when some of the stretch properties (horizontal or vertical) has changed in order to notify any children that should take special actions.
-            </summary>
-        </member>
-        <member name="F:Telerik.WinControls.RootRadElement.RootLayoutSuspendedEvent">
-            <summary>
-            Tunnels when the layout has been suspended in order to notify any children that should take special actions in this case - like RadHostItem.
-            </summary>
-        </member>
-        <member name="F:Telerik.WinControls.RootRadElement.RootLayoutResumedEvent">
-            <summary>
-            Tunnels when the layout has been resumed in order to notify any children that should take special actions in this case - like RadHostItem.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.RootRadElement.SaveCurrentStretchModeAsDefault">
-            <summary>
-            This method is used internally.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.RootRadElement.NotifyControlImageListChanged">
-            <summary>
-            This method is used internally.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.RootRadElement.Paint(Telerik.WinControls.Paint.IGraphics,System.Drawing.Rectangle)">
-            <summary>
-            Paints the RootElement and its element tree. Intended for use by RadControl inheritors.
-            </summary>
-            <param name="graphics">IGrpahics object to be used to paint elements</param>
-            <param name="clipRectangle">Clipping rectangle to be painted. Only those elements from the tree which intersect with this rectangle will be painted.</param>
-        </member>
-        <member name="M:Telerik.WinControls.RootRadElement.Paint(Telerik.WinControls.Paint.IGraphics,System.Drawing.Rectangle,System.Boolean)">
-            <summary>
-            Paints the RootElement and its element tree. Intended for use by RadControl inheritors.
-            </summary>
-            <param name="graphics">IGrpahics object to be used to paint elements</param>
-            <param name="clipRectangle">Clipping rectangle to be painted. Only those elements from the tree which intersect with this rectangle will be painted.</param>
-            <param name="useRelativeTransformation"></param>
-        </member>
-        <member name="P:Telerik.WinControls.RootRadElement.ForeColor">
-            <summary>
-            Gets or sets the forecolor. Color type represents an ARGB color.
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.RootRadElement.UseCompatibleTextRendering">
-            <summary>
-            Determines whether to use compatible text rendering engine (GDI+) or not (GDI). 
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.RootRadElement.ControlBounds">
-            <summary>
-                Gets or sets a value corresponding to the bounding rectangle of the owning Control.
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.RootRadElement.ApplyShapeToControl">
-            <summary>
-            Gets or sets value indicating whether the shape set to the root element would be applied as a region to 
-            the RadControl that contains the element.
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.RootRadElement.DisableControlSizeSet">
-            <summary>
-            This property is used internally!
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.RootRadElement.ControlDefaultSize">
-            <summary>
-            When set, replaces the default control size.
-            </summary>
-        </member>
         <member name="T:Telerik.WinControls.AttachedPropertyUsage">
             <summary>
             Defines the usage of a given attached property.
@@ -15396,15 +15449,12 @@
         </member>
         <member name="M:Telerik.WinControls.Paint.IGraphics.DrawString(System.String,System.Drawing.RectangleF,System.Drawing.Font,System.Drawing.Color,System.Drawing.ContentAlignment,System.Drawing.StringFormat,Telerik.WinControls.Paint.ShadowSettings,System.Drawing.Text.TextRenderingHint,System.Windows.Forms.Orientation,System.Boolean)">
             <summary>
-            	<para>Draws the specified text string with specified Rectangle, Font, Color,
-                ContentAlignment, StringFormat and Orientation.</para>
+            Obsolete. Use the overload without ContentAlignment parameter. ContentAlignment should be provided through the StringFormat parameter.
             </summary>
         </member>
         <member name="M:Telerik.WinControls.Paint.IGraphics.DrawString(System.String,System.Drawing.Rectangle,System.Drawing.Font,System.Drawing.Color,System.Drawing.ContentAlignment,System.Drawing.StringFormat,Telerik.WinControls.Paint.ShadowSettings,System.Drawing.Text.TextRenderingHint,System.Windows.Forms.Orientation,System.Boolean)">
             <summary>
-            	<para>Draws the specified text string with specified Rectangle, Font, Color,
-                ContentAlignment, StringFormat, ShadowSettings, TextRenderingHint and
-                Orientation.</para>
+            Obsolete. Use the overload without ContentAlignment parameter. ContentAlignment should be provided through the StringFormat parameter.
             </summary>
         </member>
         <member name="M:Telerik.WinControls.Paint.IGraphics.DrawImage(System.Drawing.Rectangle,System.Drawing.Image,System.Drawing.ContentAlignment,System.Boolean)">

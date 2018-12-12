@@ -140,3 +140,7 @@ D:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\obj\Debug\TinhGiaInLogic.pdb
 F:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\obj\Debug\TinhGiaInLogic.csprojResolveAssemblyReference.cache
 F:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\obj\Debug\TinhGiaInLogic.dll
 F:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\obj\Debug\TinhGiaInLogic.pdb
+D:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\bin\Debug\TinhGiaInDAL.dll
+D:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\bin\Debug\EntityFramework.dll
+D:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\bin\Debug\TinhGiaInDAL.pdb
+D:\GitHub02\TinhGiaDigi2\TinhGiaInLogic\bin\Debug\EntityFramework.xml

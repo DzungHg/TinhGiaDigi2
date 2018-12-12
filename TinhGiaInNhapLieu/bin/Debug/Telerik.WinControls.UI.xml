@@ -177,6 +177,16 @@
             Gets or sets a value that indicates if this item is selected. Setting this property will cause the selection events of the owner list control to fire if there is one.
             </summary>
         </member>
+        <member name="E:Telerik.WinControls.UI.CheckAllDataItem.CheckAllItemCheckedChanging">
+            <summary>
+            Occurs when a <see cref="T:Telerik.WinControls.UI.ListViewDataItem">ListViewDataItem</see> is about to be checked. Cancelable.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.CheckAllDataItem.CheckAllItemCheckedChanged">
+            <summary>
+            Occurs when a <see cref="T:Telerik.WinControls.UI.ListViewDataItem">ListViewDataItem</see> is checked.
+            </summary>
+        </member>
         <member name="T:Telerik.WinControls.UI.RadAutoCompleteBoxElement">
             <summary>
             Represents a auto-complete tokenized text box element
@@ -207,11 +217,11 @@
         </member>
         <member name="M:Telerik.WinControls.UI.LightVisualElement.GetBorderThickness(Telerik.WinControls.UI.LightVisualElement,System.Boolean)">
             <summary>
-            Gets the border thicknes of a <see cref="T:Telerik.WinControls.UI.LightVisualElement"/>
+            Gets the border thickness of a <see cref="T:Telerik.WinControls.UI.LightVisualElement"/>
             </summary>
             <param name="element">The element to check.</param>
             <param name="checkDrawBorder">Determines whether to consider when the border is disabled.</param>
-            <returns>The border thicknes.</returns>
+            <returns>The border thickness.</returns>
         </member>
         <member name="M:Telerik.WinControls.UI.LightVisualElement.ToggleTextPrimitive(Telerik.WinControls.RadProperty)">
             <summary>
@@ -271,7 +281,7 @@
                 Border style. The two possible values are SingleBorder and FourBorder. In the
                 single border case, all four sides share the same appearance although the entire
                 border may have gradient. In four border case, each of the four sides may differ in
-                appearance. For example, the left border may have different color, shadowcolor, and
+                appearance. For example, the left border may have different color, shadow-color, and
                 width from the rest. When SingleBorder is chosen, you should use the general
                 properties such as width and color, and respectively, when the FourBorder style is
                 chosen you should use properties prefixed with the corresponding side, for example,
@@ -782,6 +792,11 @@
             <value>
             The color of the null text.
             </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxControlElement.ShowNullText">
+            <summary>
+            Gets or sets a value indicating whether the null text will be shown when the control is focused and the text is empty
+            </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.RadTextBoxControlElement.Lines">
             <summary>
@@ -3077,6 +3092,11 @@
               <c>true</c> if the drop down list is read only; otherwise, <c>false</c>.
             </value>
         </member>
+        <member name="E:Telerik.WinControls.UI.RadDropDownList.TextChanged">
+            <summary>
+            	Occurs when the Text property value changes.
+            </summary>
+        </member>
         <member name="P:Telerik.WinControls.UI.RadDropDownList.NullText">
             <summary>
             Gets or sets the text that is displayed when RadDropDownList has no text set.
@@ -3096,6 +3116,16 @@
             <summary>
             Gets or sets the starting index of text selected in the combo box.
             </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadDropDownList.CausesValidation">
+            <summary>
+            Gets or sets a value indicating whether the control causes validation to be
+            performed on any controls that require validation when it receives focus.
+            </summary>
+            <value>
+            true if the control causes validation to be performed on any controls requiring
+            validation when it receives focus; otherwise, false.
+            </value>
         </member>
         <member name="P:Telerik.WinControls.UI.RadDropDownList.FindStringComparer">
             <summary>
@@ -3288,6 +3318,16 @@
         <member name="E:Telerik.WinControls.UI.RadCheckedDropDownList.ItemCheckedChanging">
             <summary>
             Occurs when a <see cref="T:Telerik.WinControls.UI.ListViewDataItem">ListViewDataItem</see> is about to be checked. Cancelable.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadCheckedDropDownList.CheckAllItemCheckedChanging">
+            <summary>
+            Occurs when a CheckAllItem is about to be checked. Cancelable.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadCheckedDropDownList.CheckAllItemCheckedChanged">
+            <summary>
+            Occurs when a CheckAllItem is checked.
             </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.RadCheckedDropDownList.ItemCheckedChanged">
@@ -3882,6 +3922,9 @@
             Gets or sets the drop down minimum width.
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadCheckedDropDownListElement.SelectedValue">
+            <commentsfrom cref="P:Telerik.WinControls.UI.RadListElement.SelectedValue" filter=""/>
+        </member>
         <member name="P:Telerik.WinControls.UI.RadCheckedDropDownListElement.AutoCompleteAppend">
             <summary>
             This property is not applicable for RadCheckedDropDownList
@@ -3915,6 +3958,16 @@
             </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.RadCheckedDropDownListElement.ItemCheckedChanged">
+            <summary>
+            Occurs when a <see cref="T:Telerik.WinControls.UI.ListViewDataItem">ListViewDataItem</see> is checked.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadCheckedDropDownListElement.CheckAllItemCheckedChanging">
+            <summary>
+            Occurs when a <see cref="T:Telerik.WinControls.UI.ListViewDataItem">ListViewDataItem</see> is about to be checked. Cancelable.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadCheckedDropDownListElement.CheckAllItemCheckedChanged">
             <summary>
             Occurs when a <see cref="T:Telerik.WinControls.UI.ListViewDataItem">ListViewDataItem</see> is checked.
             </summary>
@@ -4569,6 +4622,11 @@
             <summary>
             RadListView consists of multiple visual elements and separate settings are provided to customize their appearance.
             Current ForeColor property might be ignored.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadListView.Text">
+            <summary>
+            This property is not relevant for this class.
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.RadCheckedListBox.ShowCheckBoxes">
@@ -5854,6 +5912,11 @@
         <member name="M:Telerik.WinControls.UI.BaseComboBoxElement.SelectAll">
             <summary>
             Selects all the text in the editable portion of the combo box.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.BaseComboBoxElement.ComboboxLayoutPanel">
+            <summary>
+            Gets a layout panel that contains editor and arrow panel
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.BaseComboBoxElement.LimitToList">
@@ -7700,7 +7763,7 @@
         </member>
         <member name="P:Telerik.WinControls.UI.RadSpinElement.ButtonUp">
             <summary>
-            Gets reference to the  SpinControl's Up Button
+            Gets reference to the SpinControl's Up Button
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.RadSpinElement.DecimalPlaces">
@@ -7745,7 +7808,7 @@
         </member>
         <member name="P:Telerik.WinControls.UI.RadSpinElement.StretchVertically">
             <summary>
-            allow element to be stretched bertically
+            allow element to be stretched vertically
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.RadSpinElement.Value">
@@ -7775,7 +7838,7 @@
         </member>
         <member name="P:Telerik.WinControls.UI.RadSpinElement.MaxValue">
             <summary>
-            set or get the Max numeric value in the numeric up/dowm 
+            set or get the Max numeric value in the numeric up/down
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.RadSpinElement.ShowBorder">
@@ -7981,6 +8044,11 @@
             	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Gets or sets
             the character used to mask characters of a password in a single-line TextBox
             control.</span>
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxElement.NullTextColor">
+            <summary>
+            Gets or sets the color of prompt text that is displayed when the TextBox contains no text.
             </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.RadTextBoxElement.AcceptsTabChanged">
@@ -8626,6 +8694,12 @@
             Set or Get Gauge Orientation
             </summary>        
         </member>
+        <member name="P:Telerik.WinControls.UI.Gauges.RadLinearGauge.ForeColor">
+            <summary>
+            Gets or sets the ForeColor of the control.
+            This is actually the ForeColor property of the root element.
+            </summary>
+        </member>
         <member name="P:Telerik.WinControls.UI.Gauges.RadLinearGauge.XmlSerializationInfo">
             <summary>
             Gets the serialization info for RadRadialGauge used by Save/Load loyout methods to persist grid settings to/from XML.
@@ -8640,6 +8714,12 @@
         <member name="P:Telerik.WinControls.UI.Gauges.RadBulletGraph.ComparativeMeasure">
             <summary>
             Presents a value which should be less visually dominant than the featured measure, but easy to see in relation to the featured measure.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Gauges.RadBulletGraph.ForeColor">
+            <summary>
+            Gets or sets the ForeColor of the control.
+            This is actually the ForeColor property of the root element.
             </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.Gauges.RadBulletGraph.FeaturedMeasureChanged">
@@ -9142,6 +9222,12 @@
         <member name="P:Telerik.WinControls.UI.Gauges.RadRadialGauge.StartAngle">
             <summary>
             Determines the angle value starting from the StartAngle to draw an arc in clockwise direction.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Gauges.RadRadialGauge.ForeColor">
+            <summary>
+            Gets or sets the ForeColor of the control.
+            This is actually the ForeColor property of the root element.
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.Gauges.RadRadialGauge.XmlSerializationInfo">
@@ -9662,6 +9748,13 @@
             The zero-based index of the last assigned character to remove.
             </param>
         </member>
+        <member name="P:Telerik.WinControls.UI.StandartMaskTextBoxProvider.MaskCompleted">
+             <summary>
+            Gets a value indicating whether all required inputs have been entered into the formatted string.
+            </summary>
+             <returns>true if all required input has been entered into the mask; otherwise, false.
+             </returns>
+        </member>
         <member name="M:Telerik.WinControls.UI.NumericCharacterTextBoxProvider.#ctor(System.String,System.Globalization.CultureInfo,Telerik.WinControls.UI.NumericCharacterTextBoxProvider.RadNumericMaskFormatType,Telerik.WinControls.UI.RadMaskedEditBoxElement)">
             <summary>
             Initializes a new instance of the NumericTextBoxProvider>
@@ -9707,6 +9800,13 @@
              <param name="e">
             An <see cref="T:System.EventArgs" /> that contains event data. 
             </param>
+        </member>
+        <member name="P:Telerik.WinControls.UI.StandartCharacterMaskEditBoxProvider.MaskCompleted">
+             <summary>
+            Gets a value indicating whether all required inputs have been entered into the formatted string.
+            </summary>
+             <returns>true if all required input has been entered into the mask; otherwise, false.
+             </returns>
         </member>
         <member name="P:Telerik.WinControls.UI.StandartCharacterMaskEditBoxProvider.InsertKeyMode">
              <summary>
@@ -9763,11 +9863,6 @@
         <member name="P:Telerik.WinControls.UI.RadMaskedEditBox.AutoSize">
             <summary>
             Gets or sets whether the edit control is auto-sized
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadMaskedEditBox.PlaceHolder">
-            <summary>
-            Gets or sets the character used as the placeholder in a masked editor.
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.RadMaskedEditBox.Mask">
@@ -10944,6 +11039,11 @@
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.RadScrollablePanel.ForeColor">
+            <summary>
+            This property is not relevant for this class.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadScrollablePanel.Text">
             <summary>
             This property is not relevant for this class.
             </summary>
@@ -12298,6 +12398,16 @@
               Looks up a localized resource of type System.Drawing.Bitmap.
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.Properties.Resources.typing_indicator_dark">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Properties.Resources.typing_indicator_light">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
         <member name="P:Telerik.WinControls.UI.Properties.Resources.user_name">
             <summary>
               Looks up a localized resource of type System.Drawing.Bitmap.
@@ -12321,6 +12431,22 @@
         <member name="P:Telerik.WinControls.UI.Properties.Resources.zoom_out">
             <summary>
               Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.RadCheckBoxThreeStateAttribute">
+            <summary>
+            The RadCheckBoxThreeStateAttribute determines whether properties inside <see cref="T:Telerik.WinControls.UI.RadPropertyGrid"/> will have a three state check box editor or a two state one.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadCheckBoxThreeStateAttribute.#ctor(System.Boolean)">
+            <summary>
+            Creates a new instance of the <see cref="T:Telerik.WinControls.UI.RadCheckBoxThreeStateAttribute"/> attribute with the specified value.
+            </summary>
+            <param name="value">The value defining whether the editor should be three state.</param>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadCheckBoxThreeStateAttribute.Value">
+            <summary>
+            Gets the value of the attribute.
             </summary>
         </member>
         <member name="T:Telerik.WinControls.UI.RadRangeAttribute">
@@ -12752,6 +12878,11 @@
             Gets or sets a value defining the sort order of the item when no other sorting is applied.
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.PropertyGridItem.IsThreeState">
+            <summary>
+            Gets or sets a value defining whether check box editor will be three state.
+            </summary>
+        </member>
         <member name="P:Telerik.WinControls.UI.PropertyGridItem.Attributes">
             <summary>
             Gets a collection of the attributes applied to the property.
@@ -13146,6 +13277,601 @@
         <member name="F:Telerik.WinControls.UI.PropertyGridBestFitMode.MaximizeVisibility">
             <summary>
             Uses a mechanism that makes a maximum number of strings from both columns visibile.
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.RadBarcode">
+            <summary>
+            Generates and displays a barcode using a provided encoding method (symbology) and a value.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadBarcode.ExportToImage">
+            <summary>
+            Exports the barcode with the current dimentions of the control.
+            </summary>
+            <returns>An image of the barcode.</returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadBarcode.ExportToImage(System.Int32,System.Int32)">
+            <summary>
+            Layouts the barcode using the provided dimentions and exports it to an image.
+            </summary>
+            <param name="width">The width of the exported image.</param>
+            <param name="height">The height of the exported image.</param>
+            <returns>An image of the barcode.</returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadBarcode.ExportToImage(System.IO.Stream,System.Drawing.Size)">
+            <summary>
+            Layouts the barcode using the provided size and exports it to the specified stream.
+            </summary>
+            <param name="stream">The stream to export the barcode to.</param>
+            <param name="size">The size of the barcode.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadBarcode.ExportToImage(System.String,System.Drawing.Size)">
+            <summary>
+            Layouts the barcode using the provided size and exports it to the specified file location.
+            </summary>
+            <param name="filePath">The location of the file where to export the barcode.</param>
+            <param name="size">The size of the barcode.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadBarcode.ExportToImage(System.IO.Stream,System.Drawing.Size,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            Layouts the barcode using the provided size and exports it to the specified stream in the specified image format.
+            </summary>
+            <param name="stream">The stream to export the barcode to.</param>
+            <param name="size">The size of the barcode.</param>
+            <param name="imageFormat">The format of the exported image.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadBarcode.ExportToImage(System.String,System.Drawing.Size,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            Layouts the barcode using the provided size and exports it to the specified file location in the specified image format.
+            </summary>
+            <param name="filePath">The location of the file where to export the barcode.</param>
+            <param name="size">The size of the barcode.</param>
+            <param name="imageFormat">The format of the exported image.</param>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadBarcode.BarcodeElement">
+            <summary>
+            Gets the barcode element of this control.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadBarcode.Value">
+            <summary>
+            Gets or sets the value that will be converted into a barcode.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadBarcode.Symbology">
+            <summary>
+            Gets or sets the symbology that will be used to convert the value of this element into a visual barcode representation.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadBarcode.ValueChanged">
+            <summary>
+            Occurs after the value of the barcode is changed.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadBarcode.ValueChanging">
+            <summary>
+            Occurs before the value of the barcode is changed.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadBarcode.SymbologyChanged">
+            <summary>
+            Occurs after the symbology of the barcode is changed.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadBarcode.SymbologyChanging">
+            <summary>
+            Occurs before the symbology of the barcode is changed.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadBarcodeElement.Update">
+            <summary>
+            Updates the layout and invalidates the barcode.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadBarcodeElement.OnValueChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:ValueChanged"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadBarcodeElement.OnValueChanging(Telerik.WinControls.UI.BarcodeValueChangingEventArgs)">
+            <summary>
+            Raises the <see cref="E:ValueChanging"/> event.
+            </summary>
+            <param name="e">The <see cref="T:Telerik.WinControls.UI.BarcodeValueChangingEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadBarcodeElement.OnSymbologyChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:SymbologyChanged"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadBarcodeElement.OnSymbologyChanging(Telerik.WinControls.UI.BarcodeSymbologyChangingEventArgs)">
+            <summary>
+            Raises the <see cref="E:SymbologyChanging"/> event.
+            </summary>
+            <param name="e">The <see cref="T:Telerik.WinControls.UI.BarcodeSymbologyChangingEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadBarcodeElement.ExportToImage">
+            <summary>
+            Exports the barcode with the current dimentions of the control.
+            </summary>
+            <returns>An image of the barcode.</returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadBarcodeElement.ExportToImage(System.Int32,System.Int32)">
+            <summary>
+            Layouts the barcode using the provided dimentions and exports it to an image.
+            </summary>
+            <param name="width">The width of the exported image.</param>
+            <param name="height">The height of the exported image.</param>
+            <returns>An image of the barcode.</returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadBarcodeElement.ExportToImage(System.IO.Stream,System.Drawing.Size)">
+            <summary>
+            Layouts the barcode using the provided size and exports it to the specified stream.
+            </summary>
+            <param name="stream">The stream to export the barcode to.</param>
+            <param name="size">The size of the barcode.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadBarcodeElement.ExportToImage(System.String,System.Drawing.Size)">
+            <summary>
+            Layouts the barcode using the provided size and exports it to the specified file location.
+            </summary>
+            <param name="filePath">The location of the file where to export the barcode.</param>
+            <param name="size">The size of the barcode.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadBarcodeElement.ExportToImage(System.String,System.Drawing.Size,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            Layouts the barcode using the provided size and exports it to the specified file location in the specified image format.
+            </summary>
+            <param name="filePath">The location of the file where to export the barcode.</param>
+            <param name="size">The size of the barcode.</param>
+            <param name="imageFormat">The format of the exported image.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadBarcodeElement.ExportToImage(System.IO.Stream,System.Drawing.Size,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            Layouts the barcode using the provided size and exports it to the specified stream in the specified image format.
+            </summary>
+            <param name="stream">The stream to export the barcode to.</param>
+            <param name="size">The size of the barcode.</param>
+            <param name="imageFormat">The format of the exported image.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadBarcodeElement.OnSymbologyPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Called when a property of the symbology changes. Suitable for performing necessary updates based on the changes.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadBarcodeElement.ElementFactory">
+            <summary>
+            Gets or sets the element factory that is used to create the elements of the displayed barcode.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadBarcodeElement.Symbology">
+            <summary>
+            Gets or sets the symbology that will be used to convert the value of this element into a visual barcode representation.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadBarcodeElement.Value">
+            <summary>
+            Gets or sets the value that will be converted into a barcode.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadBarcodeElement.ValueChanged">
+            <summary>
+            Occurs after the value of the barcode is changed.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadBarcodeElement.ValueChanging">
+            <summary>
+            Occurs before the value of the barcode is changed.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadBarcodeElement.SymbologyChanged">
+            <summary>
+            Occurs after the symbology of the barcode is changed.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadBarcodeElement.SymbologyChanging">
+            <summary>
+            Occurs before the symbology of the barcode is changed.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Barcode.Symbology.SymbologyBase.TextAlign">
+            <summary>
+            Gets or sets the horizontal alignment of the text dislayed in the barcode.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Barcode.Symbology.SymbologyBase.LineAlign">
+            <summary>
+            Gets or sets the vertical alignment of the text dislayed in the barcode.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Barcode.Symbology.SymbologyBase.ShowText">
+            <summary>
+            Gets or sets whether the barcode should display the human readable value of the barcode.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Barcode.Symbology.SymbologyBase.Stretch">
+            <summary>
+            Gets or sets whether the bars of the barcode should be stretched to fill the space available.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Barcode.Symbology.SymbologyBase.Checksum">
+            <summary>
+            Gets or sets whether the barcode should calculate a checksum.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Barcode.Symbology.SymbologyBase.Module">
+            <summary>
+            Gets or sets a module by which the barcode can be scaled up.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Barcode.Symbology.SymbologyBase.Value">
+            <summary>
+            Gets the value currently being encoded by the symbology.
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.Barcode.Symbology.EncodingMode">
+            <summary>
+            The EncodingMode enumeration determines the type of the acceptable data.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.EncodingMode.Auto">
+            <summary>
+            Auto mode.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.EncodingMode.Byte">
+            <summary>
+            Accepts byte data.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.EncodingMode.Text">
+            <summary>
+            Allows text data.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.EncodingMode.Numeric">
+            <summary>
+            Allows numeric data.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.Barcode.Symbology.PDF417.#ctor">
+            <summary>
+            Creates a new PDF417 symbology with default values which can be used by <see cref="T:Telerik.WinControls.UI.RadBarcode"/> to encode values into PDF417 barcodes.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.Barcode.Symbology.PDF417.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates a new PDF417 symbology which can be used by <see cref="T:Telerik.WinControls.UI.RadBarcode"/> to encode values into PDF417 barcodes.
+            </summary>
+            <param name="columns">The number of columns fro the generated barcode.</param>
+            <param name="rows">The number of rows fro the generated barcode.</param>
+            <param name="errorCorrectionLevel">How much data will be available for error correction.</param>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Barcode.Symbology.PDF417.ECLevel">
+            <summary>
+            Gets or sets how much data will be available for error correction.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Barcode.Symbology.PDF417.Rows">
+            <summary>
+            Gets or sets the number of rows fro the generated barcode.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Barcode.Symbology.PDF417.Columns">
+            <summary>
+            Gets or sets the number of columns fro the generated barcode.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Barcode.Symbology.PDF417.Module">
+            <summary>
+            Gets or sets a module by which the barcode can be scaled up.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Barcode.Symbology.PDF417.EncodingMode">
+            <summary>
+            Gets or sets the type of the acceptable data.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Barcode.Symbology.PDF417.DataMatrix">
+            <summary>
+            Gets the true/false values representing each module in the PDF417 code.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.TextSubMode.Upper">
+            <summary>
+            Switch to "Uppercase".
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.TextSubMode.Lower">
+            <summary>
+            Switch to "Lowercase".
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.TextSubMode.Mixed">
+            <summary>
+            Switch to "Mixed".
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.TextSubMode.Punctuation">
+            <summary>
+            Switch to "Punctuation" only for next character.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.Barcode.Symbology.AlphaNumeric.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.WinControls.UI.Barcode.Symbology.AlphaNumeric"/> class.
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.Barcode.Symbology.KanjiMode">
+            <summary>
+            Provides methods for encoding and validation of double-byte Kanji characters.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.Barcode.Symbology.KanjiMode.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.WinControls.UI.Barcode.Symbology.KanjiMode"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.Barcode.Symbology.KanjiMode.EncodeData(System.String)">
+            <summary>
+            This method encodes the data for the Kanji Mode.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.Barcode.Symbology.KanjiMode.ValidateData(System.String)">
+            <summary>
+            Validates the data,  to ensure no invalid characters are present.
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.Barcode.Symbology.CodeMode">
+            <summary>
+            Determines the type of code, such as Numeric, Alphanumeric, Byte or Kanji.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.CodeMode.Byte">
+            <summary>
+            Byte Mode.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.CodeMode.Numeric">
+            <summary>
+            Allows Numbers [0-9].
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.CodeMode.Alphanumeric">
+            <summary>
+            Allows characters or numbers.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.CodeMode.Kanji">
+            <summary>
+            Kanji Mode.
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.Barcode.Symbology.ErrorCorrectionLevel">
+            <summary>
+            Determines how much data is available for error correction.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ErrorCorrectionLevel.L">
+            <summary>
+            Low.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ErrorCorrectionLevel.M">
+            <summary>
+            Medium.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ErrorCorrectionLevel.Q">
+            <summary>
+            Quartile.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ErrorCorrectionLevel.H">
+            <summary>
+            High.
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.Barcode.Symbology.ECIMode">
+            <summary>
+            Determines the Extended Channel Interpretation (ECI) mode, which allows for encoding of characters from other sets.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ECIMode.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ECIMode.ISO8859_7">
+            <summary>
+            ECI 9.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ECIMode.ISO8859_6">
+            <summary>
+            ECI 8.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ECIMode.ISO8859_5">
+            <summary>
+            ECI 7.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ECIMode.ISO8859_4">
+            <summary>
+            ECI 6.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ECIMode.ISO8859_3">
+            <summary>
+            ECI 5.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ECIMode.ISO8859_2">
+            <summary>
+            ECI 4.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ECIMode.ISO8859_1En">
+            <summary>
+            ECI 3.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ECIMode.CP437">
+            <summary>
+            ECI 2.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ECIMode.ISO8859_1">
+            <summary>
+            ECI 1.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ECIMode.ISO8859_8">
+            <summary>
+            ECI 10.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ECIMode.ISO8859_9">
+            <summary>
+            ECI 11.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ECIMode.ISO8859_11">
+            <summary>
+            ECI 13.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ECIMode.ISO8859_13">
+            <summary>
+            ECI 15.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ECIMode.ISO8859_15">
+            <summary>
+            ECI 17.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ECIMode.Windows1250">
+            <summary>
+            ECI 21.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ECIMode.Windows1251">
+            <summary>
+            ECI 22.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ECIMode.Windows1252">
+            <summary>
+            ECI 23.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ECIMode.Windows1256">
+            <summary>
+            ECI 24.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ECIMode.UTF8">
+            <summary>
+            UTF-8.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.ECIMode.ISO646US">
+            <summary>
+            ECI 27.
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.Barcode.Symbology.FNC1Mode">
+            <summary>
+            Signifies application of special formatting to the code data.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.FNC1Mode.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.FNC1Mode.FirstPosition">
+            <summary>
+            FNC 1 in first position.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.Barcode.Symbology.FNC1Mode.SecondPosition">
+            <summary>
+            FNC 1 in second position.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.Barcode.Symbology.QRCode.#ctor">
+            <summary>
+            Creates a new QRCode symbology with default values which can be used by <see cref="T:Telerik.WinControls.UI.RadBarcode"/> to encode values into QR barcodes.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.Barcode.Symbology.QRCode.#ctor(Telerik.WinControls.UI.Barcode.Symbology.CodeMode,System.Int32,Telerik.WinControls.UI.Barcode.Symbology.ErrorCorrectionLevel,Telerik.WinControls.UI.Barcode.Symbology.ECIMode,Telerik.WinControls.UI.Barcode.Symbology.FNC1Mode,System.String)">
+            <summary>
+            Creates a new QRCode symbology which can be used by <see cref="T:Telerik.WinControls.UI.RadBarcode"/> to encode values into QR barcodes.
+            </summary>
+            <param name="mode">The type of code that will be used for encoding.</param>
+            <param name="version">Determines the size of the QR code and the amount of information that can be encoded.
+            Accepted values are in the range [1..40]. If you set the version to a number outside this range, version will be calculated automatically.</param>
+            <param name="errorLevel">How much data will be available for error correction.</param>
+            <param name="eciMode">Extended Channel Interpretation (ECI) mode, which allows for encoding of characters from other sets.</param>
+            <param name="fncMode">Application of special formatting to the code data.</param>
+            <param name="appIndicator">The application indentifier to be encoded in the QR code.</param>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Barcode.Symbology.QRCode.BinaryMatrix">
+            <summary>
+            Gets the true/false values representing each module in the QR code.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Barcode.Symbology.QRCode.Module">
+            <summary>
+            Gets or sets a module by which the barcode can be scaled up.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Barcode.Symbology.QRCode.FilledValuesMatrix">
+            <summary>
+            Gets the matrix, reflecting the filled modules/positions in the QR code matrix.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Barcode.Symbology.QRCode.VersionDimension">
+            <summary>
+            Gets the size of the QR code based on the current version.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Barcode.Symbology.QRCode.Version">
+            <summary>
+            Gets or sets the version of the QR code. The version determines the size of the QR code and the amount of information that can be encoded.
+            Accepted values are in the range [1..40]. If you set the version to a number outside this range, version will be calculated automatically.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Barcode.Symbology.QRCode.CodeMode">
+            <summary>
+            Gets or sets the type of code that will be used for encoding, such as Numeric, Alphanumeric, Byte or Kanji. 
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Barcode.Symbology.QRCode.ErrorCorrectionLevel">
+            <summary>
+            Gets or sets how much data will be available for error correction.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Barcode.Symbology.QRCode.ECIMode">
+            <summary>
+            Gets or sets the Extended Channel Interpretation (ECI) mode, which allows for encoding of characters from other sets.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Barcode.Symbology.QRCode.FNC1Mode">
+            <summary>
+            Gets or sets application of special formatting to the code data.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.Barcode.Symbology.QRCode.ApplicationIndicator">
+            <summary>
+            Gets or sets the application indentifier to be encoded in the QR code.
             </summary>
         </member>
         <member name="T:Telerik.WinControls.UI.RadBrowseEditorLocalizationProvider">
@@ -14655,6 +15381,26 @@
             Called when the group is expanded or collapsed to do the necessary updates. 
             </summary>
         </member>
+        <member name="E:Telerik.WinControls.UI.LayoutControlGroupItem.Expanded">
+            <summary>
+            Occurs when the group item is expanded.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.LayoutControlGroupItem.Collapsed">
+            <summary>
+            Occurs when the group item is collapsed.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.LayoutControlGroupItem.Expanding">
+            <summary>
+            Occurs when the group item is about to be expanded. Cancelable.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.LayoutControlGroupItem.Collapsing">
+            <summary>
+            Occurs when the group item is about to be collapsed. Cancelable.
+            </summary>
+        </member>
         <member name="P:Telerik.WinControls.UI.LayoutControlGroupItem.ShowHeaderLine">
             <summary>
             Gets or sets a value indicating whether the line in the header element should be shown.
@@ -14901,6 +15647,490 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadChat.ShowOverlay(Telerik.WinControls.UI.ChatOverlayMessage)">
+            <summary>
+            Shows the provided overlay in the control.
+            </summary>
+            <param name="message">The message that contains the overlay info.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadChat.HideOverlay">
+            <summary>
+            Hides any overlays that are currently displayed by the control.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadChat.AddMessage(Telerik.WinControls.UI.ChatMessage)">
+            <summary>
+            Adds a new message to the chat. Typical messages are <see cref="T:Telerik.WinControls.UI.ChatTextMessage"/>, <see cref="T:Telerik.WinControls.UI.ChatSuggestedActionsMessage"/>, <see cref="T:Telerik.WinControls.UI.ChatMediaMessage"/>, <see cref="T:Telerik.WinControls.UI.ChatCardMessage"/> and <see cref="T:Telerik.WinControls.UI.ChatOverlayMessage"/>
+            </summary>
+            <param name="message">The message to be displayed in the chat.</param>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadChat.ChatElement">
+            <summary>
+            Gets the main chat element.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadChat.Author">
+            <summary>
+            Gets or sets the current author. This instance is used when <see cref="P:Telerik.WinControls.UI.RadChat.AutoAddUserMessages"/> is set to true as well as to determine the messages alignment and styling.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadChat.AutoAddUserMessages">
+            <summary>
+            Gets or sets a value indicating whether messages typed by the user will automatically be added as <see cref="T:Telerik.WinControls.UI.ChatTextMessage"/> to the chat.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadChat.AvatarSize">
+            <summary>
+             Gets or sets the size of the avatar images.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadChat.ShowAvatars">
+            <summary>
+            Gets or sets whether avatar images will be displayed in the chat window next to messages.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadChat.ShowMessagesOnOneSide">
+            <summary>
+            Gets or sets whether messages will be displayed aligned to only one side of the chat window or on both.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadChat.TimeSeparatorInterval">
+            <summary>
+            Gets or sets the time interval between messages that will trigger the automatic addition of a Time separator. 
+            If set to <see cref="F:System.TimeSpan.Zero"/> no Time separators will be added.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadChat.SendMessage">
+            <summary>
+            Occurs when the user performs an action e.g hits the Enter key, clicks the Send message button, clicks on a Suggested Action or a Card Action, clicks OK on an overlay.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadChat.SuggestedActionClicked">
+            <summary>
+            Occurs when the user clicks on a Suggested Action
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadChat.CardActionClicked">
+            <summary>
+            Occurs when the user clicks on a Card Action
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadChat.ToolbarActionClicked">
+            <summary>
+            Occurs when the user clicks on a Toolbar Action
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadChat.TimeSeparatorAdding">
+            <summary>
+            Occurs after a new message is added. Allows you to decide whether a time separator should be inserted before the currently added message.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadChat.ItemFormatting">
+            <summary>
+            Occurs when the data item of a visual element is changed and the element is prepared for visualization.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadChatElement.ShowOverlay(Telerik.WinControls.UI.ChatOverlayMessage)">
+            <summary>
+            Shows the provided overlay in the control.
+            </summary>
+            <param name="message">The message that contains the overlay info.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadChatElement.HideOverlay">
+            <summary>
+            Hides any overlays that are currently displayed by the control.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadChatElement.AddMessage(Telerik.WinControls.UI.ChatMessage)">
+            <summary>
+            Adds a new message to the chat. Typical messages are <see cref="T:Telerik.WinControls.UI.ChatTextMessage"/>, <see cref="T:Telerik.WinControls.UI.ChatSuggestedActionsMessage"/>, <see cref="T:Telerik.WinControls.UI.ChatMediaMessage"/>, <see cref="T:Telerik.WinControls.UI.ChatCardMessage"/> and <see cref="T:Telerik.WinControls.UI.ChatOverlayMessage"/>
+            </summary>
+            <param name="message">The message to be displayed in the chat.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadChatElement.OnSendMessage(Telerik.WinControls.UI.SendMessageEventArgs)">
+            <summary>
+            Fires the <see cref="E:SendMessage"/> event.
+            </summary>
+            <param name="e">The event arguments.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadChatElement.OnSuggestedActionClicked(Telerik.WinControls.UI.SuggestedActionEventArgs)">
+            <summary>
+            Fires the <see cref="E:SendMessage"/> event.
+            </summary>
+            <param name="e">The event arguments.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadChatElement.OnCardActionClicked(System.Object,Telerik.WinControls.UI.CardActionEventArgs)">
+            <summary>
+            Fires the <see cref="E:CardActionClicked"/> event.
+            </summary>
+            <param name="sender">The card which triggered the event.</param>
+            <param name="e">The event arguments.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadChatElement.OnToolbarActionClick(Telerik.WinControls.UI.ToolbarActionEventArgs)">
+            <summary>
+            Fires the <see cref="E:ToolbarActionClicked"/> event.
+            </summary>
+            <param name="e">The event arguments.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadChatElement.OnTimeSeparatorAdding(Telerik.WinControls.UI.TimeSeparatorEventArgs)">
+            <summary>
+            Fires the <see cref="E:AddTimeSeparator"/> event.
+            </summary>
+            <param name="e">The event arguments.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadChatElement.OnItemFormatting(Telerik.WinControls.UI.ChatItemElementEventArgs)">
+            <summary>
+            Fires the <see cref="E:ItemFormatting"/> event.
+            </summary>
+            <param name="e">The event arguments.</param>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadChatElement.Author">
+            <summary>
+            Gets or sets the current author. This instance is used when <see cref="P:Telerik.WinControls.UI.RadChatElement.AutoAddUserMessages"/> is set to true as well as to determine the messages alignment and styling.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadChatElement.AutoAddUserMessages">
+            <summary>
+            Gets or sets a value indicating whether messages typed by the user will automatically be added as <see cref="T:Telerik.WinControls.UI.ChatTextMessage"/> to the chat.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadChatElement.AvatarSize">
+            <summary>
+             Gets or sets the size of the avatar images.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadChatElement.ShowAvatars">
+            <summary>
+            Gets or sets whether avatar images will be displayed in the chat window next to messages.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadChatElement.ShowMessagesOnOneSide">
+            <summary>
+            Gets or sets whether messages will be displayed aligned to only one side of the chat window or on both.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadChatElement.TimeSeparatorInterval">
+            <summary>
+            Gets or sets the time interval between messages that will trigger the automatic addition of a Time separator. 
+            If set to <see cref="F:System.TimeSpan.Zero"/> no Time separators will be added.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadChatElement.SendMessage">
+            <summary>
+            Occurs when the user performs an action e.g hits the Enter key, clicks the Send message button, clicks on a Suggested Action or a Card Action, clicks OK on an overlay.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadChatElement.SuggestedActionClicked">
+            <summary>
+            Occurs when the user clicks on a Suggested Action
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadChatElement.CardActionClicked">
+            <summary>
+            Occurs when the user clicks on a Card Action
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadChatElement.ToolbarActionClicked">
+            <summary>
+            Occurs when the user clicks on a Toolbar Action
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadChatElement.TimeSeparatorAdding">
+            <summary>
+            Occurs after a new message is added. Allows you to decide whether a time separator should be inserted before the currently added message.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadChatElement.ItemFormatting">
+            <summary>
+            Occurs when the data item of a visual element is changed and the element is prepared for visualization.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.ChatMessagesViewElement.AvatarSize">
+            <summary>
+            Gets or sets the size of the avatar images.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.ChatMessagesViewElement.ShowAvatars">
+            <summary>
+            Gets or sets whether avatar images will be displayed in the chat window next to messages.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.ChatMessagesViewElement.ShowMessagesOnOneSide">
+            <summary>
+            Gets or sets whether messages will be displayed aligned to only one side of the chat window or on both.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.ChatMessagesViewElement.TimeSeparatorInterval">
+            <summary>
+            Gets or sets the time interval between messages that will trigger the automatic addition of a Time separator. 
+            If set to <see cref="F:System.TimeSpan.Zero"/> no Time separators will be added.
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.ItemScroller`1">
+            <summary>
+            Represent item scroller
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ItemScroller`1.OnToolTipTextNeeded(System.Object,Telerik.WinControls.ToolTipTextNeededEventArgs)">
+            <summary>
+            Called when tool tip text is needed.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:Telerik.WinControls.ToolTipTextNeededEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ItemScroller`1.OnScrollerUpdated(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:ScrollerUpdated"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ItemScroller`1.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ItemScroller`1.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ItemScroller`1.ScrollToItem(`0)">
+            <summary>
+            Scrolls to item.
+            </summary>
+            <param name="item">The item.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ItemScroller`1.ScrollToItem(`0,System.Boolean)">
+            <summary>
+            Scrolls to item.
+            </summary>
+            <param name="item">The item.</param>
+            <param name="checkScrollVisibility">if set to <c>true</c> scroll visibility is checked before processing scrolling.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ItemScroller`1.ScrollToBegin">
+            <summary>
+            Scrolls to begin.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ItemScroller`1.ScrollToEnd">
+            <summary>
+            Scrolls to end.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ItemScroller`1.ScrollTo(System.Int32)">
+            <summary>
+            Scrolls to specified position.
+            </summary>
+            <param name="position">The position.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ItemScroller`1.ScrollDown(System.Int32)">
+            <summary>
+            Scrolls down to specified position.
+            </summary>
+            <param name="step">The step.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ItemScroller`1.GetScrollHeight(`0)">
+            <summary>
+            Gets the height of the scroll.
+            </summary>
+            <param name="item">The item.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ItemScroller`1.ScrollUp(System.Int32)">
+            <summary>
+            Scrolls up.
+            </summary>
+            <param name="step">The step.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ItemScroller`1.UpdateOnScroll(System.Windows.Forms.ScrollEventArgs)">
+            <summary>
+            Updates the on scroll.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.ScrollEventArgs"/> instance containing the event data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ItemScroller`1.UpdateScrollRange">
+            <summary>
+            Updates the scroll range.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ItemScroller`1.UpdateScrollValue">
+            <summary>
+            Updates the scroll value.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ItemScroller`1.UpdateScrollRange(System.Int32,System.Boolean)">
+            <summary>
+            Updates the scroll range with concrete range.
+            </summary>
+            <param name="width">The width.</param>
+            <param name="updateScrollValue">if set to <c>true</c> [update scroll value].</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ItemScroller`1.UpdateScrollStep">
+            <summary>
+            Updates the scroll step.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ItemScroller`1.SetScrollBarVisibility">
+            <summary>
+            Sets the scroll bar visibility.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ItemScroller`1.ShowToolTip">
+            <summary>
+            Shows scroller's tool tip
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ItemScroller`1.GetToolTipText">
+            <summary>
+            Determines the ToolTip text
+            </summary>
+            <returns>
+            Returns the ToolTip's text
+            </returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ItemScroller`1.GetCurrentItemIndex">
+            <summary>
+            Determines the traverser's current item index
+            </summary>
+            <returns>
+            The Index of the current item
+            </returns>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ItemScroller`1.HideToolTip">
+            <summary>
+            Hides scroller's tooltip
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.ItemScroller`1.AllowHiddenScrolling">
+            <summary>
+            When set to true, allows the scroller to scroll through the items
+            when the scrollbar is not visible.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.ItemScroller`1.MaxItemWidth">
+            <summary>
+            Gets the max width of item.
+            </summary>
+            <value>
+            The width of the max item.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.ItemScroller`1.ScrollState">
+            <summary>
+            Gets or sets the state of the scroll.
+            </summary>
+            <value>
+            The state of the scroll.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.ItemScroller`1.Traverser">
+            <summary>
+            Gets or sets the associated traverser.
+            </summary>
+            <value>
+            The traverser.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.ItemScroller`1.Scrollbar">
+            <summary>
+            Gets or sets the associated scrollbar.
+            </summary>
+            <value>
+            The scrollbar.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.ItemScroller`1.ElementProvider">
+            <summary>
+            Gets or sets the element provider.
+            </summary>
+            <value>
+            The element provider.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.ItemScroller`1.ScrollMode">
+            <summary>
+            Gets or sets the scroll mode.
+            </summary>
+            <value>
+            The scroll mode.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.ItemScroller`1.ClientSize">
+            <summary>
+            Gets or sets the client size.
+            </summary>
+            <value>
+            The size of the client.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.ItemScroller`1.ItemHeight">
+            <summary>
+            Gets or sets the item height.
+            </summary>
+            <value>
+            The height of the item.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.ItemScroller`1.ItemSpacing">
+            <summary>
+            Gets or sets the item spacing.
+            </summary>
+            <value>
+            The item spacing.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.ItemScroller`1.ScrollOffset">
+            <summary>
+            Gets or sets the scroll offset.
+            </summary>
+            <value>
+            The scroll offset.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.ItemScroller`1.Position">
+            <summary>
+            Gets the position.
+            </summary>
+            <value>
+            The position.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.ItemScroller`1.ToolTip">
+            <summary>
+            Gets or sets the tool tip.
+            </summary>
+            <value>
+            The tool tip.
+            </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.ItemScroller`1.AsynchronousScrolling">
+            <summary>
+            Gets or sets a value indicating whether scrolling is asynchronous.
+            </summary>
+            <value>
+            <c>true</c> if [asynchronous scrolling]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="E:Telerik.WinControls.UI.ItemScroller`1.ScrollerUpdated">
+            <summary>
+            Occurs when the scroller is updated.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.ItemScroller`1.ToolTipTextNeeded">
+            <summary>
+            Occurs when tool tip text is needed.
             </summary>
         </member>
         <member name="M:Telerik.WinControls.UI.CollapsiblePanelLayoutElement.InitializeFields">
@@ -15177,6 +16407,11 @@
             <summary>
             Gets or sets the BackColor of the control.
             This is actually the BackColor property of the root element.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadCollapsiblePanel.Text">
+            <summary>
+            This property is not relevant for this class.
             </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.RadCollapsiblePanel.Expanded">
@@ -15783,6 +17018,16 @@
         <member name="E:Telerik.WinControls.UI.RadCommandBarBaseItem.DoubleClick">
             <summary>
             Occurs when the element is double-clicked.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.CommandBarMaskedEditBox.Mask">
+            <summary>
+            Gets or sets a mask expression.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.CommandBarMaskedEditBox.MaskType">
+            <summary>
+            Gets or sets the mask type.
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.CommandBarMaskedEditBox.Text">
@@ -17547,6 +18792,12 @@
             </summary>
             <value>The parent member.</value>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadTreeView.ToggleStateConverter">
+            <summary>
+            Gets or sets a <see cref="T:System.ComponentModel.TypeConverter"/> that will be used to convert the toggle state of the checkboxes 
+            to the underlying data type it is bound to.
+            </summary>
+        </member>
         <member name="P:Telerik.WinControls.UI.RadTreeView.Nodes">
             <summary>
              Gets the collection of tree nodes that are assigned to the tree view control.
@@ -17620,6 +18871,11 @@
             <summary>
             RadTreeView consists of multiple visual elements and separate settings are provided to customize their appearance.
             Current ForeColor property might be ignored.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTreeView.Text">
+            <summary>
+            This property is not relevant for this class.
             </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.RadTreeView.ShowExpander">
@@ -17903,6 +19159,11 @@
             Gets or sets a value indicating whether the name of fields in fields drop down should be sorted.
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadDataFilter.FieldNamesSortStyle">
+            <summary>
+            Gets or sets a value indicating how the field names are sorted when SortFieldNames is true.
+            </summary>
+        </member>
         <member name="P:Telerik.WinControls.UI.RadDataFilter.Nodes">
             <summary>
             Gets the collection of tree nodes.
@@ -17970,6 +19231,12 @@
         <member name="P:Telerik.WinControls.UI.RadDataFilter.ToggleMode">
             <summary>
             Gets or sets a value indicating the default tree view toggle mode.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadDataFilter.PropertyDisplayNameNeeded">
+            <summary>
+            Occurs when a property text is about to be displayed on the screen. Allows the developer to substitute property names with
+            user-friendly display strings.
             </summary>
         </member>
         <member name="M:Telerik.WinControls.UI.RadTreeViewElement.OnDataError(Telerik.WinControls.UI.TreeNodeDataErrorEventArgs)">
@@ -18764,6 +20031,12 @@
             Gets or sets a property name which will be used to define a relation of the data items. 
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadTreeViewElement.ToggleStateConverter">
+            <summary>
+            Gets or sets a <see cref="T:System.ComponentModel.TypeConverter"/> that will be used to convert the toggle state of the checkboxes 
+            to the underlying data type it is bound to.
+            </summary>
+        </member>
         <member name="P:Telerik.WinControls.UI.RadTreeViewElement.ExpandImage">
             <summary>
              Gets or sets the expand image 
@@ -19029,6 +20302,11 @@
             Updates the nodes collection by removing all the nodes that does not have corresponding property name in the Descriptors collection.
             </summary>
         </member>
+        <member name="M:Telerik.WinControls.UI.RadDataFilterElement.OnPropertyDisplayNameNeeded(System.Object,Telerik.WinControls.UI.PropertyDisplayNameNeededEventArgs)">
+            <summary>
+            Fires the <see cref="E:PropertyDisplayNameNeeded"/> event.
+            </summary>
+        </member>
         <member name="P:Telerik.WinControls.UI.RadDataFilterElement.Provider">
             <summary>
             Gets or sets the provider.
@@ -19062,6 +20340,11 @@
             Gets or sets a value indicating whether the name of fields in fields drop down should be sorted.
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadDataFilterElement.FieldNamesSortStyle">
+            <summary>
+            Gets or sets a value indicating how the field names are sorted when SortFieldNames is true.
+            </summary>
+        </member>
         <member name="P:Telerik.WinControls.UI.RadDataFilterElement.AllowAdd">
             <summary>
             Gets or sets a value indicating whether [allow edit].
@@ -19091,6 +20374,12 @@
             Gets or sets the default custom date editor format.
             </summary>
             <value>The default custom date editor format.</value>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadDataFilterElement.PropertyDisplayNameNeeded">
+            <summary>
+            Occurs when a property text is about to be displayed on the screen. Allows the developer to substitute property names with
+            user-friendly display strings.
+            </summary>
         </member>
         <member name="T:Telerik.WinControls.UI.DataLayoutControlItem">
             <summary>
@@ -19318,6 +20607,11 @@
         <member name="P:Telerik.WinControls.UI.RadDataLayout.CurrentObject">
             <summary>
             Gets the current object.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadDataLayout.Text">
+            <summary>
+            This property is not relevant for this class.
             </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.RadDataLayout.ItemValidated">
@@ -19839,6 +21133,11 @@
             </summary>
             <value>The current object.</value>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadDataEntry.Text">
+            <summary>
+            This property is not relevant for this class.
+            </summary>
+        </member>
         <member name="E:Telerik.WinControls.UI.RadDataEntry.ItemValidated">
             <summary>
             Occurs when the value of editor is changed. 
@@ -20215,6 +21514,12 @@
             </summary>
             <returns>An instance of <see cref="T:Telerik.WinControls.UI.RadBindingNavigatorElement"/>.</returns>
         </member>
+        <member name="M:Telerik.WinControls.UI.RadBindingNavigator.OnContextMenuOpenting(System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Raises the <see cref="E:ContextMenuOpenting"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.ComponentModel.CancelEventArgs"/> instance containing the event data.</param>
+        </member>
         <member name="M:Telerik.WinControls.UI.RadBindingNavigator.OnOrientationChanging(System.ComponentModel.CancelEventArgs)">
             <summary>
             Raises the <see cref="E:RadBindingNavigator.OrientationChanging"/> event.
@@ -20302,6 +21607,11 @@
             This property is controlled by the Dock property of the RadBindingNavigator control.
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadBindingNavigator.Text">
+            <summary>
+            This property is not relevant for this class.
+            </summary>
+        </member>
         <member name="E:Telerik.WinControls.UI.RadBindingNavigator.OrientationChanging">
             <summary> 
             Occurs before the orientation is changed.
@@ -20330,6 +21640,11 @@
         <member name="E:Telerik.WinControls.UI.RadBindingNavigator.FloatingStripDocked">
             <summary>
             Occurs after a floating strip is docked.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadBindingNavigator.ContextMenuOpening">
+            <summary>
+            Occurs when opening the context menu.
             </summary>
         </member>
         <member name="T:Telerik.WinControls.UI.RadBindingNavigator.RadBindingNavigatorRootElement">
@@ -20582,12 +21897,6 @@
             <summary>
             Unwires the buttons and text box events.
             </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadBindingNavigatorElement.OnNotifyPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
-            <summary>
-            Raises the standard .NET PropertyChanged event.
-            </summary>
-            <param name="e">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance containing the event data.</param>
         </member>
         <member name="M:Telerik.WinControls.UI.RadBindingNavigatorElement.FirstButton_Click(System.Object,System.EventArgs)">
             <summary>
@@ -23025,6 +24334,61 @@
             The item.
             </value>
         </member>
+        <member name="T:Telerik.WinControls.UI.RadGanttViewLinkEventArgs">
+            <summary>
+            Represents the event arguments for a link event of RadGanttView.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadGanttViewLinkEventArgs.#ctor(Telerik.WinControls.UI.GanttViewLinkDataItem)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.WinControls.UI.RadGanttViewLinkEventArgs"/> class.
+            </summary>
+            <param name="link">The link.</param>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadGanttViewLinkEventArgs.Link">
+            <summary>
+            Gets the link.
+            </summary>
+            <value>
+            The link.
+            </value>
+        </member>
+        <member name="M:Telerik.WinControls.UI.GanttViewSelectedLinkChangedEventArgs.#ctor(Telerik.WinControls.UI.GanttViewLinkDataItem)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.WinControls.UI.GanttViewSelectedLinkChangedEventArgs"/> class.
+            </summary>
+            <param name="item">The item.</param>
+        </member>
+        <member name="T:Telerik.WinControls.UI.GanttViewSelectedLinkChangingEventArgs">
+            <summary>
+            Represents the event arguments for the SelectedLinkChanging event of RadGanttView.
+            </summary>
+        </member>
+        <member name="T:Telerik.WinControls.UI.RadGanttViewLinkCancelEventArgs">
+            <summary>
+            Represents the event arguments for a cancelable link event of RadGanttView.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadGanttViewLinkCancelEventArgs.#ctor(Telerik.WinControls.UI.GanttViewLinkDataItem)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.WinControls.UI.RadGanttViewLinkCancelEventArgs"/> class.
+            </summary>
+            <param name="link">The link.</param>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadGanttViewLinkCancelEventArgs.Link">
+            <summary>
+            Gets the link.
+            </summary>
+            <value>
+            The link.
+            </value>
+        </member>
+        <member name="M:Telerik.WinControls.UI.GanttViewSelectedLinkChangingEventArgs.#ctor(Telerik.WinControls.UI.GanttViewLinkDataItem)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.WinControls.UI.GanttViewSelectedLinkChangingEventArgs"/> class.
+            </summary>
+            <param name="link">The link data item.</param>
+        </member>
         <member name="T:Telerik.WinControls.UI.GanttViewHeaderCellElementCreatingEventArgs">
             <summary>
             Represents the event arguments for the HeaderCellElementCreating event of RadGanttView.
@@ -23059,25 +24423,6 @@
             <summary>
             Gets or sets the item element.
             </summary>
-        </member>
-        <member name="T:Telerik.WinControls.UI.RadGanttViewLinkEventArgs">
-            <summary>
-            Represents the event arguments for a link event of RadGanttView.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadGanttViewLinkEventArgs.#ctor(Telerik.WinControls.UI.GanttViewLinkDataItem)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Telerik.WinControls.UI.RadGanttViewLinkEventArgs"/> class.
-            </summary>
-            <param name="link">The link.</param>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadGanttViewLinkEventArgs.Link">
-            <summary>
-            Gets the link.
-            </summary>
-            <value>
-            The link.
-            </value>
         </member>
         <member name="T:Telerik.WinControls.UI.GanttViewContextMenuOpeningEventArgs">
             <summary>
@@ -23503,25 +24848,6 @@
             <summary>
             Represents the even arguments for the LinkAdding event of RadGanttView.
             </summary>
-        </member>
-        <member name="T:Telerik.WinControls.UI.RadGanttViewLinkCancelEventArgs">
-            <summary>
-            Represents the event arguments for a cancelable link event of RadGanttView.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.RadGanttViewLinkCancelEventArgs.#ctor(Telerik.WinControls.UI.GanttViewLinkDataItem)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Telerik.WinControls.UI.RadGanttViewLinkCancelEventArgs"/> class.
-            </summary>
-            <param name="link">The link.</param>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadGanttViewLinkCancelEventArgs.Link">
-            <summary>
-            Gets the link.
-            </summary>
-            <value>
-            The link.
-            </value>
         </member>
         <member name="M:Telerik.WinControls.UI.GanttViewLinkAddingEventArgs.#ctor(Telerik.WinControls.UI.GanttViewLinkDataItem)">
             <summary>
@@ -23989,11 +25315,22 @@
             <summary>
             Prints a gantt view element to the graphics object.
             </summary>
-            <param name="g">The g.</param>
-            <param name="context">The context.</param>
-            <param name="rect">The rect.</param>
-            <param name="text">The text.</param>
-            <param name="dataItem">The data item.</param>
+            <param name="g">The Graphics object used for painting the element.</param>
+            <param name="context">The print element context.</param>
+            <param name="rect">The rectangle of the print element.</param>
+            <param name="text">The text of the print element.</param>
+            <param name="dataItem">The data item of the print element.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadGanttView.PrintGanttViewElement(System.Drawing.Graphics,Telerik.WinControls.UI.GanttViewPrintElementContext,System.Drawing.RectangleF,System.String,System.Object,System.String)">
+            <summary>
+            Prints a gantt view element to the graphics object.
+            </summary>
+            <param name="g">The Graphics object used for painting the element.</param>
+            <param name="context">The print element context.</param>
+            <param name="rect">The rectangle of the print element.</param>
+            <param name="text">The text of the print element.</param>
+            <param name="dataItem">The data item of the print element.</param>
+            <param name="columnName">The column name of the print element.</param>
         </member>
         <member name="M:Telerik.WinControls.UI.RadGanttView.GetElementShape(Telerik.WinControls.UI.GanttViewPrintElementContext,System.Drawing.RectangleF)">
             <summary>
@@ -24165,6 +25502,12 @@
             </summary>
             <value>The selected item.</value>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadGanttView.SelectedLink">
+            <summary>
+            Gets or sets the selected link.
+            </summary>
+            <value>The selected link.</value>
+        </member>
         <member name="P:Telerik.WinControls.UI.RadGanttView.CurrentColumn">
             <summary>
             Gets or sets the current column.
@@ -24319,6 +25662,11 @@
             Current ForeColor property might be ignored.
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadGanttView.Text">
+            <summary>
+            This property is not relevant for this class.
+            </summary>
+        </member>
         <member name="E:Telerik.WinControls.UI.RadGanttView.ItemChildIdNeeded">
             <summary>
             Occurs when an item needs an id for storing in data sources.
@@ -24372,6 +25720,16 @@
         <member name="E:Telerik.WinControls.UI.RadGanttView.SelectedItemChanged">
             <summary>
             Occurs when selected item has been changed.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadGanttView.SelectedLinkChanging">
+            <summary>
+            Occurs when the selected link is about to be changed.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadGanttView.SelectedLinkChanged">
+            <summary>
+            Occurs when selected link has been changed.
             </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.RadGanttView.ItemExpandedChanging">
@@ -24596,6 +25954,12 @@
             <param name="item">The item.</param>
             <returns></returns>
         </member>
+        <member name="M:Telerik.WinControls.UI.RadGanttViewElement.ProcessSelection(Telerik.WinControls.UI.GanttViewLinkDataItem)">
+            <summary>
+            Processes the item for selection.
+            </summary>
+            <param name="link">The item.</param>
+        </member>
         <member name="M:Telerik.WinControls.UI.RadGanttViewElement.EnsureVisible(Telerik.WinControls.UI.GanttViewDataItem)">
             <summary>
             Ensures that the specified item is visible within the gantt view element, scrolling the contents of the element if necessary.
@@ -24768,11 +26132,23 @@
             </summary>
             <param name="e">The <see cref="T:Telerik.WinControls.UI.GanttViewSelectedItemChangingEventArgs"/> instance containing the event data.</param>
         </member>
+        <member name="M:Telerik.WinControls.UI.RadGanttViewElement.OnSelectedLinkChanging(Telerik.WinControls.UI.GanttViewSelectedLinkChangingEventArgs)">
+            <summary>
+            Raises the <see cref="E:SelectedLinkChanging"/> event.
+            </summary>
+            <param name="e">The <see cref="T:Telerik.WinControls.UI.GanttViewSelectedLinkChangingEventArgs"/> instance containing the event data.</param>
+        </member>
         <member name="M:Telerik.WinControls.UI.RadGanttViewElement.OnSelectedItemChanged(Telerik.WinControls.UI.GanttViewSelectedItemChangedEventArgs)">
             <summary>
             Raises the <see cref="E:SelectedItemChanged"/> event.
             </summary>
             <param name="e">The <see cref="T:Telerik.WinControls.UI.GanttViewSelectedItemChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadGanttViewElement.OnSelectedLinkChanged(Telerik.WinControls.UI.GanttViewSelectedLinkChangedEventArgs)">
+            <summary>
+            Raises the <see cref="E:SelectedLinkChanged"/> event.
+            </summary>
+            <param name="e">The <see cref="T:Telerik.WinControls.UI.GanttViewSelectedLinkChangedEventArgs"/> instance containing the event data.</param>
         </member>
         <member name="M:Telerik.WinControls.UI.RadGanttViewElement.OnSelectedItemChanged(Telerik.WinControls.UI.GanttViewDataItem)">
             <summary>
@@ -25237,6 +26613,12 @@
             </summary>
             <value>The selected item.</value>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadGanttViewElement.SelectedLink">
+            <summary>
+            Gets or sets the selected link item.
+            </summary>
+            <value>The selected link item.</value>
+        </member>
         <member name="P:Telerik.WinControls.UI.RadGanttViewElement.CurrentColumn">
             <summary>
             Gets or sets the current column.
@@ -25440,9 +26822,19 @@
             Occurs when the selected item is about to be changed.
             </summary>
         </member>
+        <member name="E:Telerik.WinControls.UI.RadGanttViewElement.SelectedLinkChanging">
+            <summary>
+            Occurs when the selected link is about to be changed.
+            </summary>
+        </member>
         <member name="E:Telerik.WinControls.UI.RadGanttViewElement.SelectedItemChanged">
             <summary>
             Occurs when selected item has been changed.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadGanttViewElement.SelectedLinkChanged">
+            <summary>
+            Occurs when selected link has been changed.
             </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.RadGanttViewElement.ItemExpandedChanging">
@@ -26224,35 +27616,35 @@
             Calculates the link lines for the given link and optional point when a new link is being created.
             </summary>
             <param name="link">The link.</param>
-            <param name="endPoint">The end point.</param>
+            <param name="point">The position of the mouse (if creating or editing a link).</param>
         </member>
         <member name="M:Telerik.WinControls.UI.GanttViewGraphicalViewElement.CalculateStartToStartLines(Telerik.WinControls.UI.GanttViewLinkDataItem,System.Nullable{System.Drawing.Point})">
             <summary>
             Calculates the start to start lines for the given link and optional point when a new link is being created.
             </summary>
             <param name="link">The link.</param>
-            <param name="endPoint">The end point.</param>
+            <param name="point">The position of the mouse (if creating or editing a link).</param>
         </member>
         <member name="M:Telerik.WinControls.UI.GanttViewGraphicalViewElement.CalculateStartToFinishLines(Telerik.WinControls.UI.GanttViewLinkDataItem,System.Nullable{System.Drawing.Point})">
             <summary>
             Calculates the start to finish lines for the given link and optional point when a new link is being created.
             </summary>
             <param name="link">The link.</param>
-            <param name="endPoint">The end point.</param>
+            <param name="point">The position of the mouse (if creating or editing a link).</param>
         </member>
         <member name="M:Telerik.WinControls.UI.GanttViewGraphicalViewElement.CalculateFinishToStartLines(Telerik.WinControls.UI.GanttViewLinkDataItem,System.Nullable{System.Drawing.Point})">
             <summary>
             Calculates the finish to start lines for the given link and optional point when a new link is being created.
             </summary>
             <param name="link">The link.</param>
-            <param name="endPoint">The end point.</param>
+            <param name="point">The position of the mouse (if creating or editing a link).</param>
         </member>
         <member name="M:Telerik.WinControls.UI.GanttViewGraphicalViewElement.CalculateFinishToFinishLines(Telerik.WinControls.UI.GanttViewLinkDataItem,System.Nullable{System.Drawing.Point})">
             <summary>
             Calculates the finish to finish lines for the given link and optional point when a new link is being created.
             </summary>
             <param name="link">The link.</param>
-            <param name="endPoint">The end point.</param>
+            <param name="point">The position of the mouse (if creating or editing a link).</param>
         </member>
         <member name="M:Telerik.WinControls.UI.GanttViewGraphicalViewElement.PopulateFlatTasksCollection">
             <summary>
@@ -26362,6 +27754,13 @@
             <param name="dateTime">The date to scroll to.</param>
             <returns>true if the scroll operation was successful otherwise false.</returns>
         </member>
+        <member name="M:Telerik.WinControls.UI.GanttViewGraphicalViewElement.GetLink(System.Drawing.Point)">
+            <summary>
+            Gets the link item in the given position if such exists otherwise returns null;
+            </summary>
+            <param name="location">The location in control coordinates where to search for a link.</param>
+            <returns></returns>
+        </member>
         <member name="M:Telerik.WinControls.UI.GanttViewGraphicalViewElement.PaintChildren(Telerik.WinControls.Paint.IGraphics,System.Drawing.Rectangle,System.Single,System.Drawing.SizeF,System.Boolean)">
             <summary>
             Paints the children.
@@ -26383,6 +27782,16 @@
             Raises the standard .NET PropertyChanged event.
             </summary>
             <param name="e"></param>
+        </member>
+        <member name="P:Telerik.WinControls.UI.GanttViewGraphicalViewElement.LinksSelectionClickTreshold">
+            <summary>
+            Gets or sets how many pixels along the link of a link will trigger selection.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.GanttViewGraphicalViewElement.LinksSelectionColorSpread">
+            <summary>
+            Gets or sets how wide the selection highlight color will be painted along a selected link.
+            </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.GanttViewGraphicalViewElement.HorizontalScrollBarElement">
             <summary>
@@ -27286,271 +28695,6 @@
             Represents the bottom portion of a <see cref="T:Telerik.WinControls.UI.GanttViewTimelineItemElement"/>.
             </summary>
         </member>
-        <member name="T:Telerik.WinControls.UI.ItemScroller`1">
-            <summary>
-            Represent item scroller
-            </summary>
-            <typeparam name="T"></typeparam>
-        </member>
-        <member name="M:Telerik.WinControls.UI.ItemScroller`1.OnToolTipTextNeeded(System.Object,Telerik.WinControls.ToolTipTextNeededEventArgs)">
-            <summary>
-            Called when tool tip text is needed.
-            </summary>
-            <param name="sender">The sender.</param>
-            <param name="e">The <see cref="T:Telerik.WinControls.ToolTipTextNeededEventArgs"/> instance containing the event data.</param>
-        </member>
-        <member name="M:Telerik.WinControls.UI.ItemScroller`1.OnScrollerUpdated(System.EventArgs)">
-            <summary>
-            Raises the <see cref="E:ScrollerUpdated"/> event.
-            </summary>
-            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
-        </member>
-        <member name="M:Telerik.WinControls.UI.ItemScroller`1.Dispose">
-            <summary>
-            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.ItemScroller`1.Dispose(System.Boolean)">
-            <summary>
-            Releases unmanaged and - optionally - managed resources.
-            </summary>
-            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
-        </member>
-        <member name="M:Telerik.WinControls.UI.ItemScroller`1.ScrollToItem(`0)">
-            <summary>
-            Scrolls to item.
-            </summary>
-            <param name="item">The item.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.WinControls.UI.ItemScroller`1.ScrollToItem(`0,System.Boolean)">
-            <summary>
-            Scrolls to item.
-            </summary>
-            <param name="item">The item.</param>
-            <param name="checkScrollVisibility">if set to <c>true</c> scroll visibility is checked before processing scrolling.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.WinControls.UI.ItemScroller`1.ScrollToBegin">
-            <summary>
-            Scrolls to begin.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.WinControls.UI.ItemScroller`1.ScrollToEnd">
-            <summary>
-            Scrolls to end.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.WinControls.UI.ItemScroller`1.ScrollTo(System.Int32)">
-            <summary>
-            Scrolls to specified position.
-            </summary>
-            <param name="position">The position.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.WinControls.UI.ItemScroller`1.ScrollDown(System.Int32)">
-            <summary>
-            Scrolls down to specified position.
-            </summary>
-            <param name="step">The step.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.WinControls.UI.ItemScroller`1.GetScrollHeight(`0)">
-            <summary>
-            Gets the height of the scroll.
-            </summary>
-            <param name="item">The item.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.WinControls.UI.ItemScroller`1.ScrollUp(System.Int32)">
-            <summary>
-            Scrolls up.
-            </summary>
-            <param name="step">The step.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.WinControls.UI.ItemScroller`1.UpdateOnScroll(System.Windows.Forms.ScrollEventArgs)">
-            <summary>
-            Updates the on scroll.
-            </summary>
-            <param name="e">The <see cref="T:System.Windows.Forms.ScrollEventArgs"/> instance containing the event data.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.WinControls.UI.ItemScroller`1.UpdateScrollRange">
-            <summary>
-            Updates the scroll range.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.ItemScroller`1.UpdateScrollValue">
-            <summary>
-            Updates the scroll value.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.ItemScroller`1.UpdateScrollRange(System.Int32,System.Boolean)">
-            <summary>
-            Updates the scroll range with concrete range.
-            </summary>
-            <param name="width">The width.</param>
-            <param name="updateScrollValue">if set to <c>true</c> [update scroll value].</param>
-        </member>
-        <member name="M:Telerik.WinControls.UI.ItemScroller`1.UpdateScrollStep">
-            <summary>
-            Updates the scroll step.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.ItemScroller`1.SetScrollBarVisibility">
-            <summary>
-            Sets the scroll bar visibility.
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.ItemScroller`1.ShowToolTip">
-            <summary>
-            Shows scroller's tool tip
-            </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.ItemScroller`1.GetToolTipText">
-            <summary>
-            Determines the ToolTip text
-            </summary>
-            <returns>
-            Returns the ToolTip's text
-            </returns>
-        </member>
-        <member name="M:Telerik.WinControls.UI.ItemScroller`1.GetCurrentItemIndex">
-            <summary>
-            Determines the traverser's current item index
-            </summary>
-            <returns>
-            The Index of the current item
-            </returns>
-        </member>
-        <member name="M:Telerik.WinControls.UI.ItemScroller`1.HideToolTip">
-            <summary>
-            Hides scroller's tooltip
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.ItemScroller`1.AllowHiddenScrolling">
-            <summary>
-            When set to true, allows the scroller to scroll through the items
-            when the scrollbar is not visible.
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.ItemScroller`1.MaxItemWidth">
-            <summary>
-            Gets the max width of item.
-            </summary>
-            <value>
-            The width of the max item.
-            </value>
-        </member>
-        <member name="P:Telerik.WinControls.UI.ItemScroller`1.ScrollState">
-            <summary>
-            Gets or sets the state of the scroll.
-            </summary>
-            <value>
-            The state of the scroll.
-            </value>
-        </member>
-        <member name="P:Telerik.WinControls.UI.ItemScroller`1.Traverser">
-            <summary>
-            Gets or sets the associated traverser.
-            </summary>
-            <value>
-            The traverser.
-            </value>
-        </member>
-        <member name="P:Telerik.WinControls.UI.ItemScroller`1.Scrollbar">
-            <summary>
-            Gets or sets the associated scrollbar.
-            </summary>
-            <value>
-            The scrollbar.
-            </value>
-        </member>
-        <member name="P:Telerik.WinControls.UI.ItemScroller`1.ElementProvider">
-            <summary>
-            Gets or sets the element provider.
-            </summary>
-            <value>
-            The element provider.
-            </value>
-        </member>
-        <member name="P:Telerik.WinControls.UI.ItemScroller`1.ScrollMode">
-            <summary>
-            Gets or sets the scroll mode.
-            </summary>
-            <value>
-            The scroll mode.
-            </value>
-        </member>
-        <member name="P:Telerik.WinControls.UI.ItemScroller`1.ClientSize">
-            <summary>
-            Gets or sets the client size.
-            </summary>
-            <value>
-            The size of the client.
-            </value>
-        </member>
-        <member name="P:Telerik.WinControls.UI.ItemScroller`1.ItemHeight">
-            <summary>
-            Gets or sets the item height.
-            </summary>
-            <value>
-            The height of the item.
-            </value>
-        </member>
-        <member name="P:Telerik.WinControls.UI.ItemScroller`1.ItemSpacing">
-            <summary>
-            Gets or sets the item spacing.
-            </summary>
-            <value>
-            The item spacing.
-            </value>
-        </member>
-        <member name="P:Telerik.WinControls.UI.ItemScroller`1.ScrollOffset">
-            <summary>
-            Gets or sets the scroll offset.
-            </summary>
-            <value>
-            The scroll offset.
-            </value>
-        </member>
-        <member name="P:Telerik.WinControls.UI.ItemScroller`1.Position">
-            <summary>
-            Gets the position.
-            </summary>
-            <value>
-            The position.
-            </value>
-        </member>
-        <member name="P:Telerik.WinControls.UI.ItemScroller`1.ToolTip">
-            <summary>
-            Gets or sets the tool tip.
-            </summary>
-            <value>
-            The tool tip.
-            </value>
-        </member>
-        <member name="P:Telerik.WinControls.UI.ItemScroller`1.AsynchronousScrolling">
-            <summary>
-            Gets or sets a value indicating whether scrolling is asynchronous.
-            </summary>
-            <value>
-            <c>true</c> if [asynchronous scrolling]; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="E:Telerik.WinControls.UI.ItemScroller`1.ScrollerUpdated">
-            <summary>
-            Occurs when the scroller is updated.
-            </summary>
-        </member>
-        <member name="E:Telerik.WinControls.UI.ItemScroller`1.ToolTipTextNeeded">
-            <summary>
-            Occurs when tool tip text is needed.
-            </summary>
-        </member>
         <member name="M:Telerik.WinControls.UI.GanttViewTimelineScroller.UpdateScrollRange">
             <summary>
             Updates the scroll range.
@@ -27816,13 +28960,6 @@
             <summary>
             Synchronizes this instance.
             </summary>
-        </member>
-        <member name="M:Telerik.WinControls.UI.GanttViewTextViewCellElement.IsNumericType(System.Type)">
-            <summary>
-            Gets a value indicating whether the type specified is a numeric type.
-            </summary>
-            <param name="type">The type to check.</param>
-            <returns></returns>
         </member>
         <member name="M:Telerik.WinControls.UI.GanttViewTextViewCellElement.IsCompatible(Telerik.WinControls.UI.GanttViewTextViewColumn,System.Object)">
             <summary>
@@ -28411,6 +29548,420 @@
             <value>
             The item element.
             </value>
+        </member>
+        <member name="F:Telerik.WinControls.UI.ImageEditor.Dialogs.ImageEditorBaseDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ImageEditor.Dialogs.ImageEditorBaseDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ImageEditor.Dialogs.ImageEditorBaseDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.ImageEditor.Dialogs.BlurDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ImageEditor.Dialogs.BlurDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ImageEditor.Dialogs.BlurDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.ImageEditor.Dialogs.ContrastDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ImageEditor.Dialogs.ContrastDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ImageEditor.Dialogs.ContrastDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.ImageEditor.Dialogs.DrawDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ImageEditor.Dialogs.DrawDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ImageEditor.Dialogs.DrawDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.ImageEditor.Dialogs.DrawShapeDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ImageEditor.Dialogs.DrawShapeDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ImageEditor.Dialogs.DrawShapeDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.ImageEditor.Dialogs.DrawTextDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ImageEditor.Dialogs.DrawTextDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ImageEditor.Dialogs.DrawTextDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.ImageEditor.Dialogs.HueShiftDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ImageEditor.Dialogs.HueShiftDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ImageEditor.Dialogs.HueShiftDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.ImageEditor.Dialogs.ResizeCanvasDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ImageEditor.Dialogs.ResizeCanvasDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ImageEditor.Dialogs.ResizeCanvasDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.ImageEditor.Dialogs.ResizeDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ImageEditor.Dialogs.ResizeDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ImageEditor.Dialogs.ResizeDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.ImageEditor.Dialogs.RoundCornersDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ImageEditor.Dialogs.RoundCornersDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ImageEditor.Dialogs.RoundCornersDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.ImageEditor.Dialogs.SaturationDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ImageEditor.Dialogs.SaturationDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ImageEditor.Dialogs.SaturationDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Telerik.WinControls.UI.ImageEditor.Dialogs.SharpenDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ImageEditor.Dialogs.SharpenDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.ImageEditor.Dialogs.SharpenDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadImageEditor.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:MouseDown"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.MouseEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadImageEditor.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:MouseMove"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.MouseEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadImageEditor.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:MouseUp"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.MouseEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadImageEditor.OnMouseClick(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.MouseClick" /> event.
+            </summary>
+            <param name="e">An <see cref="T:System.Windows.Forms.MouseEventArgs" /> that contains the event data.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadImageEditor.OnMouseDoubleClick(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.MouseDoubleClick" /> event.
+            </summary>
+            <param name="e">An <see cref="T:System.Windows.Forms.MouseEventArgs" /> that contains the event data.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadImageEditor.OnMouseEnter(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:MouseEnter"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadImageEditor.OnMouseLeave(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:MouseLeave"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadImageEditor.OnMouseWheel(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the <see cref="E:MouseWheel"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.MouseEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadImageEditor.OnMouseHover(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:MouseHover"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadImageEditor.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Raises the <see cref="E:KeyDown"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.KeyEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadImageEditor.OnKeyPress(System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Raises the <see cref="E:KeyPress"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.KeyPressEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadImageEditor.OnKeyUp(System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Raises the <see cref="E:KeyUp"/> event.
+            </summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.KeyEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadImageEditor.ImageEditorElement">
+            <summary>
+            Gets the main element of the editor.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadImageEditor.CurrentBitmap">
+            <summary>
+            Gets or sets the current bitmap. If you want to open an image for edit use one of the OpenImage methods.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadImageEditor.BitmapPath">
+            <summary>
+            Gets or sets the path that will be used for save operations.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadImageEditor.ZoomFactor">
+            <summary>
+            Gets or sets the zoom factor of the editor.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadImageEditor.ImageLoaded">
+            <summary>
+            Occurs after an image is loaded in the editor.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadImageEditor.ImageLoadAsyncProgressChanged">
+            <summary>
+            Occurs when the progress of an async load operation changes.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadImageEditor.OperationError">
+            <summary>
+            Occurs when an operation results in an error or an exception.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadImageEditorElement.CloseOpenDialog">
+            <summary>
+            Closes the open dialog.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadImageEditorElement.OnImageLoaded(System.ComponentModel.AsyncCompletedEventArgs)">
+            <summary>
+            Fires the <see cref="E:ImageLoaded"/> event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadImageEditorElement.OnImageLoadAsyncProgressChanged(System.ComponentModel.ProgressChangedEventArgs)">
+            <summary>
+            Fires the <see cref="E:ImageLoadAsyncProgressChanged"/> event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadImageEditorElement.OnOperationError(System.IO.ErrorEventArgs)">
+            <summary>
+            Fires the <see cref="E:OperationError"/> event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadImageEditorElement.CommandsElement">
+            <summary>
+            Gets the element containing the buttons with commands.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadImageEditorElement.CanvasElement">
+            <summary>
+            Gets the element that is responsible for drawing the image.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadImageEditorElement.ZoomElement">
+            <summary>
+            Gets the element continaing the zooming controls.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadImageEditorElement.ScrollViewer">
+            <summary>
+            Gets the scroll viewer controller.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadImageEditorElement.CurrentBitmap">
+            <summary>
+            Gets or sets the current bitmap. If you want to open an image for edit use one of the OpenImage methods.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadImageEditorElement.OriginalBitmap">
+            <summary>
+            Gets or sets the original image when performing editing operations.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadImageEditorElement.BitmapPath">
+            <summary>
+            Gets or sets the path that will be used for save operations.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadImageEditorElement.ZoomFactor">
+            <summary>
+            Gets or sets the zoom factor of the editor.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadImageEditorElement.DialogFactory">
+            <summary>
+            Gets or sets a factory used for creating dialogs.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadImageEditorElement.CommandsElementWidth">
+            <summary>
+            Gets or sets the width of the <see cref="P:Telerik.WinControls.UI.RadImageEditorElement.CommandsElement"/>.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadImageEditorElement.ZoomElementHeight">
+            <summary>
+            Gets or sets the height of the <see cref="P:Telerik.WinControls.UI.RadImageEditorElement.ZoomElement"/>
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadImageEditorElement.UndoStack">
+            <summary>
+            Gets the undo operations stack.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadImageEditorElement.RedoStack">
+            <summary>
+            Gets the redo operations stack.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadImageEditorElement.ImageLoaded">
+            <summary>
+            Occurs after an image is loaded in the editor.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadImageEditorElement.ImageLoadAsyncProgressChanged">
+            <summary>
+            Occurs when the progress of an async load operation changes.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadImageEditorElement.OperationError">
+            <summary>
+            Occurs when an operation results in an error or an exception.
+            </summary>
         </member>
         <member name="T:Telerik.WinControls.UI.DraggableLayoutControlItem">
             <summary>
@@ -29576,6 +31127,11 @@
             If the user is currently resizing, returns the active <see cref="T:Telerik.WinControls.UI.LayoutControlResizingBehavior"/>, otherwise returns null.
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadLayoutControl.Text">
+            <summary>
+            This property is not relevant for this class.
+            </summary>
+        </member>
         <member name="P:Telerik.WinControls.UI.RadLayoutControl.XmlSerializationInfo">
             <summary>
             Gets the serialization info for RadLayoutControl used by Save/Load loyout methods to persist the layout to/from XML.
@@ -29901,6 +31457,11 @@
             <summary>
             Gets or sets a value that determines whether to stop the selection events from firing. These are SelectedIndexChanged,
             SelectedIndexChanging and SelectedValueChanged.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadListControl.Text">
+            <summary>
+            This property is not relevant for this class.
             </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.RadListControl.DataBindingComplete">
@@ -30450,6 +32011,75 @@
             Gets the editor value.
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.StripViewItemContainer.ButtonsPanel">
+            <summary>
+            Gets the element which hosts and arranges all the items within the strip.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.StripViewItemContainer.ItemLayout">
+            <summary>
+            Gets the element which hosts and arranges all the items within the strip.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadPageViewNavigationViewElement.OnCollapsing(System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Fires the <see cref="E:Collapsing"/> event.
+            </summary>
+            <param name="e">The event arguments.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadPageViewNavigationViewElement.OnExpanding(System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Fires the <see cref="E:Expanding"/> event.
+            </summary>
+            <param name="e">The event arguments.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadPageViewNavigationViewElement.OnCollapsed(System.EventArgs)">
+            <summary>
+            Fires the <see cref="E:Collapsed"/> event.
+            </summary>
+            <param name="e">The event arguments.</param>
+        </member>
+        <member name="M:Telerik.WinControls.UI.RadPageViewNavigationViewElement.OnExpanded(System.EventArgs)">
+            <summary>
+            Fires the <see cref="E:Expanded"/> event.
+            </summary>
+            <param name="e">The event arguments.</param>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadPageViewNavigationViewElement.AllowAnimation">
+            <summary>
+            Gets or sets a value indicating whether to use animation when collapsing and expanding the menu.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadPageViewNavigationViewElement.AnimationInterval">
+            <summary>
+            Gets or sets the animation interval.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadPageViewNavigationViewElement.AnimationFrames">
+            <summary>
+            Gets or sets the animation frames.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadPageViewNavigationViewElement.Collapsing">
+            <summary>
+            Occurs before the hamburger menu is collapsed.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadPageViewNavigationViewElement.Expanding">
+            <summary>
+            Occurs before the hamburger menu is expanded.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadPageViewNavigationViewElement.Collapsed">
+            <summary>
+            Occurs after the hamburger menu is collapsed.
+            </summary>
+        </member>
+        <member name="E:Telerik.WinControls.UI.RadPageViewNavigationViewElement.Expanded">
+            <summary>
+            Occurs after the hamburger menu is expanded.
+            </summary>
+        </member>
         <member name="M:Telerik.WinControls.UI.DiamondShape.CreatePath(System.Drawing.Rectangle)">
             <summary>
             Creates Star like shape. Overrides CreatePath method in the base class
@@ -30546,6 +32176,11 @@
             <summary>
             Gets or sets whether the rating is ReadOnly. 
             The Value of the element can still be set in ReadOnly mode, nothing else.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadRating.Text">
+            <summary>
+            This property is not relevant for this class.
             </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.RadRating.ValueChanged">
@@ -32599,7 +34234,7 @@
         </member>
         <member name="P:Telerik.WinControls.UI.RadTextBoxControl.AutoCompleteItems">
             <summary>
-            Gets a value specifiying the complete items used for automatic completion.
+            Gets a value specifying the complete items used for automatic completion.
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.RadTextBoxControl.HideSelection">
@@ -32670,6 +34305,11 @@
             <value>
             The color of the null text.
             </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxControl.ShowNullText">
+            <summary>
+            Gets or sets a value indicating whether the null text will be shown when the control is focused and the text is empty.
+            </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.RadTextBoxControl.TextAlign">
             <summary>
@@ -33015,6 +34655,11 @@
             Determines if users can input text directly into the text field..
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadBrowseEditor.Text">
+            <summary>
+            This property is not relevant for this class.
+            </summary>
+        </member>
         <member name="E:Telerik.WinControls.UI.RadBrowseEditor.DialogClosed">
             <summary>
             Fires after the dialog window is closed.
@@ -33064,6 +34709,11 @@
             <summary>
             RadClock consists of multiple visual elements and separate settings are provided to customize their appearance.
             Current ForeColor property might be ignored.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadClock.Text">
+            <summary>
+            This property is not relevant for this class.
             </summary>
         </member>
         <member name="M:Telerik.WinControls.UI.PropertyGridUITypeEditorElement.DropEditor">
@@ -34319,6 +35969,11 @@
             Current ForeColor property might be ignored.
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadPropertyGrid.Text">
+            <summary>
+            This property is not relevant for this class.
+            </summary>
+        </member>
         <member name="E:Telerik.WinControls.UI.RadPropertyGrid.SelectedObjectChanging">
             <summary>
             Occurs before the selected object is changed.
@@ -34556,6 +36211,16 @@
         <member name="M:Telerik.WinControls.UI.PropertyGridValueElement.Synchronize">
             <summary>
             Syncronizes element with data item.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.PropertyGridTableElement.RaiseValueChanged(System.EventArgs)">
+            <summary>
+            Allows you to raise ValueChanged event when using custom editor.
+            </summary>
+        </member>
+        <member name="M:Telerik.WinControls.UI.PropertyGridTableElement.RaiseValueChanging(Telerik.WinControls.UI.ValueChangingEventArgs)">
+            <summary>
+            Allows you to raise ValueChanging event when using custom editor.
             </summary>
         </member>
         <member name="M:Telerik.WinControls.UI.PropertyGridTableElement.BestFit">
@@ -35098,6 +36763,11 @@
             <value>
               <c>true</c> if the calculator drop down is read only; otherwise, <c>false</c>.
             </value>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadCalculatorDropDown.Text">
+            <summary>
+            This property is not relevant for this class.
+            </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.RadCalculatorDropDown.CalculatorValueChanging">
             <summary>
@@ -35928,11 +37598,6 @@
         <member name="P:Telerik.WinControls.UI.CalendarView.Name">
             <summary>
             Gets or sets the name of the node.
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.CalendarView.AllowToolTips">
-            <summary>
-            Gets or sets whether tool tips are displayed for this specific control.
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.CalendarView.CellToolTipFormat">
@@ -37025,6 +38690,11 @@
             <summary>
             Gets the instance of RadCalendarElement wrapped by this control. RadCalendarElement
             is the main element in the hierarchy tree and encapsulates the actual functionality of RadCalendar.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadCalendar.Text">
+            <summary>
+            This property is not relevant for this class.
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.RadCalendar.HeaderNavigationMode">
@@ -38337,11 +40007,6 @@
             	</ul>
             </remarks>
         </member>
-        <member name="P:Telerik.WinControls.UI.RadCalendar.AllowToolTips">
-            <summary>
-            Gets or sets whether tool tips are displayed for this speciffic control.
-            </summary>
-        </member>
         <member name="P:Telerik.WinControls.UI.RadCalendar.DateRangeSeparator">
             <summary>
             Gets or sets the separator string that will be put between start and end months in a multi view title.
@@ -39036,11 +40701,6 @@
             label element
             </summary>        
         </member>
-        <member name="P:Telerik.WinControls.UI.CalendarStatusElement.LableFormat">
-            <summary>
-            Gets or sets date time format
-            </summary>        
-        </member>
         <member name="P:Telerik.WinControls.UI.CalendarStatusElement.LabelFormat">
             <summary>
             Gets or sets date time format
@@ -39199,10 +40859,6 @@
                 RadColorBox control may be nested in other telerik controls.
             </summary>
         </member>
-        <member name="M:Telerik.WinControls.UI.RadColorBox.Focus">
-            <summary>Sets input focus to the control.</summary>
-            <returns>true if the input focus request was successful; otherwise, false.</returns>      
-        </member>
         <member name="P:Telerik.WinControls.UI.RadColorBox.AutoSize">
             <summary>
             Gets or sets whether the edit control is auto-sized
@@ -39228,12 +40884,10 @@
             Determines if users can input text directly into the text field..
             </summary>
         </member>
-        <member name="P:Telerik.WinControls.UI.RadColorBox.TabStop">
+        <member name="P:Telerik.WinControls.UI.RadColorBox.Text">
             <summary>
-            Gets or sets a value indicating whether the user can give the focus to this control
-            using the TAB key.
-            </summary>        
-            <returns>true if the user can give the focus to the control using the TAB key;otherwise, false. The default is true.</returns>
+            This property is not relevant for this class.
+            </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.RadColorBox.DialogClosed">
             <summary>
@@ -40954,6 +42608,11 @@
             Current ForeColor property might be ignored.
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadCommandBar.Text">
+            <summary>
+            This property is not relevant for this class.
+            </summary>
+        </member>
         <member name="E:Telerik.WinControls.UI.RadCommandBar.OrientationChanging">
             <summary> 
             Occurs before the orientation is changed.
@@ -42290,7 +43949,7 @@
         <member name="P:Telerik.WinControls.UI.RadDesktopAlert.ContentText">
             <summary>
             Gets or sets the text displayed in the alert popup. This text
-            can be additinally HTML formatted to achieve better appearance.
+            can be additionally HTML formatted to achieve better appearance.
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.RadDesktopAlert.CaptionText">
@@ -44044,6 +45703,11 @@
             Current ForeColor property might be ignored.
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadSeparator.Text">
+            <summary>
+            This property is not relevant for this class.
+            </summary>
+        </member>
         <member name="T:Telerik.WinControls.UI.ContentTransitionType">
             <summary>
             Represents an enumration of the possible transitions which a <see cref="T:Telerik.WinControls.UI.RadLiveTileElement"/> uses to change its content.
@@ -44249,6 +45913,11 @@
             <summary>
             RadPanorama consists of multiple visual elements and separate settings are provided to customize their appearance.
             Current ForeColor property might be ignored.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadPanorama.Text">
+            <summary>
+            This property is not relevant for this class.
             </summary>
         </member>
         <member name="T:Telerik.WinControls.UI.HorizontalScrollAlignment">
@@ -45589,6 +47258,11 @@
             Gets or sets the Maximal time value assigned to the control.
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadTimePicker.Text">
+            <summary>
+            This property is not relevant for this class.
+            </summary>
+        </member>
         <member name="E:Telerik.WinControls.UI.RadTimePicker.ValueChanging">
             <summary>
             Occurs when the editing value is changing.
@@ -45658,6 +47332,11 @@
         <member name="P:Telerik.WinControls.UI.RadTimePickerContent.TimePickerElement">
             <summary>
             Gets the <see cref="T:Telerik.WinControls.UI.RadTimePickerContentElement">RadTimePickerElement</see> which encapsulates the UI representation and functionality of the control.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTimePickerContent.ReadOnly">
+            <summary>
+            Gets or sets a value indicating whether the contents of the time picker control can be changed.
             </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.RadTimePickerContent.ValueChanged">
@@ -46433,6 +48112,11 @@
             Current ForeColor property might be ignored.
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadWizard.Text">
+            <summary>
+            This property is not relevant for this class.
+            </summary>
+        </member>
         <member name="E:Telerik.WinControls.UI.RadWizard.ModeChanging">
             <summary>
             Fires before the mode of RadWizard is changed.
@@ -47065,6 +48749,11 @@
             Current ForeColor property might be ignored.
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadRangeSelector.Text">
+            <summary>
+            This property is not relevant for this class.
+            </summary>
+        </member>
         <member name="E:Telerik.WinControls.UI.RadRangeSelector.ThumbLeftValueChanging">
             <summary>
             Occurs when the value of left thumb is changing.
@@ -47600,6 +49289,47 @@
             Gets the tab that is being selected.
             </summary>
         </member>
+        <member name="M:Telerik.WinControls.UI.RadKeyTipShowingEventArgs.#ctor(System.Boolean,System.Drawing.Point,System.Drawing.Font,System.Drawing.Color,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Creates an instance of the <see cref="T:Telerik.WinControls.UI.RadKeyTipShowingEventArgs"/>
+            class.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadKeyTipShowingEventArgs.CustomLocation">
+            <summary>
+            Gets or sets an instance of the <see cref="T:System.Drawing.Point"/>
+            struct containing the coordinates which will be used
+            to position the key tip.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadKeyTipShowingEventArgs.Font">
+            <summary>
+            Gets or sets an instance of the <see cref="T:System.Drawing.Font"/>
+            class containing the font which will be used
+            to paint the text of the key tip.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadKeyTipShowingEventArgs.BackColor">
+            <summary>
+            Gets or sets an instance of the <see cref="T:System.Drawing.Color"/>
+            struct containing the color which will be used
+            to paint the background of the key tip.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadKeyTipShowingEventArgs.BorderColor">
+            <summary>
+            Gets or sets an instance of the <see cref="T:System.Drawing.Color"/>
+            struct containing the color which will be used
+            to paint the borders of the key tip.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadKeyTipShowingEventArgs.ForeColor">
+            <summary>
+            Gets or sets an instance of the <see cref="T:System.Drawing.Color"/>
+            struct containing the color which will be used
+            to paint the text forecolor of the key tip.
+            </summary>
+        </member>
         <member name="T:Telerik.WinControls.UI.RadQuickAccessOverflowButton">
             <summary>
             Represents a toolstrip overflow button element. 
@@ -47888,6 +49618,11 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadPageView.Text">
+            <summary>
+            This property is not relevant for this class.
+            </summary>
+        </member>
         <member name="P:Telerik.WinControls.UI.RadPageViewObject.Owner">
             <summary>
             Gets the <see cref="T:Telerik.WinControls.UI.RadPageView"/> instance that this object is associated with.
@@ -47903,16 +49638,6 @@
         <member name="P:Telerik.WinControls.UI.RadPageViewContentAreaElement.Owner">
             <summary>
             Gets the RadPageViewElement instance that owns this instance.
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.StripViewItemContainer.ButtonsPanel">
-            <summary>
-            Gets the element which hosts and arranges all the items within the strip.
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.StripViewItemContainer.ItemLayout">
-            <summary>
-            Gets the element which hosts and arranges all the items within the strip.
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.StripViewItemLayout.ScrollOffset">
@@ -48494,6 +50219,11 @@
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.RadSplitContainer.ForeColor">
+            <summary>
+            This property is not relevant for this class.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadSplitContainer.Text">
             <summary>
             This property is not relevant for this class.
             </summary>
@@ -49268,6 +50998,11 @@
         <member name="P:Telerik.WinControls.UI.RadTrackBar.AllowKeyNavigation">
             <summary>
             Gets or Sets whether the selected thumb should move on arrow key press.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTrackBar.Text">
+            <summary>
+            This property is not relevant for this class.
             </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.RadTrackBar.ValueChanged">
@@ -50321,6 +52056,16 @@
             Gets the exporting tree node.
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadBreadCrumb.SelectTreeNodeOnClick">
+            <summary>
+            Determines whether a tree node will be selected upon clicking on the action part of the split button element. The default value is false and click on the action part will result in opening the popup with the menu items.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadBreadCrumb.BreadCrumbElement">
+            <summary>
+            Gets the breadCrumb element.
+            </summary>
+        </member>
         <member name="P:Telerik.WinControls.UI.RadBreadCrumb.ForeColor">
             <summary>
             RadbreadCrumb consists of multiple visual elements and separate settings are provided to customize their appearance.
@@ -51079,6 +52824,11 @@
             <summary>
             RadToggleSwitch consists of multiple visual elements and separate settings are provided to customize their appearance.
             Current ForeColor property might be ignored.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadToggleSwitch.Text">
+            <summary>
+            This property is not relevant for this class.
             </summary>
         </member>
         <member name="E:Telerik.WinControls.UI.RadToggleSwitch.ValueChanging">
@@ -52139,7 +53889,7 @@
         </member>
         <member name="P:Telerik.WinControls.UI.RadColorSelector.EnableAnalytics">
             <summary>
-            Gets or sets a value indicating whether the Analytics functionality is enable or disbale for this control.
+            Gets or sets a value indicating whether the Analytics functionality is enable or disable for this control.
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.RadColorSelector.SelectedColor">
@@ -52259,7 +54009,7 @@
         </member>
         <member name="P:Telerik.WinControls.UI.RadColorSelector.SaveCustomColors">
             <summary>
-            Gets or sets a value indicatign whether custom colors should be save upon exiting the color picker.
+            Gets or sets a value indicating whether custom colors should be save upon exiting the color picker.
             </summary>
         </member>
         <member name="T:Telerik.WinControls.UI.RadColorPicker.CustomColors">
@@ -55868,6 +57618,11 @@
             <value>The default System.Drawing.Size of the control.</value>
             <remarks>The default Size of the control.</remarks>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadPanel.Text">
+            <summary>
+            This property is not relevant for this class.
+            </summary>
+        </member>
         <member name="P:Telerik.WinControls.UI.RadPanel.CausesValidation">
             <summary>
             Gets or sets a value indicating whether the control causes validation to be
@@ -55886,19 +57641,19 @@
         </member>
         <member name="P:Telerik.WinControls.UI.RadPanelElement.PanelFill">
             <summary>
-            Gets the <see cref="T:Telerik.WinControls.Primitives.FillPrimitive"/>of the
+            Gets the <see cref="T:Telerik.WinControls.Primitives.FillPrimitive"/> of the
             panel element.
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.RadPanelElement.PanelBorder">
             <summary>
-            Gets the <see cref="T:Telerik.WinControls.Primitives.BorderPrimitive"/>of the
+            Gets the <see cref="T:Telerik.WinControls.Primitives.BorderPrimitive"/> of the
             panel element.
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.RadPanelElement.PanelText">
             <summary>
-            Gets the <see cref="T:Telerik.WinControls.Primitives.TextPrimitive"/>of the
+            Gets the <see cref="T:Telerik.WinControls.Primitives.TextPrimitive"/> of the
             panel element.
             </summary>
         </member>
@@ -56417,9 +58172,9 @@
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.RadStatusStrip.Text">
-             <summary>
-            Gets or sets the text associated with this control.
-             </summary>
+            <summary>
+            This property is not relevant for this class.
+            </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.RadStatusStrip.SizingGrip">
             <summary>
@@ -56631,6 +58386,14 @@
             </summary>
             <param name="step"></param>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadSpinEditor.TabStop">
+            <summary>
+            Gets or sets a value indicating whether the user can give the focus to this control using the TAB key.
+            </summary>
+            <returns>
+            True if the user can give the focus to the control using the TAB key, otherwise false. The default is true.
+            </returns>
+        </member>
         <member name="P:Telerik.WinControls.UI.RadSpinEditor.DefaultSize">
             <summary>
             set the default control size
@@ -56732,6 +58495,16 @@
             <summary>
             Gets or sets the minimum value that could be set in the spin editor
             </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadSpinEditor.CausesValidation">
+            <summary>
+            Gets or sets a value indicating whether the control causes validation to be
+            performed on any controls that require validation when it receives focus.
+            </summary>
+            <value>
+            true if the control causes validation to be performed on any controls requiring
+            validation when it receives focus; otherwise, false.
+            </value>
         </member>
         <member name="E:Telerik.WinControls.UI.RadSpinEditor.ValueChanged">
             <summary>
@@ -56996,6 +58769,11 @@
             reference. 
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBoxBase.ShowNullText">
+            <summary>
+            Gets or sets a value indicating whether the null text will be shown when the control is focused and the text is empty.
+            </summary>
+        </member>
         <member name="P:Telerik.WinControls.UI.RadTextBoxBase.PasswordChar">
             <summary>
             	<span id="ctl00_ContentPlaceHolder1_src1_resRC_ctl01_LabelAbstract">Gets or sets
@@ -57116,6 +58894,11 @@
             Gets or sets a color of the null text
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.HostedTextBoxBase.ShowNullText">
+            <summary>
+            Gets or sets a value indicating whether the null text will be shown when the control is focused and the text is empty
+            </summary>
+        </member>
         <member name="P:Telerik.WinControls.UI.HostedTextBoxBase.UseGenericBorderPaint">
             <summary>
             Gets or sets a value indicating whether to show the bottom part of characters, clipped 
@@ -57169,6 +58952,16 @@
             <summary>
             Gets or sets a value indicating whether the clear button is shown.
             </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadTextBox.CausesValidation">
+            <summary>
+            Gets or sets a value indicating whether the control causes validation to be
+            performed on any controls that require validation when it receives focus.
+            </summary>
+            <value>
+            true if the control causes validation to be performed on any controls requiring
+            validation when it receives focus; otherwise, false.
+            </value>
         </member>
         <member name="T:Telerik.WinControls.UI.CheckBoxLayoutPanel">
             <summary>
@@ -57504,6 +59297,11 @@
             <summary>
             RadMenu consists of multiple visual elements and separate settings are provided to customize their appearance.
             Current ForeColor property might be ignored.
+            </summary>
+        </member>
+        <member name="P:Telerik.WinControls.UI.RadMenu.Text">
+            <summary>
+            This property is not relevant for this class.
             </summary>
         </member>
         <member name="T:Telerik.WinControls.UI.RadMenu.RadMenuState">
@@ -58200,6 +59998,11 @@
             Current ForeColor property might be ignored.
             </summary>
         </member>
+        <member name="P:Telerik.WinControls.UI.RadScrollBar.Text">
+            <summary>
+            This property is not relevant for this class.
+            </summary>
+        </member>
         <member name="E:Telerik.WinControls.UI.RadScrollBar.ValueChanged">
             <commentsfrom cref="E:Telerik.WinControls.UI.RadScrollBarElement.ValueChanged" filter=""/>
         </member>
@@ -58326,7 +60129,7 @@
             Gets or sets a value between 0.0 and 1.0 that indicates what part of the scrollable area
             can be occupied by the thumb. If the value is 0.0 then the thumb should be with length 0
             but the property MinThumbLength will cause the thumb to be larger.
-            If the value is 1.0 the the thumb takes the whole area between the two scrolling buttons.
+            If the value is 1.0 the thumb takes the whole area between the two scrolling buttons.
             Negative value means that the thumb length should be calculated automatically based on
             Minimum, Maximum and LargeChange values.
             </summary>
@@ -59117,11 +60920,6 @@
             </summary>
             <param name="clientRect">The client rectangle.</param>
         </member>
-        <member name="P:Telerik.WinControls.UI.WaitingBarContentElement.Indicators">
-            <summary>
-            Obsolete. Use WaitingIndicators instead.
-            </summary>
-        </member>
         <member name="P:Telerik.WinControls.UI.WaitingBarContentElement.WaitingIndicators">
             <summary>
             Gets a collection of <see cref="T:Telerik.WinControls.UI.BaseWaitingBarIndicatorElement"/> elements
@@ -59202,11 +61000,6 @@
         <member name="P:Telerik.WinControls.UI.RadWaitingBar.AutoSize">
             <summary>
             Gets or sets whether the edit control is auto-sized
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadWaitingBar.Indicators">
-            <summary>
-            Obsolete. Use WaitingIndicators instead.
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.RadWaitingBar.WaitingIndicators">
@@ -59373,11 +61166,6 @@
             <summary>
             Gets an instance of the <see cref="T:Telerik.WinControls.UI.WaitingBarContentElement"/> class
             that represents the waiting bar content element
-            </summary>
-        </member>
-        <member name="P:Telerik.WinControls.UI.RadWaitingBarElement.Indicators">
-            <summary>
-            Obsolete. Use WaitingIndicators instead.
             </summary>
         </member>
         <member name="P:Telerik.WinControls.UI.RadWaitingBarElement.WaitingIndicators">
