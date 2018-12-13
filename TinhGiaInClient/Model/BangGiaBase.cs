@@ -10,7 +10,7 @@ namespace TinhGiaInClient.Model
 {
     public class BangGiaBase
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Ten { get; set; }
         public string LoaiBangGia { get; set; }
         public string DienGiai { get; set; }

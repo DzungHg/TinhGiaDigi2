@@ -46,8 +46,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BangGiaLuyTienDAO.cs" />
+    <Compile Include="BangGiaTheoGoiDAO.cs" />
     <Compile Include="BangGiaTheoBuocDAO.cs" />
     <Compile Include="IBangGiaLuyTienDAO.cs" />
+    <Compile Include="IBangGiaTheoGoiDAO.cs" />
     <Compile Include="IBangGiaTheoBuocDAO.cs" />
     <Compile Include="IKhoSanPhamDAO.cs" />
     <Compile Include="INiemYetGiaInNhanhDAO.cs" />

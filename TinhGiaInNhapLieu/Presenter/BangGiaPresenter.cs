@@ -42,7 +42,7 @@ namespace TinhGiaInNhapLieu.Presenter
             if (View.ID <= 0)
                 return;
             //Đọc theo từng bảng
-            BangGiaBase bangGiaIn;
+            BangGiaBase bangGiaIn = null;
             switch (View.LoaiBangGia)
             {
                 case LoaiBangGiaS.LuyTien:
@@ -52,14 +52,12 @@ namespace TinhGiaInNhapLieu.Presenter
                     bangGiaIn = BangGiaTheoBuoc.DocTheoId(View.ID);
                     break;
                 case LoaiBangGiaS.Goi:
-                    bangGiaIn = BangGiaTheoBuoc.DocTheoId(View.ID);
+                    bangGiaIn = BangGiaTheoGoi.DocTheoId(View.ID);
                     break;
-                default:
-                     bangGiaIn = BangGiaTheoBuoc.DocTheoId(View.ID);
-                    break;
+               
             }
             
-            View.ID = bangGiaIn.ID;
+            View.ID = bangGiaIn.Id;
             View.Ten = bangGiaIn.Ten;
             View.DienGiai = bangGiaIn.DienGiai;
             View.DaySoLuong = bangGiaIn.DaySoLuong;
@@ -74,7 +72,7 @@ namespace TinhGiaInNhapLieu.Presenter
         {
             var bangGiaLT = new BangGiaLuyTien
             {
-                ID = View.ID,
+                Id = View.ID,
                 Ten = View.Ten,
                 DienGiai = View.DienGiai,
                 LoaiBangGia = View.LoaiBangGia.ToString(),
@@ -86,7 +84,19 @@ namespace TinhGiaInNhapLieu.Presenter
             };
             var bangGiaBuoc = new BangGiaTheoBuoc
             {
-                ID = View.ID,
+                Id = View.ID,
+                Ten = View.Ten,
+                DienGiai = View.DienGiai,
+                LoaiBangGia = View.LoaiBangGia.ToString(),
+                DaySoLuong = View.DaySoLuong,
+                DayGia = View.DayGiaTrang,
+                DonViTinh = View.DonViTinh,
+                ThuTu = View.ThuTu,
+                KhongCon = View.KhongSuDung
+            };
+            var bangGiaGoi = new BangGiaTheoGoi
+            {
+                Id = View.ID,
                 Ten = View.Ten,
                 DienGiai = View.DienGiai,
                 LoaiBangGia = View.LoaiBangGia.ToString(),
@@ -97,6 +107,7 @@ namespace TinhGiaInNhapLieu.Presenter
                 KhongCon = View.KhongSuDung
             };
             // case từng bảng
+            var lbg = View.LoaiBangGia.ToString();
 
             switch (View.LoaiBangGia)
             {
@@ -113,7 +124,7 @@ namespace TinhGiaInNhapLieu.Presenter
 
                     break;
 
-                default:
+                case LoaiBangGiaS.Buoc:
                     switch (View.TinhTrangForm)
                     {
                         case FormStateS.Edit:
@@ -125,6 +136,19 @@ namespace TinhGiaInNhapLieu.Presenter
                     }
 
                     break;
+                case LoaiBangGiaS.Goi:
+                    switch (View.TinhTrangForm)
+                    {
+                        case FormStateS.Edit:
+                            thongDiep = BangGiaTheoGoi.Sua(bangGiaGoi);
+                            break;
+                        case FormStateS.New:
+                            thongDiep = BangGiaTheoGoi.Them(bangGiaGoi);
+                            break;
+                    }
+
+                    break;
+
             }
 
         }

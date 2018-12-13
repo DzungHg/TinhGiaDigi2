@@ -70,7 +70,7 @@ namespace TinhGiaInClient.Model
         {
             var logic = new KhoSanPhamLogic();
 
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<KhoSanPham, KhoSanPham>());
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<KhoSanPham, KhoSanPhamBDO>());
             var mapper = config.CreateMapper();
             var objBDO = mapper.Map<KhoSanPhamBDO>(item);
             logic.Sua(objBDO);

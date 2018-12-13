@@ -240,56 +240,57 @@ namespace TinhGiaInClient.Model
 
             return kq;
         }
-        public static decimal GiaDanhThiep(string daySoLuong, string dayGia, int soLuong)
-        {///Dò số lượng lấy giá
-            ///Sau đó lấy giá tại khoảng đó nhân số lượng
+        public static decimal GiaGoi2(string daySoLuong, string dayGia, int soLuong)
+        {
+            ///Đặt số lượng và giá như sau
+            ///100, 200, 300, 400, 500
+            ///5000, 3000, 2000, 1000, 800
+            ///Khi đạt 100 tính 5000, đạt 200 tính 3000, đạt 300 tính 2000 v..v.
+            decimal kqTinhGia = 0;
 
-            int result = 0;
-
-            if (string.IsNullOrEmpty(daySoLuong) || string.IsNullOrEmpty(dayGia) ||
-                soLuong <= 0)
-                return result;
-            /*
-           //Tạo bản dãy số lượng
-
-           var daySoLuongs = daySoLuong.Split(';');
-           var dayLoiNhuans = dayGia.Split(';');
-           var giaTheoKhoang = 0;
-
-           var tmpI = 0;
-           //trường hợp soluong< Số lượng đầu tiên:
-           if (soLuong < int.Parse(daySoLuongs[0]))
-           {
-               tmpI = 0;
-               giaTheoKhoang = int.Parse(dayLoiNhuans[tmpI]);
-                
-           }
-           //Trường họp số lượng >= số lượng cuối (lớn nhất)
-           if (soLuong >= int.Parse(daySoLuongs[daySoLuongs.Length - 1]))
-           {
-               tmpI = daySoLuongs.Length - 1;
-               giaTheoKhoang = int.Parse(dayLoiNhuans[tmpI]);
-                
-           }
-           //Lặp tiếp chỉ đến phẩn tử kế cuối
-           for (int i = 0; i < daySoLuongs.Length - 1; i++) // chỉ đến kế cuối
-           {
-               //Tiếp tục
-               if (int.Parse(daySoLuongs[i]) <= soLuong && soLuong < int.Parse(daySoLuongs[i + 1]))
-               {
-                   tmpI = i;
-                   break;
-               }
-           }
-           //Vậy 
+            var daySoLuongS = daySoLuong.Split(';');
+            var dayGiaS = dayGia.Split(';');
+            //--Tìm khoảng:
             
-           giaTheoKhoang = int.Parse(dayLoiNhuans[tmpI]);
-         */
-            var giaTheoKhoang = TinhToan.GiaTriTheoKhoang(daySoLuong, dayGia, soLuong);
+           
+            //làm lại dãy số lượng
+            string[] daySoLuongExt = new string[daySoLuongS.Length + 1];
+            //1. Thêm 1 vô đầu tiên để tạo bản dãy số lượng mới cho phù hợp
+            daySoLuongExt[0] = 1.ToString();
+            //2. Thêm còn lại từ bản dãy daySoLuongS
+            for (int i = 1; i <= daySoLuongS.Length; i++)//Không lố
+                daySoLuongExt[i] = daySoLuongS[i - 1];
 
-            result = giaTheoKhoang * soLuong;
+            //3. Bắt đầu tính
+            var indexDayGia = 0;
+            //Trường họp số lượng >= số lượng cuối (lớn nhất)
+            if (soLuong >= int.Parse(daySoLuongExt[daySoLuongS.Length - 1]))
+            {
+                indexDayGia = daySoLuongExt.Length - 1;
+               
+               
+            }
+            else //chạy từ đầu đến cuối
+            {
+                //Lặp tiếp chỉ đến phẩn tử kế cuối
+                for (int i = 0; i < daySoLuongExt.Length - 1; i++) // chỉ đến kế cuối
+                {
+                    //Tiếp tục
+                    if (int.Parse(daySoLuongExt[i]) <= soLuong && soLuong < int.Parse(daySoLuongS[i + 1]))
+                    {
+                        indexDayGia = i;
+                        break;
+                    }
+                }
+            }
+            //Tính toán giá:
+            //1. Nếu số lượng vô < số lượng đầu tiên sẽ kết quả tính giá là - 1 vì không chấp nhận
+            if (soLuong < int.Parse(daySoLuongS[0]))
+                return -1;
+            else
+                kqTinhGia = decimal.Parse(dayGiaS[indexDayGia]) * soLuong;
 
-            return result;
+            return kqTinhGia;
         }
         public static decimal GiaTheNhua(string daySoLuong, string dayGia, int soLuong)
         {///Dò số lượng lấy giá

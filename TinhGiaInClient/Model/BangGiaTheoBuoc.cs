@@ -40,17 +40,27 @@ namespace TinhGiaInClient.Model
 
         public static string Them(BangGiaTheoBuoc bangGia)
         {
-            var bangGiaLogic = new BangGiaTheoBuocLogic();
-            var itemBDO = new BangGiaTheoBuocBDO();
+            var logic = new BangGiaTheoBuocLogic();
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<BangGiaTheoBuoc, BangGiaTheoBuocBDO>());
+            var mapper = config.CreateMapper();
+            var objBDO = mapper.Map<BangGiaTheoBuocBDO>(bangGia);
 
-            return bangGiaLogic.Them(itemBDO);
+            //Thêm
+            if (objBDO != null)
+            {
+                logic.Them(objBDO); //Thành công Mapper được
+            }
+            return "Đã thêm";
         }
         public static string Sua(BangGiaTheoBuoc bangGia)
         {
-            var bangGiaLogic = new BangGiaTheoBuocLogic();
-            var itemBDO = new BangGiaTheoBuocBDO();
+            var logic = new BangGiaTheoBuocLogic();
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<BangGiaTheoBuoc, BangGiaTheoBuocBDO>());
+            var mapper = config.CreateMapper();
+            var objBDO = mapper.Map<BangGiaTheoBuocBDO>(bangGia);
+            logic.Sua(objBDO);
 
-            return bangGiaLogic.Sua(itemBDO);
+            return "Sửa xong";
         }
         #endregion
 

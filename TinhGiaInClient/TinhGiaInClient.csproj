@@ -152,6 +152,7 @@
     <Compile Include="Model\BaiIn.cs" />
     <Compile Include="Model\BaiInTheNhua.cs" />
     <Compile Include="Model\BangGiaBase.cs" />
+    <Compile Include="Model\BangGiaTheoGoi.cs" />
     <Compile Include="Model\DanhSachBangGia.cs" />
     <Compile Include="Model\GiaInNhanhNiemYet.cs" />
     <Compile Include="Model\LoaiBangGiaNo.cs" />

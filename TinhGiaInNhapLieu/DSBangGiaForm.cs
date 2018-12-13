@@ -108,7 +108,7 @@ namespace TinhGiaInNhapLieu
             if (lstBangGia.SelectedItems.Count > 0)
                 {
                     var item = (BangGiaBase)lstBangGia.SelectedItems[0].DataBoundItem;
-                    this.IdBangGiaChon = item.ID;
+                    this.IdBangGiaChon = item.Id;
                 Enum.TryParse(item.LoaiBangGia, out loaiBangGia);
 
                     this.LoaiBangGia = loaiBangGia;

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BangGiaBDO.cs" />
     <Compile Include="BangGiaLuyTienBDO.cs" />
+    <Compile Include="BangGiaTheoGoiBDO.cs" />
     <Compile Include="BangGiaTheoBuocBDO.cs" />
     <Compile Include="KhoSanPhamBDO.cs" />
     <Compile Include="LoaiBangGiaBDO.cs" />

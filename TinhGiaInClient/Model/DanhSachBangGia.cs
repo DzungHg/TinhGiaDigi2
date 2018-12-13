@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TinhGiaInClient.Presenter;
 using TinhGiaInApp.Common.Enums;
+using TinhGiaInClient.Model;
 
 
 namespace TinhGiaInClient.Model
@@ -21,18 +22,27 @@ namespace TinhGiaInClient.Model
 
             }
             //Bảng giá tiếp
+            //var count = BangGiaTheoBuoc.DocTatCa().Count;
+            //var count2 = count;
             foreach (BangGiaTheoBuoc bg in BangGiaTheoBuoc.DocTatCa())
             {
                 lst.Add(bg);
 
             }
+            foreach (BangGiaTheoGoi bg in BangGiaTheoGoi.DocTatCa())
+            {
+                lst.Add(bg);
+
+            }
             return lst;
+
+
         }
         
         public static BangGiaBase DocTheoIDvaLoai(int id, LoaiBangGiaS loai)
         {
             BangGiaBase bg = null;
-            bg = DanhSachBangGia.DanhSachS().Where(x => x.ID == id && x.LoaiBangGia.Trim() == loai.ToString() ).SingleOrDefault();
+            bg = DanhSachBangGia.DanhSachS().Where(x => x.Id == id && x.LoaiBangGia.Trim() == loai.ToString() ).SingleOrDefault();
             return bg;
         }
         public static Dictionary<string, string> TrinhBayBangGiaTuDB(int idBangGia, LoaiBangGiaS loaiBangGia)

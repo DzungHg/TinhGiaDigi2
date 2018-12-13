@@ -27,9 +27,10 @@ namespace TinhGiaInNhapLieu.Presenter
             switch (View.LoaiBangGia)
             {
                 case LoaiBangGiaS.LuyTien:
+                    
                     lst = DanhSachBangGia.DanhSachS().Where(x => x.LoaiBangGia.Trim() == LoaiBangGiaS.LuyTien.ToString()).ToList();
                     
-                    var count = lst.Count();
+                    
                     break;
                 case LoaiBangGiaS.Buoc:
                     lst = DanhSachBangGia.DanhSachS().Where(x => x.LoaiBangGia.Trim() == LoaiBangGiaS.Buoc.ToString()).ToList();

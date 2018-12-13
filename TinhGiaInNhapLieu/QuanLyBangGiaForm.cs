@@ -35,7 +35,7 @@ namespace TinhGiaInNhapLieu
                 if (lstBangGia.SelectedItems.Count > 0)
                 {
                     var item = (BangGiaBase)lstBangGia.SelectedItems[0].DataBoundItem;
-                    _idBangGiaChon = item.ID;
+                    _idBangGiaChon = item.Id;
                 }
                 return _idBangGiaChon;
             }
@@ -46,13 +46,16 @@ namespace TinhGiaInNhapLieu
         {
             get
             {
+                LoaiBangGiaS loaiBangGia;
                 if (rdbLuyTien.IsChecked)
-                    return LoaiBangGiaS.LuyTien;
+                    loaiBangGia = LoaiBangGiaS.LuyTien;
                 else
                     if (rdbBuoc.IsChecked)
-                        return LoaiBangGiaS.Buoc;
-                    else
-                        return LoaiBangGiaS.Goi;
+                    loaiBangGia = LoaiBangGiaS.Buoc;
+                    else 
+                    loaiBangGia = LoaiBangGiaS.Goi;
+
+                return loaiBangGia;
             }
             set
             {
@@ -128,9 +131,9 @@ namespace TinhGiaInNhapLieu
         private void lstBangGia_ColumnCreating(object sender, Telerik.WinControls.UI.ListViewColumnCreatingEventArgs e)
         {
             
-            if (e.Column.FieldName == "ID")
+            if (e.Column.FieldName == "Id")
             {
-                e.Column.HeaderText = "ID";
+                e.Column.HeaderText = "Id";
                 e.Column.Width = 5;
                 e.Column.MinWidth = 5;
             }

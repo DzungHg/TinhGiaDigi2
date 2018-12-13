@@ -251,7 +251,6 @@
             this.cboLoaiBangGia.Name = "cboLoaiBangGia";
             this.cboLoaiBangGia.Size = new System.Drawing.Size(125, 20);
             this.cboLoaiBangGia.TabIndex = 61;
-            this.cboLoaiBangGia.Text = "Hạng Khách hàng";
             // 
             // BangGiaForm
             // 

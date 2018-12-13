@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BangGiaLuyTienLogic.cs" />
+    <Compile Include="BangGiaTheoGoiLogic.cs" />
     <Compile Include="BangGiaTheoBuocLogic.cs" />
     <Compile Include="LoaiBangGiaLogic.cs" />
     <Compile Include="KhoSanPhamLogic.cs" />
