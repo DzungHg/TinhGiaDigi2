@@ -30,7 +30,9 @@ namespace TinhGiaInClient
             giaInPres = new GiaInNhanhPresenter(this, giaIn);
             //Nạp bảng giá vô combo
             LoadNiemYetGia();
-            
+
+            MessageBox.Show(giaInPres.NiemYetGiaInNhanhS().Count.ToString());
+
             //Chọn bảng giá ở đây
             if (this.TinhTrangForm == FormStateS.Edit)
                 this.IdNiemYetChon = giaIn.IdNiemYetGiaInNhanh;
@@ -46,7 +48,7 @@ namespace TinhGiaInClient
             
         }
         #region implement Iview
-        public int ID
+        public int Id
         {
             get;
             set;
@@ -107,12 +109,12 @@ namespace TinhGiaInClient
             set { txtHangKhachHang.Text = value; }
         }
 
-
-        int _idBangGiaInNhanh = 0;
+        
         public int IdNiemYetChon
         {
             get
             {
+                int _idBangGiaInNhanh = 0;
                 if (cboNiemYetGia.SelectedValue != null)
                     int.TryParse(cboNiemYetGia.SelectedValue.ToString(), 
                         out _idBangGiaInNhanh);
@@ -179,8 +181,9 @@ namespace TinhGiaInClient
         public bool FormCanDong { get; set; }
         private void LoadNiemYetGia()
         {
+            cboNiemYetGia.DataSource = null;
             cboNiemYetGia.DataSource = giaInPres.NiemYetGiaInNhanhS();
-            cboNiemYetGia.ValueMember = "ID";
+            cboNiemYetGia.ValueMember = "Id";
             cboNiemYetGia.DisplayMember = "Ten";
         }
         
@@ -215,9 +218,13 @@ namespace TinhGiaInClient
             }
             else
             {
+                //TODO-Xem lại
                 //Bẫy để cập nhật chi tiết
-                cboNiemYetGia.SelectedIndex = -1;
-                cboNiemYetGia.SelectedIndex = 0; //có lỗi khi không có dữ liệu
+                if (cboNiemYetGia.DataSource != null)
+                {
+                   // cboNiemYetGia.SelectedIndex = -1;
+                    //cboNiemYetGia.SelectedIndex = 0; //có lỗi khi không có dữ liệu
+                }
             }
             
             //Ten hang KH
@@ -353,7 +360,10 @@ namespace TinhGiaInClient
         {
             TrinhBayBangGia();
             this.TyLeLoiNhuanTheoHangKH = giaInPres.TyLeLoiNhuanTheoHangKH();
-            this.SoTrangToiDaTheoBangGia = giaInPres.SoTrangToiDaTheoBangGia();
+            try
+            {
+                this.SoTrangToiDaTheoBangGia = giaInPres.SoTrangToiDaTheoBangGia();
+            } catch { }
         }
 
         private void btnClose_Click(object sender, EventArgs e)

@@ -38,7 +38,20 @@ namespace TinhGiaInClient.Model
 
 
         }
-        
+        public static List<BangGiaBase> DanhSachConDungS()
+        {
+            List<BangGiaBase> output = null;
+            output = DanhSachBangGia.DanhSachS().Where(x => x.KhongCon == false).ToList();
+            return output;
+
+        }
+        public static BangGiaBase DocTheoIDvaLoaiConDung(int id, LoaiBangGiaS loai)
+        {
+            BangGiaBase bg = null;
+            bg = DanhSachBangGia.DanhSachConDungS().Where(x => x.Id == id && x.LoaiBangGia.Trim() == loai.ToString()).SingleOrDefault();
+            return bg;
+        }
+
         public static BangGiaBase DocTheoIDvaLoai(int id, LoaiBangGiaS loai)
         {
             BangGiaBase bg = null;

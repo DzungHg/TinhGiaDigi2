@@ -194,7 +194,7 @@ namespace TinhGiaInClient.Model
 
             return result;
         }
-        public static decimal GiaGoi (string daySoLuong, string dayGia, int soLuong)
+        /*public static decimal GiaGoi (string daySoLuong, string dayGia, int soLuong)
         {
             decimal kq = 0;
             if (string.IsNullOrEmpty(daySoLuong) || string.IsNullOrEmpty(dayGia) ||
@@ -239,8 +239,8 @@ namespace TinhGiaInClient.Model
             }
 
             return kq;
-        }
-        public static decimal GiaGoi2(string daySoLuong, string dayGia, int soLuong)
+        }*/
+       /* public static decimal GiaGoi2(string daySoLuong, string dayGia, int soLuong)
         {
             ///Đặt số lượng và giá như sau
             ///100, 200, 300, 400, 500
@@ -288,7 +288,41 @@ namespace TinhGiaInClient.Model
             if (soLuong < int.Parse(daySoLuongS[0]))
                 return -1;
             else
+              
                 kqTinhGia = decimal.Parse(dayGiaS[indexDayGia]) * soLuong;
+
+            return kqTinhGia;
+        }*/
+        public static decimal GiaGoi3(string daySoLuong, string dayGia, int soLuong)
+        {
+            ///Đặt số lượng và giá như sau
+            ///100, 200, 300, 400, 500
+            ///5000, 3000, 2000, 1000, 800
+            ///Khi đạt 100 tính 5000, đạt 200 tính 3000, đạt 300 tính 2000 v..v.
+            decimal kqTinhGia = 0;
+
+            var daySoLuongS = daySoLuong.Split(';');
+            var dayGiaS = dayGia.Split(';');
+            //--Tìm khoảng
+
+            //1. Điều kiểm tra mức thấp nhất
+            if (soLuong < int.Parse(daySoLuongS[0]))
+                return -1; //vô nghĩa
+            //2. Nếu không thì kiểm tiếp từ cao tới thấp
+            var indexDayGia = 0;
+
+            for (int i = daySoLuongS.Length-1; i >= 0; i--)
+                if ( (soLuong - int.Parse(daySoLuongS[i])) >= 0)
+                {
+                    indexDayGia = i;
+                    break;
+                }
+            
+
+            //3. Tính giá
+            
+           
+            kqTinhGia = decimal.Parse(dayGiaS[indexDayGia]) * soLuong;
 
             return kqTinhGia;
         }

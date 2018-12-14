@@ -150,7 +150,7 @@ namespace TinhGiaInClient.Presenter
                     kq = TinhToan.GiaBuoc(bGiaInNhanh.DaySoLuong, bGiaInNhanh.DayGia, soTrangA4);
                     break;
                 case Global.cBangGiaGoi:
-                    kq = TinhToan.GiaGoi(bGiaInNhanh.DaySoLuong, bGiaInNhanh.DayGia, soTrangA4);
+                    kq = TinhToan.GiaGoi3(bGiaInNhanh.DaySoLuong, bGiaInNhanh.DayGia, soTrangA4);
                     break;
             }           
              

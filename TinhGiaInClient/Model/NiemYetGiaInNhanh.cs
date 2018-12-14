@@ -99,8 +99,7 @@ namespace TinhGiaInClient.Model
 
             var objBDO = logic.DocTheoId(idNiemYetGia);
 
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<NiemYetGiaInNhanhBDO, NiemYetGiaInNhanh>()
-                        );
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<NiemYetGiaInNhanhBDO, NiemYetGiaInNhanh>()   );
             var mapper = config.CreateMapper();
 
             var objModel = mapper.Map<NiemYetGiaInNhanh>(objBDO);
@@ -109,18 +108,32 @@ namespace TinhGiaInClient.Model
             return objModel;
         }
         #region them sua xoa
-        public static string Them(NiemYetGiaInNhanh toInMayDigi)
+        public static string Them(NiemYetGiaInNhanh niemYetGiaInNhanh)
         {
-            var NiemYetGiaInNhanhLogic = new NiemYetGiaInNhanhLogic();
-            var itemBDO = new NiemYetGiaInNhanhBDO();
+            var logic = new NiemYetGiaInNhanhLogic();
+           
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<NiemYetGiaInNhanh, NiemYetGiaInNhanhBDO>());
+            var mapper = config.CreateMapper();
+            var objBDO = mapper.Map<NiemYetGiaInNhanhBDO>(niemYetGiaInNhanh);
 
-            return NiemYetGiaInNhanhLogic.Them(itemBDO);
+            //Thêm
+            if (objBDO != null)
+            {
+                logic.Them(objBDO); //Thành công Mapper được
+            }
+            return "Đã thêm";
         }
-        public static bool Sua(ref string thongDiep, NiemYetGiaInNhanh toInMayDigi)
+        public static bool Sua(ref string thongDiep, NiemYetGiaInNhanh niemYetGiaInNhanh)
         {
-            var NiemYetGiaInNhanhLogic = new NiemYetGiaInNhanhLogic();
-            var itemBDO = new NiemYetGiaInNhanhBDO();
-            return NiemYetGiaInNhanhLogic.Sua(ref thongDiep, itemBDO);
+            string thongDiepRef = "";
+            var logic = new NiemYetGiaInNhanhLogic();
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<NiemYetGiaInNhanh, NiemYetGiaInNhanhBDO>());
+            var mapper = config.CreateMapper();
+            var objBDO = mapper.Map<NiemYetGiaInNhanhBDO>(niemYetGiaInNhanh);
+
+            logic.Sua(ref thongDiepRef, objBDO);
+
+            return true;
         }
         #endregion
 

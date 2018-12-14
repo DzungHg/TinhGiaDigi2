@@ -38,7 +38,7 @@ namespace TinhGiaInClient.Model
                     ketQua = TinhToan.GiaBuoc(this.BangGiaInNhanh.DaySoLuong, this.BangGiaInNhanh.DayGia, soLuong);
                     break;
                 case Global.cBangGiaGoi:
-                    ketQua = TinhToan.GiaGoi(this.BangGiaInNhanh.DaySoLuong, this.BangGiaInNhanh.DayGia, soLuong);
+                    ketQua = TinhToan.GiaGoi3(this.BangGiaInNhanh.DaySoLuong, this.BangGiaInNhanh.DayGia, soLuong);
                     break;
             }
                         

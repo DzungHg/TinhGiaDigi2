@@ -20,17 +20,16 @@ namespace TinhGiaInNhapLieu
         public BangGiaForm(LoaiBangGiaS loaiBangGia, FormStateS tinhTrangForm, int idBangGia = 0 )
         {
             InitializeComponent();
-            //Khởi đầu một số dữ liệu
-            cboLoaiBangGia.DataSource = Enum.GetValues(typeof(LoaiBangGiaS));
+            
 
             //NhapMotSoCoban
-            this.ID = idBangGia;
-            this.LoaiBangGia = loaiBangGia;
+            this.Id = idBangGia;
+            this.LoaiBangGia = loaiBangGia.ToString();         
             this.TinhTrangForm = tinhTrangForm;
             //
             bangGiaPres = new BangGiaPresenter(this);
 
-           
+            //MessageBox.Show(loaiBangGia.ToString());
 
            
             //Event
@@ -57,7 +56,7 @@ namespace TinhGiaInNhapLieu
         }
         BangGiaPresenter bangGiaPres;
         #region implementIView
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Ten
         {
             get
@@ -87,15 +86,16 @@ namespace TinhGiaInNhapLieu
 
 
 
-        public LoaiBangGiaS LoaiBangGia
+        public string LoaiBangGia
         {
             
             get {
-                LoaiBangGiaS loaiBangGia;
-                Enum.TryParse(cboLoaiBangGia.SelectedItem.ToString(), out loaiBangGia);
-                return loaiBangGia;
+                return txtLoaiBangGia.Text;
             }
-            set { cboLoaiBangGia.Text = value.ToString(); }
+            set {
+
+                txtLoaiBangGia.Text = value;
+                 }
         }
         public string DonViTinh
         {
@@ -302,7 +302,7 @@ namespace TinhGiaInNhapLieu
             bangGiaPres.TrinhBayChiTietBangGia();
             this.DataChanged = false;
             btnLuu.Enabled = this.DataChanged;
-            lblIDBanGia.Text = this.ID.ToString();
+            lblIDBanGia.Text = this.Id.ToString();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)

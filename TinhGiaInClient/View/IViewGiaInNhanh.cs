@@ -10,7 +10,7 @@ namespace TinhGiaInClient.View
 {
     public interface IViewGiaInNhanh
     {
-        int ID { get; set; }
+        int Id { get; set; }
         int IdBaiIn { get; set; }
         int IdHangKH { get; set; }
         string TenHangKH { get; set; }

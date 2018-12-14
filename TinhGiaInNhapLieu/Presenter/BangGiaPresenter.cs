@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TinhGiaInClient.Model;
 using TinhGiaInNhapLieu.View;
 using TinhGiaInApp.Common.Enums;
@@ -24,7 +25,7 @@ namespace TinhGiaInNhapLieu.Presenter
        
         public void TrinhBayThemMoi()
         {
-            View.ID = 0;
+            View.Id = 0;
             View.Ten = "";
             View.DienGiai = "Diễn giải";
                     
@@ -39,25 +40,27 @@ namespace TinhGiaInNhapLieu.Presenter
         }
         public void TrinhBayChiTietBangGia()
         {
-            if (View.ID <= 0)
+            if (View.Id <= 0)
                 return;
             //Đọc theo từng bảng
             BangGiaBase bangGiaIn = null;
-            switch (View.LoaiBangGia)
+            LoaiBangGiaS loaiBangGia;
+            Enum.TryParse(View.LoaiBangGia, out loaiBangGia);
+            switch (loaiBangGia)
             {
                 case LoaiBangGiaS.LuyTien:
-                    bangGiaIn = BangGiaLuyTien.DocTheoId(View.ID);
+                    bangGiaIn = BangGiaLuyTien.DocTheoId(View.Id);
                     break;
                 case LoaiBangGiaS.Buoc:
-                    bangGiaIn = BangGiaTheoBuoc.DocTheoId(View.ID);
+                    bangGiaIn = BangGiaTheoBuoc.DocTheoId(View.Id);
                     break;
                 case LoaiBangGiaS.Goi:
-                    bangGiaIn = BangGiaTheoGoi.DocTheoId(View.ID);
+                    bangGiaIn = BangGiaTheoGoi.DocTheoId(View.Id);
                     break;
                
             }
             
-            View.ID = bangGiaIn.Id;
+            //View.ID = bangGiaIn.Id;
             View.Ten = bangGiaIn.Ten;
             View.DienGiai = bangGiaIn.DienGiai;
             View.DaySoLuong = bangGiaIn.DaySoLuong;
@@ -72,7 +75,7 @@ namespace TinhGiaInNhapLieu.Presenter
         {
             var bangGiaLT = new BangGiaLuyTien
             {
-                Id = View.ID,
+                Id = View.Id,
                 Ten = View.Ten,
                 DienGiai = View.DienGiai,
                 LoaiBangGia = View.LoaiBangGia.ToString(),
@@ -84,7 +87,7 @@ namespace TinhGiaInNhapLieu.Presenter
             };
             var bangGiaBuoc = new BangGiaTheoBuoc
             {
-                Id = View.ID,
+                Id = View.Id,
                 Ten = View.Ten,
                 DienGiai = View.DienGiai,
                 LoaiBangGia = View.LoaiBangGia.ToString(),
@@ -96,7 +99,7 @@ namespace TinhGiaInNhapLieu.Presenter
             };
             var bangGiaGoi = new BangGiaTheoGoi
             {
-                Id = View.ID,
+                Id = View.Id,
                 Ten = View.Ten,
                 DienGiai = View.DienGiai,
                 LoaiBangGia = View.LoaiBangGia.ToString(),
@@ -106,10 +109,10 @@ namespace TinhGiaInNhapLieu.Presenter
                 ThuTu = View.ThuTu,
                 KhongCon = View.KhongSuDung
             };
-            // case từng bảng
-            var lbg = View.LoaiBangGia.ToString();
-
-            switch (View.LoaiBangGia)
+           
+            LoaiBangGiaS loaiBangGia;
+            Enum.TryParse(View.LoaiBangGia, out loaiBangGia);
+            switch (loaiBangGia)
             {
                 case LoaiBangGiaS.LuyTien:
                     switch (View.TinhTrangForm)
@@ -155,10 +158,12 @@ namespace TinhGiaInNhapLieu.Presenter
         public Dictionary<string, string> TrinhBayBangGia()
         {
             Dictionary<string, string> kq = null;
-         
+
             // làm treenform là được
+            LoaiBangGiaS loaiBangGia;
+            Enum.TryParse(View.LoaiBangGia, out loaiBangGia);
             kq = DanhSachBangGia.TrinhBayBangGia(View.DaySoLuong, View.DayGiaTrang,
-                View.LoaiBangGia, View.DonViTinh);
+                loaiBangGia, View.DonViTinh);
 
             return kq;
         }

@@ -49,7 +49,7 @@
             this.btnKiemTraBG = new Telerik.WinControls.UI.RadButton();
             this.txtDonViTinh = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
-            this.cboLoaiBangGia = new Telerik.WinControls.UI.RadDropDownList();
+            this.txtLoaiBangGia = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnLuu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDong)).BeginInit();
@@ -70,7 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnKiemTraBG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDonViTinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboLoaiBangGia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLoaiBangGia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -244,20 +244,20 @@
             this.radLabel4.TabIndex = 54;
             this.radLabel4.Text = "Đơn vị tính";
             // 
-            // cboLoaiBangGia
+            // txtLoaiBangGia
             // 
-            this.cboLoaiBangGia.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            this.cboLoaiBangGia.Location = new System.Drawing.Point(98, 129);
-            this.cboLoaiBangGia.Name = "cboLoaiBangGia";
-            this.cboLoaiBangGia.Size = new System.Drawing.Size(125, 20);
-            this.cboLoaiBangGia.TabIndex = 61;
+            this.txtLoaiBangGia.Location = new System.Drawing.Point(98, 129);
+            this.txtLoaiBangGia.Name = "txtLoaiBangGia";
+            this.txtLoaiBangGia.ReadOnly = true;
+            this.txtLoaiBangGia.Size = new System.Drawing.Size(104, 20);
+            this.txtLoaiBangGia.TabIndex = 3;
             // 
             // BangGiaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 356);
-            this.Controls.Add(this.cboLoaiBangGia);
+            this.Controls.Add(this.txtLoaiBangGia);
             this.Controls.Add(this.radLabel4);
             this.Controls.Add(this.txtDonViTinh);
             this.Controls.Add(this.btnKiemTraBG);
@@ -306,7 +306,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnKiemTraBG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDonViTinh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboLoaiBangGia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLoaiBangGia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -336,6 +336,6 @@
         private Telerik.WinControls.UI.RadButton btnKiemTraBG;
         private Telerik.WinControls.UI.RadTextBox txtDonViTinh;
         private Telerik.WinControls.UI.RadLabel radLabel4;
-        private Telerik.WinControls.UI.RadDropDownList cboLoaiBangGia;
+        private Telerik.WinControls.UI.RadTextBox txtLoaiBangGia;
     }
 }

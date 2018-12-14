@@ -112,8 +112,24 @@ namespace TinhGiaInNhapLieu.Presenter
             }
             //
             var bangGia = DanhSachBangGia.DocTheoIDvaLoai(View.IdBangGiaChon, View.LoaiBangGia);
-            var giaInNhanhNiemYet = new GiaInNhanhNiemYet(View.SoTrangTinhThu, bangGia);
-            kq = giaInNhanhNiemYet.ThanhTienSales();
+            /* var giaInNhanhNiemYet = new GiaInNhanhNiemYet(View.SoTrangTinhThu, bangGia);
+             kq = giaInNhanhNiemYet.ThanhTienSales(); */
+            //Tính thử theo giá của bảng giá chứ không phải niêm yết
+            LoaiBangGiaS loaiBangGia;            
+            Enum.TryParse(bangGia.LoaiBangGia.Trim(), out loaiBangGia);
+            switch(loaiBangGia)
+            {
+                case LoaiBangGiaS.LuyTien:
+                    kq = TinhToan.GiaInLuyTien(bangGia.DaySoLuong, bangGia.DayGia, View.SoTrangTinhThu);
+                    break;
+                case LoaiBangGiaS.Buoc:
+                    kq = TinhToan.GiaBuoc(bangGia.DaySoLuong, bangGia.DayGia, View.SoTrangTinhThu);
+                    break;
+                case LoaiBangGiaS.Goi://Gói cũ giống Bước
+                    kq = TinhToan.GiaGoi3(bangGia.DaySoLuong, bangGia.DayGia, View.SoTrangTinhThu);
+                    break;
+            }
+
 
             giaTBA4 = string.Format("{0:0,0}đ/A4", Math.Round(kq / View.SoTrangTinhThu));
             return kq;

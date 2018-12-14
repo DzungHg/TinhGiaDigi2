@@ -21,7 +21,7 @@ namespace TinhGiaInClient.Presenter
             View = view;
             MucGiaInNhanh = mucGiaIn;
 
-            View.ID = MucGiaInNhanh.ID;
+            View.Id = MucGiaInNhanh.ID;
             View.IdMayInOrToIn = MucGiaInNhanh.IdMayIn;
             View.IdNiemYetChon = MucGiaInNhanh.IdNiemYetGiaInNhanh;
             View.ChoTinhGopTrang = MucGiaInNhanh.ChoTinhGopTrang;
@@ -71,7 +71,7 @@ namespace TinhGiaInClient.Presenter
         }
         public int SoTrangToiDaTheoBangGia()
         {
-            
+            //TODO: bị null ở đây
             return NiemYetGiaInNhanh.DocTheoId(View.IdNiemYetChon).SoTrangToiDa;
         }
         public string TenToInDigiChon()
@@ -132,7 +132,7 @@ namespace TinhGiaInClient.Presenter
                         kq = TinhToan.GiaBuoc(bGiaInNhanh.DaySoLuong, bGiaInNhanh.DayGia, View.SoTrangA4);
                         break;
                     case Global.cBangGiaGoi:
-                         kq = TinhToan.GiaGoi(bGiaInNhanh.DaySoLuong, bGiaInNhanh.DayGia, View.SoTrangA4);
+                         kq = TinhToan.GiaGoi3(bGiaInNhanh.DaySoLuong, bGiaInNhanh.DayGia, View.SoTrangA4);
                         break;
                 }
 

@@ -27,7 +27,7 @@ namespace TinhGiaInNhapLieu
         //
         public void LoadBangGia()
         {
-            lstBangGia.DataSource = DanhSachBangGia.DanhSachS();
+            lstBangGia.DataSource = DanhSachBangGia.DanhSachConDungS();
             lstBangGia.DataMember = "Id";
 
         }
