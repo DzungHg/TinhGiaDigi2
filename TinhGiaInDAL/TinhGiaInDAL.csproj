@@ -201,7 +201,6 @@
     <Compile Include="RepoTinhGia\IDongCuonDAO.cs" />
     <Compile Include="RepoTinhGia\ICanPhuDAO.cs" />
     <Compile Include="RepoTinhGia\MarkUpLoiNhuanGiayDAO.cs" />
-    <Compile Include="RepoTinhGia\HangKhachHangDAO.cs" />
     <Compile Include="RepoTinhGia\BangGiaInNhanhDAO.cs" />
     <Compile Include="RepoTinhGia\BANG_GIA_IN_NHANH.cs">
       <DependentUpon>QLyGiaInModel.tt</DependentUpon>
@@ -212,7 +211,6 @@
       <DependentUpon>QLyGiaInModel.tt</DependentUpon>
     </Compile>
     <Compile Include="RepoTinhGia\IMarkUpLoiNhuanGiay.cs" />
-    <Compile Include="RepoTinhGia\IHangKhachHangDAO.cs" />
     <Compile Include="RepoTinhGia\IBangGiaInNhanhDAO.cs" />
     <Compile Include="RepoTinhGia\IDanhMucGiayDAO.cs" />
     <Compile Include="RepoTinhGia\IGiayDAO.cs" />

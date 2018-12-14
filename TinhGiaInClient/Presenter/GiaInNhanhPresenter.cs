@@ -15,35 +15,47 @@ namespace TinhGiaInClient.Presenter
     public class GiaInNhanhPresenter
     {
         IViewGiaInNhanh View;
-        MucGiaIn MucGiaInNhanh;
+        private MucGiaIn _mucGiaInNhanh;
         public GiaInNhanhPresenter(IViewGiaInNhanh view, MucGiaIn mucGiaIn)
         {
             View = view;
-            MucGiaInNhanh = mucGiaIn;
 
-            View.Id = MucGiaInNhanh.ID;
-            View.IdMayInOrToIn = MucGiaInNhanh.IdMayIn;
-            View.IdNiemYetChon = MucGiaInNhanh.IdNiemYetGiaInNhanh;
-            View.ChoTinhGopTrang = MucGiaInNhanh.ChoTinhGopTrang;
-            View.IdBaiIn = MucGiaInNhanh.IdBaiIn;
-            View.IdHangKH = MucGiaInNhanh.IdHangKhachHang;
-            View.SoToChay = MucGiaInNhanh.SoToChay;
-            View.SoMatIn = MucGiaInNhanh.SoMatIn;               
-          
+            this._mucGiaInNhanh = mucGiaIn;
+
+        }
+        public void CapNhatMucGiaInVoView()
+        {
+            View.Id = _mucGiaInNhanh.ID;
+            View.IdMayInOrToIn = _mucGiaInNhanh.IdMayIn;
+            View.IdNiemYetChon = _mucGiaInNhanh.IdNiemYetGiaInNhanh;
+            View.ChoTinhGopTrang = _mucGiaInNhanh.ChoTinhGopTrang;
+            View.IdBaiIn = _mucGiaInNhanh.IdBaiIn;
+            View.IdHangKH = _mucGiaInNhanh.IdHangKhachHang;
+            View.SoToChay = _mucGiaInNhanh.SoToChay;
+            View.SoMatIn = _mucGiaInNhanh.SoMatIn;
+
         }
         public string TenHangKH (int idHangKH)
         {
-            return HangKhachHang.LayTheoId(idHangKH).Ten;
+            return HangKhachHang.DocTheoId(idHangKH).Ten;
         }
         public int TyLeLoiNhuanTheoHangKH()
         {
-            return HangKhachHang.LayTheoId(View.IdHangKH).LoiNhuanChenhLech;
+            
+            return HangKhachHang.DocTheoId(View.IdHangKH).LoiNhuanChenhLech;
+           
         }
-        public List<NiemYetGiaInNhanh>NiemYetGiaInNhanhS()
+        public List<NiemYetGiaInNhanh>NiemYetGiaTheoHangKH()
         {
+            
+            var id = View.IdHangKH;
             return NiemYetGiaInNhanh.DocTheoIdHangKHConDung(View.IdHangKH);
         }
-        private BangGiaBase DocBangGiaChon()
+        public List<HangKhachHang>HangKhachHangS()
+        {
+            return HangKhachHang.DocTatCa();
+        }
+        private BangGiaBase DocBangGiaChonTheoNiemYetGia()
         {
             BangGiaBase kq = null;
             if (View.IdNiemYetChon > 0)
@@ -52,7 +64,7 @@ namespace TinhGiaInClient.Presenter
 
                 LoaiBangGiaS loaiBangGia;
                 Enum.TryParse(niemYetGia.LoaiBangGia, out loaiBangGia);
-                kq = DanhSachBangGia.DocTheoIDvaLoai(niemYetGia.IdBangGia,
+                kq = DanhSachBangGia.DocTheoIdVaLoai(niemYetGia.IdBangGia,
                     loaiBangGia);
             }
             return kq;
@@ -71,7 +83,7 @@ namespace TinhGiaInClient.Presenter
         }
         public int SoTrangToiDaTheoBangGia()
         {
-            //TODO: bị null ở đây
+            
             return NiemYetGiaInNhanh.DocTheoId(View.IdNiemYetChon).SoTrangToiDa;
         }
         public string TenToInDigiChon()
@@ -95,20 +107,22 @@ namespace TinhGiaInClient.Presenter
         public Dictionary<string, string> TrinhBayBangGia()
         {
             Dictionary<string, string> kq = null;
-            if (this.DocBangGiaChon() != null)
+            if(string.IsNullOrEmpty(View.LoaiBangGiaNiemYet))
+                return kq;
+
+            var bangGiaChon = this.DocBangGiaChonTheoNiemYetGia();
+            if (bangGiaChon != null)
             {
-                if (View.LoaiBangGiaNiemYet == Global.cBangGiaLuyTien)
-                    kq = HoTro.TrinhBayBangGiaLuyTien(this.DocBangGiaChon().DaySoLuong,
-                        this.DocBangGiaChon().DayGia, this.DocBangGiaChon().DonViTinh);
+                LoaiBangGiaS loaiBangGia;
+                Enum.TryParse(View.LoaiBangGiaNiemYet.Trim(), out loaiBangGia);
 
-                if (View.LoaiBangGiaNiemYet == Global.cBangGiaBuoc)
-                    kq = HoTro.TrinhBayBangGiaBuoc(this.DocBangGiaChon().DaySoLuong,
-                        this.DocBangGiaChon().DayGia, this.DocBangGiaChon().DonViTinh);
+                /* kq = DanhSachBangGia.TrinhBayBangGia(bangGiaChon.DaySoLuong,
+                     bangGiaChon.DayGia, loaiBangGia, bangGiaChon.DonViTinh);
+                     */
 
-                if (View.LoaiBangGiaNiemYet == Global.cBangGiaGoi)
-                    kq = HoTro.TrinhBayBangGiaGoi(this.DocBangGiaChon().DaySoLuong,
-                        this.DocBangGiaChon().DayGia, this.DocBangGiaChon().DonViTinh);
+                kq = DanhSachBangGia.TrinhBayBangGiaTuDB(bangGiaChon.Id, loaiBangGia);
             }
+            
             return kq;
         }
        
@@ -116,22 +130,25 @@ namespace TinhGiaInClient.Presenter
         {
             decimal kq = 0;
             giaTBTrang = 0;
-            if (this.DocBangGiaChon() == null || View.SoTrangA4 <= 0)
+            if (this.DocBangGiaChonTheoNiemYetGia() == null || View.SoTrangA4 <= 0)
             {
                 return kq;
             }
             //Vượt tiép
+            LoaiBangGiaS loaiBangGia;
+            var bGiaInNhanh = this.DocBangGiaChonTheoNiemYetGia();
+            Enum.TryParse(bGiaInNhanh.LoaiBangGia.Trim(), out loaiBangGia);
            
-                var bGiaInNhanh = this.DocBangGiaChon();
-                switch (bGiaInNhanh.LoaiBangGia.Trim())
+                
+                switch (loaiBangGia)
                 { 
-                    case Global.cBangGiaLuyTien:                
+                    case LoaiBangGiaS.LuyTien:                
                         kq = TinhToan.GiaInLuyTien(bGiaInNhanh.DaySoLuong, bGiaInNhanh.DayGia, View.SoTrangA4);
                         break;
-                    case Global.cBangGiaBuoc:
+                    case LoaiBangGiaS.Buoc:
                         kq = TinhToan.GiaBuoc(bGiaInNhanh.DaySoLuong, bGiaInNhanh.DayGia, View.SoTrangA4);
                         break;
-                    case Global.cBangGiaGoi:
+                    case LoaiBangGiaS.Goi:
                          kq = TinhToan.GiaGoi3(bGiaInNhanh.DaySoLuong, bGiaInNhanh.DayGia, View.SoTrangA4);
                         break;
                 }
@@ -141,37 +158,40 @@ namespace TinhGiaInClient.Presenter
             return kq;
         }
         public decimal TinhGiaCuoiCung(ref decimal giaTBTrang) //Ngưng dùng
-        {            
-            var giaInKetHop = new GiaInNhanhKetHopBangGia_May(View.SoTrangA4, this.DocBangGiaChon(),
+        {   /*         
+            var giaInKetHop = new GiaInNhanhKetHopBangGia_May(View.SoTrangA4, this.DocBangGiaChonTheoNiemYetGia(),
                             View.SoTrangToiDaTheoBangGia, View.IdMayInOrToIn, TyLeLoiNhuanTheoHangKH());
 
             giaTBTrang = giaInKetHop.GiaTBTrenDonViTinh();
             return giaInKetHop.GiaBan();
+            */// Trên không còn phù hợp nữa //Do đã cài đăt các loại bảng giá cho phù hợp
+
+            return GiaInNhanhTheoBang(ref giaTBTrang);
         }
 
     
         private void CapNhatMucGiaInNhanh()
         {
-            if (this.MucGiaInNhanh != null)
+            if (this._mucGiaInNhanh != null)
             {
-                MucGiaInNhanh.IdBaiIn = View.IdBaiIn;
-                MucGiaInNhanh.PhuongPhapIn = View.PhuongPhapIn;
-                MucGiaInNhanh.IdMayIn = View.IdMayInOrToIn;
-                MucGiaInNhanh.IdNiemYetGiaInNhanh = View.IdNiemYetChon;
-                MucGiaInNhanh.ChoTinhGopTrang = View.ChoTinhGopTrang;
-                MucGiaInNhanh.SoTrangIn = View.SoTrangA4;
-                MucGiaInNhanh.IdHangKhachHang = View.IdHangKH;
-                MucGiaInNhanh.SoToChay = View.SoToChay;
-                MucGiaInNhanh.SoMatIn = View.SoMatIn;
+                _mucGiaInNhanh.IdBaiIn = View.IdBaiIn;
+                _mucGiaInNhanh.PhuongPhapIn = View.PhuongPhapIn;
+                _mucGiaInNhanh.IdMayIn = View.IdMayInOrToIn;
+                _mucGiaInNhanh.IdNiemYetGiaInNhanh = View.IdNiemYetChon;
+                _mucGiaInNhanh.ChoTinhGopTrang = View.ChoTinhGopTrang;
+                _mucGiaInNhanh.SoTrangIn = View.SoTrangA4;
+                _mucGiaInNhanh.IdHangKhachHang = View.IdHangKH;
+                _mucGiaInNhanh.SoToChay = View.SoToChay;
+                _mucGiaInNhanh.SoMatIn = View.SoMatIn;
               
                 decimal giaTBTrang = 0;
-                MucGiaInNhanh.TienIn = this.TinhGiaCuoiCung(ref giaTBTrang);
+                _mucGiaInNhanh.TienIn = this.TinhGiaCuoiCung(ref giaTBTrang);
             }
         }
         public MucGiaIn DocMucGiaIn() 
         {
             CapNhatMucGiaInNhanh();//cập nhật đã
-            return this.MucGiaInNhanh;
+            return this._mucGiaInNhanh;
 
         }
     }

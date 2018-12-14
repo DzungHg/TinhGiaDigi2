@@ -44,6 +44,7 @@
     <Compile Include="BangGiaLuyTienLogic.cs" />
     <Compile Include="BangGiaTheoGoiLogic.cs" />
     <Compile Include="BangGiaTheoBuocLogic.cs" />
+    <Compile Include="HangKhachHangLogic.cs" />
     <Compile Include="LoaiBangGiaLogic.cs" />
     <Compile Include="KhoSanPhamLogic.cs" />
     <Compile Include="NiemYetGiaInNhanhLogic.cs" />

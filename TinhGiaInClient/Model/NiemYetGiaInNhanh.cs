@@ -70,8 +70,12 @@ namespace TinhGiaInClient.Model
         }
         public static List<NiemYetGiaInNhanh> DocTatCaConDung()
         {
-            var nguon = DocTatCa().Where(x => !x.KhongSuDung).OrderBy(x => x.ThuTu);
-            return nguon.ToList();
+            var logic = new NiemYetGiaInNhanhLogic();
+
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<NiemYetGiaInNhanhBDO, NiemYetGiaInNhanh>());
+            var mapper = config.CreateMapper();
+            List<NiemYetGiaInNhanh> nguon = mapper.Map<List<NiemYetGiaInNhanhBDO>, List<NiemYetGiaInNhanh>>(logic.DocTatCaConDung());
+            return nguon;
         }
 
         public static List<NiemYetGiaInNhanh> DocTheoIdHangKHConDung(int idHangKH)
@@ -80,9 +84,9 @@ namespace TinhGiaInClient.Model
 
             var config = new MapperConfiguration(cfg => cfg.CreateMap<NiemYetGiaInNhanhBDO, NiemYetGiaInNhanh>());
             var mapper = config.CreateMapper();
-            List<NiemYetGiaInNhanh> nguon = mapper.Map<List<NiemYetGiaInNhanhBDO>, List<NiemYetGiaInNhanh>>(logic.DocTatCaConDung());
+            List<NiemYetGiaInNhanh> nguon = mapper.Map<List<NiemYetGiaInNhanhBDO>, List<NiemYetGiaInNhanh>>(logic.DocTheoIdHangKHConDung(idHangKH));
 
-            return nguon.Where(x => x.IdHangKhachHang == idHangKH).ToList();
+            return nguon;
         }
         public static List<NiemYetGiaInNhanh> DocTheoIdHangKH(int idHangKH)
         {

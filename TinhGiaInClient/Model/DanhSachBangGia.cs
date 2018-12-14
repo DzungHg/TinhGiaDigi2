@@ -52,7 +52,7 @@ namespace TinhGiaInClient.Model
             return bg;
         }
 
-        public static BangGiaBase DocTheoIDvaLoai(int id, LoaiBangGiaS loai)
+        public static BangGiaBase DocTheoIdVaLoai(int id, LoaiBangGiaS loai)
         {
             BangGiaBase bg = null;
             bg = DanhSachBangGia.DanhSachS().Where(x => x.Id == id && x.LoaiBangGia.Trim() == loai.ToString() ).SingleOrDefault();
@@ -65,7 +65,11 @@ namespace TinhGiaInClient.Model
                 return kq;
 
 
-            var bangGiaChon = DanhSachBangGia.DocTheoIDvaLoai(idBangGia, loaiBangGia);
+            var bangGiaChon = DanhSachBangGia.DocTheoIdVaLoai(idBangGia, loaiBangGia);
+
+            if (bangGiaChon == null)
+                return kq;
+
             switch (loaiBangGia)
             {
                 case LoaiBangGiaS.LuyTien:

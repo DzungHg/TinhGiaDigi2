@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TinhGiaInBDO;
-using TinhGiaInLogic;
+using AutoMapper;
+using TinhGiaInApp.BDO;
+using TinhGiaInApp.Logic;
 
 namespace TinhGiaInClient.Model
 {
@@ -20,68 +21,32 @@ namespace TinhGiaInClient.Model
         public int ThuTu { get; set; }
         //==
         #region Các hàm static
-        public static List<HangKhachHang> LayTatCa()
+        public static List<HangKhachHang> DocTatCa()
         {
-            var giayLogic = new HangKhachHangLogic();
-            List<HangKhachHang> nguon = null;
-            try
-            {
-                nguon = giayLogic.LayTatCa().Select(x => new HangKhachHang
-                {
-                    ID = x.ID,
-                    Ten = x.Ten,
-                    DienGiai = x.Ten,
-                    GiaTriHang = x.HangHangKhachHang,
-                    LoiNhuanChenhLech = x.LoiNhuanChenhLech,
-                    LoiNhuanOffsetGiaCong = x.LoiNhuanOffsetGiaCong,
-                    MaHieu = x.MaHieu,
-                    ThuTu = x.ThuTu
-
-                }).OrderBy(x => x.ThuTu).ToList();
-            }
-            catch { }
+            //Xài automapper
+            var logic = new HangKhachHangLogic();
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<HangKhachHangBDO, HangKhachHang>());
+            var mapper = config.CreateMapper();
+            List<HangKhachHang> nguon = mapper.Map<List<HangKhachHangBDO>, List<HangKhachHang>> (logic.DocTatCa());
             return nguon;
-        }
-
-        public static HangKhachHang LayTheoId(int idHangKH)
-        {
-            var bGiaInNhanhLogic = new HangKhachHangLogic();
-            HangKhachHang hangKH = new HangKhachHang();
-            try
-            {
-                var hangKHBDO = bGiaInNhanhLogic.LayTheoId(idHangKH);
-                //Chuyen
-                ChuyenDoiBDOThanhDTO(hangKHBDO, hangKH);
-            }
-                catch {
-                }
-            return hangKH;
-        }
-        //Chuyển đổi
-        private static void ChuyenDoiBDOThanhDTO(HangKhachHangBDO hangKHBDO, HangKhachHang hangKH)
-        {
-            hangKH.ID = hangKHBDO.ID;
-            hangKH.Ten = hangKHBDO.Ten;
-            hangKH.DienGiai = hangKHBDO.DienGiai;
-            hangKH.GiaTriHang = hangKHBDO.HangHangKhachHang;
-            hangKH.LoiNhuanChenhLech = hangKHBDO.LoiNhuanChenhLech;
-            hangKH.LoiNhuanOffsetGiaCong = hangKHBDO.LoiNhuanOffsetGiaCong;
-            hangKH.MaHieu = hangKHBDO.MaHieu;
-            hangKH.ThuTu = hangKHBDO.ThuTu;
-            
-        }
-        private static void ChuyenDoiDTOThanhBDO(HangKhachHang hangKH, HangKhachHangBDO hangKHBDO)
-        {
-            hangKHBDO.ID = hangKH.ID;
-            hangKHBDO.Ten = hangKH.Ten;
-            hangKHBDO.DienGiai = hangKH.DienGiai;
-            hangKHBDO.HangHangKhachHang = hangKH.GiaTriHang;
-            hangKHBDO.LoiNhuanChenhLech = hangKH.LoiNhuanChenhLech;
-            hangKHBDO.LoiNhuanOffsetGiaCong = hangKH.LoiNhuanOffsetGiaCong;
-            hangKHBDO.MaHieu = hangKH.MaHieu;
-            hangKHBDO.ThuTu = hangKH.ThuTu;
 
         }
+        public static HangKhachHang DocTheoId(int iD)
+        {
+            var logic = new HangKhachHangLogic();
+
+            var objBDO = logic.DocTheoId(iD);
+
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<HangKhachHangBDO, HangKhachHang>()
+                        );
+            var mapper = config.CreateMapper();
+
+            var objModel = mapper.Map<HangKhachHang>(objBDO);
+
+            //Trả về
+            return objModel;
+        }
+      
         #endregion
         #region  hàm tính giá in nhanh
         public static decimal TinhGiaInNhanh(BangGiaInNhanh bangGia, int soTrangA4)

@@ -33,7 +33,7 @@ namespace TinhGiaInClient.Presenter
         
         public string TenHangKhachHang()
         {
-            return HangKhachHang.LayTheoId(View.IdHangKhachHang).Ten;
+            return HangKhachHang.DocTheoId(View.IdHangKhachHang).Ten;
 
         }
       

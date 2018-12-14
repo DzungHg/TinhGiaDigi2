@@ -39,11 +39,11 @@ namespace TinhGiaInClient.Presenter
 
         public string TenHangKH (int idHangKH)
         {
-            return HangKhachHang.LayTheoId(idHangKH).Ten;
+            return HangKhachHang.DocTheoId(idHangKH).Ten;
         }
         public int TyLeLoiNhuanTheoHangKH()
         {
-            return HangKhachHang.LayTheoId(View.IdHangKH).LoiNhuanOffsetGiaCong;
+            return HangKhachHang.DocTheoId(View.IdHangKH).LoiNhuanOffsetGiaCong;
         }
         
         

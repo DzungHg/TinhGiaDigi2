@@ -68,7 +68,7 @@ namespace TinhGiaInNhapLieu.Presenter
 
             
 
-            var bangGiaChon = DanhSachBangGia.DocTheoIDvaLoai(View.IdBangGiaChon, View.LoaiBangGia);
+            var bangGiaChon = DanhSachBangGia.DocTheoIdVaLoai(View.IdBangGiaChon, View.LoaiBangGia);
             
 
             switch (View.LoaiBangGia)
@@ -98,7 +98,7 @@ namespace TinhGiaInNhapLieu.Presenter
             if (View.IdBangGiaChon <= 0)
                 return kq;
             //
-            var bangGia = DanhSachBangGia.DocTheoIDvaLoai(View.IdBangGiaChon, View.LoaiBangGia);
+            var bangGia = DanhSachBangGia.DocTheoIdVaLoai(View.IdBangGiaChon, View.LoaiBangGia);
             kq = bangGia.DienGiai;
             return kq;
         }
@@ -111,7 +111,7 @@ namespace TinhGiaInNhapLieu.Presenter
                 return kq;
             }
             //
-            var bangGia = DanhSachBangGia.DocTheoIDvaLoai(View.IdBangGiaChon, View.LoaiBangGia);
+            var bangGia = DanhSachBangGia.DocTheoIdVaLoai(View.IdBangGiaChon, View.LoaiBangGia);
             /* var giaInNhanhNiemYet = new GiaInNhanhNiemYet(View.SoTrangTinhThu, bangGia);
              kq = giaInNhanhNiemYet.ThanhTienSales(); */
             //Tính thử theo giá của bảng giá chứ không phải niêm yết

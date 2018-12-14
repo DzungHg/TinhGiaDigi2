@@ -41,7 +41,7 @@ namespace TinhGiaInNhapLieu
         {
             
             
-            foreach(HangKhachHang hang in HangKhachHang.LayTatCa())
+            foreach(HangKhachHang hang in HangKhachHang.DocTatCa())
             {
                 nguonHangKH.Add(hang.ID, hang.Ten);
             }

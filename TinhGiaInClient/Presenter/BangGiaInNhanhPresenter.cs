@@ -26,16 +26,16 @@ namespace TinhGiaInClient.Presenter
         
         public List<HangKhachHang>HangKhachHangS()
         {
-            return HangKhachHang.LayTatCa();
+            return HangKhachHang.DocTatCa();
         }
         public string TenHangKhachHang()
         {
-            return HangKhachHang.LayTheoId(View.IdHangKHChon).Ten;
+            return HangKhachHang.DocTheoId(View.IdHangKHChon).Ten;
 
         }
         public int TyLeMarkUpTheoHangKH ()
         {
-            return HangKhachHang.LayTheoId(View.IdHangKHChon).LoiNhuanChenhLech;
+            return HangKhachHang.DocTheoId(View.IdHangKHChon).LoiNhuanChenhLech;
         }
         public List<NiemYetGiaInNhanh> NiemYetGiaInNhanhS()
         {
@@ -69,7 +69,7 @@ namespace TinhGiaInClient.Presenter
 
                 LoaiBangGiaS loaiBangGia;
                 Enum.TryParse(niemYetGia.LoaiBangGia, out loaiBangGia);
-                kq = DanhSachBangGia.DocTheoIDvaLoai(niemYetGia.IdBangGia,
+                kq = DanhSachBangGia.DocTheoIdVaLoai(niemYetGia.IdBangGia,
                     loaiBangGia);
             }
             return kq;

@@ -44,11 +44,11 @@ namespace TinhGiaInClient.Presenter
         
         public int TyLeMarkUp()
         {
-            return HangKhachHang.LayTheoId(View.IdHangKhachHang).LoiNhuanChenhLech;
+            return HangKhachHang.DocTheoId(View.IdHangKhachHang).LoiNhuanChenhLech;
         }
         public string ThongTinHangKH(int idHangKH)
         {
-            return HangKhachHang.LayTheoId(idHangKH).Ten;
+            return HangKhachHang.DocTheoId(idHangKH).Ten;
         }
 
         public List<BoiBiaCung> ThanhPhamS()

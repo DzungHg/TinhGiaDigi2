@@ -24,7 +24,7 @@ namespace TinhGiaInNhapLieu.Presenter
         }
         public List<HangKhachHang> HangKhachHangS()
         {
-            return HangKhachHang.LayTatCa();
+            return HangKhachHang.DocTatCa();
         }
         public void TrinhBayThemMoi()
         {
@@ -69,7 +69,7 @@ namespace TinhGiaInNhapLieu.Presenter
         {
             var kq = "";
             if (View.IdHangKhachHang > 0)
-                kq = HangKhachHang.LayTheoId(View.IdHangKhachHang).DienGiai;
+                kq = HangKhachHang.DocTheoId(View.IdHangKhachHang).DienGiai;
 
             return kq;
         }

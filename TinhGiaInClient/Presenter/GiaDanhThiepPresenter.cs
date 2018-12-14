@@ -40,11 +40,11 @@ namespace TinhGiaInClient.Presenter
         }
         public string TenHangKH ()
         {
-            return HangKhachHang.LayTheoId(View.IdHangKH).Ten;
+            return HangKhachHang.DocTheoId(View.IdHangKH).Ten;
         }
         public int TyLeLoiNhuanTheoHangKH()
         {
-            return HangKhachHang.LayTheoId(View.IdHangKH).LoiNhuanChenhLech;
+            return HangKhachHang.DocTheoId(View.IdHangKH).LoiNhuanChenhLech;
         }
         /*public Dictionary<int, string>BangGiaDanhThiepS()
         {

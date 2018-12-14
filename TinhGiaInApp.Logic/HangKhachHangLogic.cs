@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TinhGiaInBDO;
-using TinhGiaInDAL.RepoTinhGia;
+using TinhGiaInApp.BDO;
+using TinhGiaInApp.DAL;
 
-namespace TinhGiaInLogic
+namespace TinhGiaInApp.Logic
 {
     public class HangKhachHangLogic
     {
         HangKhachHangDAO hangKhachHangDAO = new HangKhachHangDAO();
-        public List<HangKhachHangBDO> LayTatCa()
+        public List<HangKhachHangBDO> DocTatCa()
         {
-            var nguon = hangKhachHangDAO.LayTatCa().ToList();
+            var nguon = hangKhachHangDAO.DocTatCa().ToList();
             return nguon;
         }
 
 
-        public HangKhachHangBDO LayTheoId(int iD)
+        public HangKhachHangBDO DocTheoId(int iD)
         {
-            return hangKhachHangDAO.LayTheoId(iD);
+            return hangKhachHangDAO.DocTheoId(iD);
         }
     }
 }

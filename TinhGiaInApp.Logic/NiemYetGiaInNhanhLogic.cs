@@ -26,7 +26,12 @@ namespace TinhGiaInApp.Logic
             var nguon = niemYetGiaInNhanhDAO.DocTatCa().Where(x => x.IdHangKhachHang == iDHangKH);
             return nguon.ToList();
         }
-     
+        public List<NiemYetGiaInNhanhBDO> DocTheoIdHangKHConDung(int iDHangKH)
+        {
+            var nguon = this.DocTatCaConDung().Where(x => x.IdHangKhachHang == iDHangKH);
+            return nguon.ToList();
+        }
+
         public NiemYetGiaInNhanhBDO DocTheoId(int iD)
         {
             return niemYetGiaInNhanhDAO.DocTheoId(iD);

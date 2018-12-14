@@ -100,7 +100,7 @@ namespace TinhGiaInNhapLieu
                 foreach (KeyValuePair<string, string> kvp in
                     quanLyBGPres.TrinhBayBangGia())
                 {
-                    item = new ListViewItem(kvp.Key);
+                    item = new ListViewItem(kvp.Key.Trim());
                     item.SubItems.Add(kvp.Value);
                     lstTrinhBayBG.Items.Add(item);
                 }

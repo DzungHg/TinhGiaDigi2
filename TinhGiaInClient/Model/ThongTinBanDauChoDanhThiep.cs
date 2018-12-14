@@ -14,7 +14,7 @@ namespace TinhGiaInClient.Model
         public int IdHangKhachHang { get; set; }
         public string TenHangKhachHang
         {
-            get { return HangKhachHang.LayTheoId(this.IdHangKhachHang).Ten; }
+            get { return HangKhachHang.DocTheoId(this.IdHangKhachHang).Ten; }
         }
     }
 }

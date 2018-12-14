@@ -27,7 +27,7 @@ namespace TinhGiaInClient.Presenter
         public Dictionary<int, string> HangKhachHangS()
         {
             var hangKHTheoUser = NguoiDung.DocTheoTenDangNhap(View.TenNhanVien.Trim().ToLower()).ChoHangKhachHang.Trim().Split(';');
-            var nguonHangKH = HangKhachHang.LayTatCa().Where(x => hangKHTheoUser.Contains(x.MaHieu.Trim())).ToList();
+            var nguonHangKH = HangKhachHang.DocTatCa().Where(x => hangKHTheoUser.Contains(x.MaHieu.Trim())).ToList();
             //var so = nguonHangKH.Count();
 
             //var so = nguonHangKH.Count();
@@ -45,7 +45,7 @@ namespace TinhGiaInClient.Presenter
         }
         public string DienGiaiHangKH() //
         {
-            return HangKhachHang.LayTheoId(this.IdHangKH()).DienGiai;
+            return HangKhachHang.DocTheoId(this.IdHangKH()).DienGiai;
         }
 
         //phần không lưu data

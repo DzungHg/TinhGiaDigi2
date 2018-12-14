@@ -38,7 +38,7 @@ namespace TinhGiaInClient.UI
         }
         private void LoadHangKhachHang()
         {
-            var nguon = HangKhachHang.LayTatCa();
+            var nguon = HangKhachHang.DocTatCa();
             cboHangKH.ValueMember = "ID";
             cboHangKH.DisplayMember = "Ten";
             cboHangKH.DataSource = nguon;

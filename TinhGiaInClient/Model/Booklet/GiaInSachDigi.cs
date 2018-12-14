@@ -135,7 +135,7 @@ namespace TinhGiaInClient.Model.Booklet
             //Lấy mục giá in đầu tiên để tính
             var idBangGiaInNhanh = this.InRuot.GiaInS[0].IdNiemYetGiaInNhanh;
             var idToInDigi = this.InRuot.GiaInS[0].IdMayIn;
-            var tyLeMarkUpSalesIn = HangKhachHang.LayTheoId(this.IdHangKhachHang).LoiNhuanChenhLech;
+            var tyLeMarkUpSalesIn = HangKhachHang.DocTheoId(this.IdHangKhachHang).LoiNhuanChenhLech;
             /// Đoạn này tạm ngừng vì giá in cataloque là riêng //đã sửa lại
             ///var giaInNhanhKetHop = new GiaInNhanhKetHopBangGia_May(this.TongSoTrangA4In(), idBangGiaInNhanh,
             ///    idToInDigi, tyLeMarkUpSalesIn);

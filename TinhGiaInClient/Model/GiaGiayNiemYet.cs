@@ -22,7 +22,7 @@ namespace TinhGiaInClient.Model
         }
         public string TenHangKhachHang()
         {
-            return HangKhachHang.LayTheoId(this.IdHangKhachHang).Ten;
+            return HangKhachHang.DocTheoId(this.IdHangKhachHang).Ten;
         }
         //hàm static
         public static List<GiaGiayNiemYet> DocTatCa()

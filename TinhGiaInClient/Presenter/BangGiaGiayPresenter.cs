@@ -22,7 +22,7 @@ namespace TinhGiaInClient.Presenter
         }
         public List<HangKhachHang>HangKhachHangS()
         {
-            return HangKhachHang.LayTatCa();
+            return HangKhachHang.DocTatCa();
         }
         
         public Dictionary<int, List<string>> GiayTheoDanhMucS()
@@ -49,7 +49,7 @@ namespace TinhGiaInClient.Presenter
         }
         public string DienGiaiHangKH()
         {
-            return HangKhachHang.LayTheoId(View.IdHangKHChon).DienGiai;
+            return HangKhachHang.DocTheoId(View.IdHangKHChon).DienGiai;
         }
         public Giay GiayChon ()
         {

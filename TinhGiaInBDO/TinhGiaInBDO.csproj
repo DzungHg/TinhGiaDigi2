@@ -72,7 +72,6 @@
     <Compile Include="MayThanhPhamBaseBDO.cs" />
     <Compile Include="MarkUpLoiNhuanGiayBDO.cs" />
     <Compile Include="GiayBDO.cs" />
-    <Compile Include="HangKhachHangBDO.cs" />
     <Compile Include="MayInDigiBDO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="KetQuaTinhGiaInBDO.cs" />

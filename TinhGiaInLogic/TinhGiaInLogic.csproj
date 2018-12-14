@@ -69,7 +69,6 @@
     <Compile Include="CanPhuLogic.cs" />
     <Compile Include="KetQuaTinhGiaInLogic.cs" />
     <Compile Include="MarkUpLoiNhuanGiayLogic.cs" />
-    <Compile Include="HangKhachHangLogic.cs" />
     <Compile Include="DanhMucGiayLogic.cs" />
     <Compile Include="BangGiaInNhanhLogic.cs" />
     <Compile Include="GiayLogic.cs" />

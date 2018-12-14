@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TinhGiaInBDO;
+using TinhGiaInApp.BDO;
 
-namespace TinhGiaInDAL.RepoTinhGia
+namespace TinhGiaInApp.DAL
 {
     public interface IHangKhachHangDAO
     {
-        IEnumerable<HangKhachHangBDO> LayTatCa();
-        HangKhachHangBDO LayTheoId(int iD);
+        IEnumerable<HangKhachHangBDO> DocTatCa();
+        HangKhachHangBDO DocTheoId(int iD);
         void Them(HangKhachHangBDO entityBDO);
         void Sua(HangKhachHangBDO entityBDO);
         void Xoa(int iD);     

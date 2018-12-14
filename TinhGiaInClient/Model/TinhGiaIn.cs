@@ -31,7 +31,7 @@ namespace TinhGiaInClient.Model
         { get; set; }
         public int TyLeMarkupSales()
         {
-            return HangKhachHang.LayTheoId(this.IdHangKhachHang).LoiNhuanChenhLech;
+            return HangKhachHang.DocTheoId(this.IdHangKhachHang).LoiNhuanChenhLech;
         }
         
       
@@ -151,7 +151,7 @@ namespace TinhGiaInClient.Model
                     //Tạo bảng giá in nhanh
                     Enum.TryParse(NiemYetGiaInNhanh.DocTheoId(idNiemYetGiaInNhanh).LoaiBangGia.Trim(), out loaiBangGia);
 
-                    var bangGia = DanhSachBangGia.DocTheoIDvaLoai(NiemYetGiaInNhanh.DocTheoId(idNiemYetGiaInNhanh).IdBangGia,
+                    var bangGia = DanhSachBangGia.DocTheoIdVaLoai(NiemYetGiaInNhanh.DocTheoId(idNiemYetGiaInNhanh).IdBangGia,
                           loaiBangGia);
                     var soTrangToiDa = NiemYetGiaInNhanh.DocTheoId(idNiemYetGiaInNhanh).SoTrangToiDa;
 

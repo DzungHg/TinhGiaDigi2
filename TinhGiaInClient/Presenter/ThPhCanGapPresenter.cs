@@ -45,7 +45,7 @@ namespace TinhGiaInClient.Presenter
         
         public int TyLeMarkUp()
         {
-            return HangKhachHang.LayTheoId(View.IdHangKhachHang).LoiNhuanChenhLech;
+            return HangKhachHang.DocTheoId(View.IdHangKhachHang).LoiNhuanChenhLech;
         }
       
 

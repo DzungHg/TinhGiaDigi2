@@ -24,7 +24,7 @@ namespace TinhGiaInNhapLieu.Presenter
         }
         public List<HangKhachHang> HangKhachHangS()
         {
-            return HangKhachHang.LayTatCa();
+            return HangKhachHang.DocTatCa();
         }
         public void TrinhBayThemMoi()
         {
@@ -73,7 +73,7 @@ namespace TinhGiaInNhapLieu.Presenter
             var kq = "";
             if (iDBangGia > 0)
             {
-                kq  = DanhSachBangGia.DocTheoIDvaLoai(iDBangGia, loaiBangGia).Ten;               
+                kq  = DanhSachBangGia.DocTheoIdVaLoai(iDBangGia, loaiBangGia).Ten;               
 
             }
             return kq;
@@ -83,7 +83,7 @@ namespace TinhGiaInNhapLieu.Presenter
             var kq = "";
             if (iDBangGia > 0 )
             {
-                kq = DanhSachBangGia.DocTheoIDvaLoai(iDBangGia, loaiBangGia).DienGiai;
+                kq = DanhSachBangGia.DocTheoIdVaLoai(iDBangGia, loaiBangGia).DienGiai;
 
             }
             return kq;
@@ -94,7 +94,7 @@ namespace TinhGiaInNhapLieu.Presenter
             {
                 if (View.IdBangGia > 0 )
                 {
-                    var bangGia = DanhSachBangGia.DocTheoIDvaLoai(View.IdBangGia, View.LoaiBangGia);
+                    var bangGia = DanhSachBangGia.DocTheoIdVaLoai(View.IdBangGia, View.LoaiBangGia);
                     View.TenBangGia = bangGia.Ten;
 
                 }
@@ -106,7 +106,7 @@ namespace TinhGiaInNhapLieu.Presenter
         {
             var kq = "";
             if (View.IdHangKhachHang > 0)
-                kq = HangKhachHang.LayTheoId(View.IdHangKhachHang).DienGiai;
+                kq = HangKhachHang.DocTheoId(View.IdHangKhachHang).DienGiai;
 
             return kq;
         }

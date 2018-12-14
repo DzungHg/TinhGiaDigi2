@@ -68,7 +68,7 @@ namespace TinhGiaInClient.Presenter
                 LoaiBangGiaS loaiBangGia;
                 Enum.TryParse(niemYetGia.LoaiBangGia, out loaiBangGia);
                 
-                kq = DanhSachBangGia.DocTheoIDvaLoai(niemYetGia.IdBangGia,
+                kq = DanhSachBangGia.DocTheoIdVaLoai(niemYetGia.IdBangGia,
                     loaiBangGia);
             }
             return kq;
